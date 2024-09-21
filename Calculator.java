@@ -39,7 +39,7 @@ class Calculator{
 			System.out.println("\n=== CALCULATOR CHISTEMATICOS ===");
 			System.out.println("1. suma[+]");
 			System.out.println("2. resta[-]");
-			System.out.println("3. multiplicaion[*]");
+			System.out.println("3. multiplicacion[*]");
 			System.out.println("4. division[/]");
 			System.out.println("5. modulo[%]");
 			System.out.println("6. SALIR");
