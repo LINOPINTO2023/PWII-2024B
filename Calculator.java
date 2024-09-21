@@ -3,8 +3,8 @@ import java.util.Scanner;
 class Calculator{
     
     //metodos para las operaciones de la calculadora
-    int add(int a, int b){
-        return a+b ;
+    int rest(int a, int b){
+        return a-b ;
     }
     
     public static void main(String[] args){
