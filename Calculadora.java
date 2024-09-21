@@ -19,8 +19,18 @@ class Calculadora{
             case 1: System.out.println("Resultado de la suma: "); break;
             case 2: System.out.println("Resultado de la resta: "); break;
             case 3: System.out.println("Resultado de la multiplicacion: "); break;
-            case 4: System.out.println("Resultado de la divisin: "); break;
-            default: System.out.println("Opcion no valida."); break;
+            case 4: 
+                if (num2 != 0) {
+                    System.out.println("Resultado de la división: " + division(num1, num2)); 
+                } else {
+                 System.out.println("Error: No se puede dividir entre cero.");
+                }
+                break;
         }
     }
+
+    public static double division(double a, double b) {
+        return a / b;
+    }
+
 }
