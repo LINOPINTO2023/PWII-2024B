@@ -8,11 +8,71 @@
   </head>
   <body>
     <h1>CALCULADORA</h1>
-    <div>Ingrese</div>
-    <input type="number" />
-    <button>enter</button>
+    <div>
+      <label for="numero">Ingrese texto: </label>
+      <input type="text" id="numero" />
+    </div>
+    <div id="buttonContainer"></div>
+    <div class="operation">
+      <button id="enterButton">=</button> <button id="clearButton">C</button>
+    </div>
+
+    <h2>Resultado: <span id="resultado">0</span></h2>
+
+    <script>
+      const input = document.getElementById("numero");
+      const button = document.getElementById("enterButton");
+      const clearButton = document.getElementById("clearButton");
+      const resultDisplay = document.getElementById("resultado");
+
+      function evaluarExpresion(expresion) {
+        try {
+          const resultado = eval(expresion);
+          resultDisplay.textContent = resultado;
+        } catch (error) {
+          console.error("Error al evaluar la expresión:", error);
+          resultDisplay.textContent = "Error";
+        }
+      }
+
+      button.addEventListener("click", function () {
+        const numero = input.value;
+        console.log("El número ingresado es:", numero);
+        evaluarExpresion(numero);
+      });
+
+      clearButton.addEventListener("click", function () {
+        input.value = "";
+        resultDisplay.textContent = "0";
+      });
+
+      function crearBotones() {
+        const buttonContainer = document.getElementById("buttonContainer");
+        for (let i = 0; i <= 9; i++) {
+          const boton = document.createElement("button");
+          boton.textContent = i;
+          boton.className = "button";
+          boton.addEventListener("click", () => {
+            input.value += i;
+            console.log("Número presionado:", i);
+          });
+          buttonContainer.appendChild(boton);
+        }
+
+        const operaciones = ["+", "-", "*", "/", "%"];
+        operaciones.forEach((op) => {
+          const botonOperacion = document.createElement("button");
+          botonOperacion.textContent = op;
+          botonOperacion.className = "button";
+          botonOperacion.addEventListener("click", () => {
+            input.value += op;
+            console.log("Operación presionada:", op);
+          });
+          buttonContainer.appendChild(botonOperacion);
+        });
+      }
+
+      crearBotones();
+    </script>
   </body>
-  <script>
-    console.log("Hola mundo :V");
-  </script>
 </html>
