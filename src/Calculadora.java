@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //import Metodos.Division;
@@ -17,10 +18,21 @@ public class Calculadora {
             double num1, num2;
             int op;
 
-            System.out.print("Ingrese el primer operando: ");
-            num1 = sc.nextDouble();
-            System.out.print("Ingrese el segundo operando: ");
-            num2 = sc.nextDouble();
+            boolean inputValido = false; // Control de la entrada
+
+            while (!inputValido) {
+                try {
+                    System.out.print("Ingrese el primer operando: ");
+                    num1 = sc.nextDouble();
+
+                    System.out.print("Ingrese el segundo operando: ");
+                    num2 = sc.nextDouble();
+                    inputValido = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Debes ingresar un número válido.");
+                    sc.next(); // Limpiar la entrada incorrecta
+                }
+            }
 
             System.out.println("¿Qué operación desea hacer? (Solo coloque un número) \n" +
                     "1: Sumar\n" +
@@ -45,7 +57,7 @@ public class Calculadora {
                     break;
                 case 4:
                     if (num2 != 0) {
-                        //resultado = Division.dividir(num1, num2);
+                        // resultado = Division.dividir(num1, num2);
                     } else {
                         System.out.println(
                                 "Dividir por cero no es posible. Asegúrate de ingresar un número distinto de cero como divisor.");
@@ -54,7 +66,7 @@ public class Calculadora {
                     break;
                 case 5:
                     if (num2 != 0) {
-                        //resultado = Modulo.modular(num1, num2);
+                        // resultado = Modulo.modular(num1, num2);
                     } else {
                         System.out.println(
                                 "No se puede calcular el módulo con un divisor de cero. Por favor, ingresa un número distinto de cero.");
