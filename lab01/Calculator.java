@@ -13,7 +13,7 @@ class Calculator {
         double div(double a, double b) {
             if (b == 0) {
                 System.out.println("Error: No se puede dividir entre cero.");
-                return 0;
+                return Double.NaN;
             }
             return a / b;
         } 
