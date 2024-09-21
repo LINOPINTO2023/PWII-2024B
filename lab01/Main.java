@@ -8,10 +8,10 @@ public class Main {
         System.out.println("SIMULADOR DE UNA CALCULADORA");
 
         System.out.println("Ingrese el primer numero: ");
-        int num1 = sc.nextInt();
+        double num1 = sc.nextInt();
 
         System.out.println("Ingrese el segundo numero: ");
-        int num2 = sc.nextInt();
+        double num2 = sc.nextInt();
 
         // Menú de operaciones
         System.out.println("Selecciona la operación:");
@@ -23,7 +23,7 @@ public class Main {
 
         int option = sc.nextInt(); //leer la opcion del usuario
 
-        int resultado = 0;
+        double resultado = 0;
 
         switch (option) {
             case 1:

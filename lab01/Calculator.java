@@ -1,16 +1,16 @@
 package lab01;
 
 class Calculator {
-        int add(int a, int b) {
+        double add(double a, double b) {
             return a + b;
         } 
-        int sub(int a, int b) {
+        double sub(double a, double b) {
             return a - b;
         } 
-        int mul(int a, int b) {
+        double mul(double a, double b) {
             return a * b;
         } 
-        int div(int a, int b) {
+        double div(double a, double b) {
             if (b == 0) {
                 System.out.println("Error: No se puede dividir entre cero.");
                 return 0;
@@ -18,7 +18,7 @@ class Calculator {
             return a / b;
         } 
     
-        int mod(int a, int b) {
+        double mod(double a, double b) {
             if (b == 0) {
                 System.out.println("Error: No se puede calcular el módulo con divisor cero.");
                 return 0;
