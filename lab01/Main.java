@@ -4,13 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner sc = new Scanner(System.in);
-        // Menú de operaciones
-        System.out.println("Selecciona la operación:");
-        System.out.println("1. Suma");
-        System.out.println("2. Resta");
-        System.out.println("3. Multiplicación");
-        System.out.println("4. División");
-        System.out.println("5. Módulo");
+        System.out.println("Bienvenido a mi primer proyecto de Git Hub");
+        System.out.println("SIMULADOR DE UNA CALCULADORA");
 
         int option = sc.nextInt(); //leer la opcion del usuario
 
@@ -19,6 +14,16 @@ public class Main {
 
         System.out.println("Ingrese el segundo numero: ");
         int num2 = sc.nextInt();
+        
+        // Menú de operaciones
+        System.out.println("Selecciona la operación:");
+        System.out.println("1. Suma");
+        System.out.println("2. Resta");
+        System.out.println("3. Multiplicación");
+        System.out.println("4. División");
+        System.out.println("5. Módulo");
+
+
 
         int resultado = 0;
 
