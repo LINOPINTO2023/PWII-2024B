@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-import Metodos.Division;
-import Metodos.Modulo;
+//import Metodos.Division;
+//import Metodos.Modulo;
 import Metodos.Multiplicacion;
 import Metodos.Resta;
 import Metodos.Suma;
@@ -11,14 +11,15 @@ public class Calculadora {
         Scanner sc = new Scanner(System.in);
         boolean continuar = true; // Variable para controlar el bucle
 
+        System.out.println("Calculadora de Operaciones Básicas");
+        System.out.println("====================================");
         while (continuar) { // Bucle para repetir operaciones
             double num1, num2;
             int op;
 
-            System.out.println("Calculadora de Operaciones Básicas");
-            System.out.print("Por favor, dame el primer número de la operación: ");
+            System.out.print("Ingrese el primer operando: ");
             num1 = sc.nextDouble();
-            System.out.print("Por favor, dame el segundo número de la operación: ");
+            System.out.print("Ingrese el segundo operando: ");
             num2 = sc.nextDouble();
 
             System.out.println("¿Qué operación desea hacer? (Solo coloque un número) \n" +
@@ -29,35 +30,52 @@ public class Calculadora {
                     "5: Módulo");
             op = sc.nextInt();
 
+            double resultado = 0;
+            boolean esEntero = false; // Variable para determinar si el resultado es entero
+
             switch (op) {
                 case 1:
-                    System.out.println("Resultado de la suma: " + Suma.sumar(num1, num2));
+                    resultado = Suma.sumar(num1, num2);
                     break;
                 case 2:
-                    System.out.println("Resultado de la resta: " + Resta.restar(num1, num2));
+                    resultado = Resta.restar(num1, num2);
                     break;
                 case 3:
-                    System.out.println("Resultado de la multiplicación: " + Multiplicacion.multiplicar(num1, num2));
+                    resultado = Multiplicacion.multiplicar(num1, num2);
                     break;
                 case 4:
                     if (num2 != 0) {
-                        System.out.println("Resultado de la división: " + Division.dividir(num1, num2));
+                        //resultado = Division.dividir(num1, num2);
                     } else {
                         System.out.println(
                                 "Dividir por cero no es posible. Asegúrate de ingresar un número distinto de cero como divisor.");
+                        continue;
                     }
                     break;
                 case 5:
                     if (num2 != 0) {
-                        System.out.println("Resultado del módulo: " + Modulo.modular(num1, num2));
+                        //resultado = Modulo.modular(num1, num2);
                     } else {
                         System.out.println(
                                 "No se puede calcular el módulo con un divisor de cero. Por favor, ingresa un número distinto de cero.");
+                        continue;
                     }
                     break;
                 default:
                     System.out.println("¡Seleccione un número entre 1 y 5!");
-                    break;
+                    continue;
+            }
+
+            // Verificar si el resultado es un número entero
+            if (resultado % 1 == 0) {
+                esEntero = true;
+            }
+
+            // Imprimir el resultado de acuerdo al tipo (entero o decimal)
+            if (esEntero) {
+                System.out.println("Resultado: " + (int) resultado);
+            } else {
+                System.out.println("Resultado: " + resultado);
             }
 
             // Preguntar si desea realizar otra operación
