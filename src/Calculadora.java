@@ -14,9 +14,9 @@ public class Calculadora {
 
         System.out.println("Calculadora de Operaciones Básicas");
         System.out.println("====================================");
-        while (continuar) { // Bucle para repetir operaciones
-            double num1, num2;
-            int op;
+        while (continuar) { 
+            double num1 = 0, num2 = 0;
+            int op = 0; // Inicializar variable de operación
 
             boolean inputValido = false; // Control de la entrada
 
@@ -24,10 +24,20 @@ public class Calculadora {
                 try {
                     System.out.print("Ingrese el primer operando: ");
                     num1 = sc.nextDouble();
+                    inputValido = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Debes ingresar un número válido.");
+                    sc.next(); // Limpiar la entrada incorrecta
+                }
+            }
 
+            inputValido = false;
+
+            while (!inputValido) {
+                try {
                     System.out.print("Ingrese el segundo operando: ");
                     num2 = sc.nextDouble();
-                    inputValido = true;
+                    inputValido = true; 
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Debes ingresar un número válido.");
                     sc.next(); // Limpiar la entrada incorrecta
