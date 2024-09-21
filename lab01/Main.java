@@ -7,14 +7,12 @@ public class Main {
         System.out.println("Bienvenido a mi primer proyecto de Git Hub");
         System.out.println("SIMULADOR DE UNA CALCULADORA");
 
-        int option = sc.nextInt(); //leer la opcion del usuario
-
         System.out.println("Ingrese el primer numero: ");
         int num1 = sc.nextInt();
 
         System.out.println("Ingrese el segundo numero: ");
         int num2 = sc.nextInt();
-        
+
         // Menú de operaciones
         System.out.println("Selecciona la operación:");
         System.out.println("1. Suma");
@@ -23,7 +21,7 @@ public class Main {
         System.out.println("4. División");
         System.out.println("5. Módulo");
 
-
+        int option = sc.nextInt(); //leer la opcion del usuario
 
         int resultado = 0;
 
