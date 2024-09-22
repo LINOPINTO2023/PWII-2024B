@@ -62,7 +62,7 @@ class Calculator{
 						System.out.println("\nMULTIPLICACION: " + mul(a, b));
 						break;
 					case 4:
-						System.out.println("\nDIVICION: " + div(a, b));
+						System.out.println("\nDIVISION: " + div(a, b));
 						break;
 					case 5:
 						System.out.println("\nMODULO: " + mod(a, b));
