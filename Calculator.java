@@ -4,7 +4,7 @@ class Calculator{
     
     //metodos para las operaciones de la calculadora
     static int add(int a, int b){ 
-		return 0; 
+		return a+b; 
 	} 
 	
 	static int rest(int a, int b){
