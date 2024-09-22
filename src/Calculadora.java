@@ -1,11 +1,12 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//import Metodos.Division;
-//import Metodos.Modulo;
+import Metodos.Division;
+import Metodos.Modulo;
 import Metodos.Multiplicacion;
 import Metodos.Resta;
 import Metodos.Suma;
+
 
 public class Calculadora {
     public static void main(String[] args) {
@@ -67,7 +68,7 @@ public class Calculadora {
                     break;
                 case 4:
                     if (num2 != 0) {
-                        // resultado = Division.dividir(num1, num2);
+                        resultado = Division.dividir(num1, num2);
                     } else {
                         System.out.println(
                                 "Dividir por cero no es posible. Asegúrate de ingresar un número distinto de cero como divisor.");
@@ -76,7 +77,7 @@ public class Calculadora {
                     break;
                 case 5:
                     if (num2 != 0) {
-                        // resultado = Modulo.modular(num1, num2);
+                        resultado = Modulo.modulo(num1, num2);
                     } else {
                         System.out.println(
                                 "No se puede calcular el módulo con un divisor de cero. Por favor, ingresa un número distinto de cero.");
