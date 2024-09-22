@@ -1,5 +1,5 @@
 # Integrantes
-## • Arce Valencia Anderson Lino
+##### • Arce Valencia Anderson Lino
 ## • Caracela Challco Anthony Jeffry
 ## • Carfer Carpio Nagin Jazmin
 ## • Davila Flores Mathias Dario
