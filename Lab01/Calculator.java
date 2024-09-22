@@ -20,8 +20,12 @@ public class Calculator {
             System.out.println("La multiplicacion es: "+ mul(primernum, segundonum));
             break;
             case 4:
-            System.out.println("La division es: "+ div(primernum, segundonum));
-            break;
+                if (segundonum == 0) {
+                    System.out.println("División entre 0, INSTRUCCIÓN NO VÁLIDA");
+                } else {
+                    System.out.println("La división es: " + div(primernum, segundonum));
+                }
+                break;
             case 5:
             System.out.println("El módulo o resto es: "+ mod(primernum, segundonum));
             break;
@@ -41,8 +45,8 @@ public class Calculator {
     public static int mul(int a, int b){
         return a * b; 
     }
-    public static int div(int a, int b){ 
-        return a / b;    
+    public static int div(int a, int b){
+        return a / b;  
     }
     public static int mod(int a, int b){ 
         return a % b; 
