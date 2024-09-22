@@ -11,14 +11,14 @@ public class Calculator {
         operador = sc.nextInt();
         switch (operador) {
             case 1:
-            System.out.println("La suma es: "+ sum(primernum, segundonum));
+                System.out.println("La suma es: "+ sum(primernum, segundonum));
                 break;
             case 2:
-            System.out.println("La resta es: "+ sum(primernum, segundonum));//falta el metodo de resta
-            break;
+                System.out.println("La resta es: "+ sum(primernum, segundonum));//falta el metodo de resta
+                break;
             case 3:
-            System.out.println("La multiplicacion es: "+ mul(primernum, segundonum));
-            break;
+                System.out.println("La multiplicacion es: "+ mul(primernum, segundonum));
+                break;
             case 4:
                 if (segundonum == 0) {
                     System.out.println("División entre 0, INSTRUCCIÓN NO VÁLIDA");
@@ -27,13 +27,17 @@ public class Calculator {
                 }
                 break;
             case 5:
-            System.out.println("El módulo o resto es: "+ mod(primernum, segundonum));
-            break;
+                if(segundonum == 0) {
+                    System.out.println("Modulo entre 0, INSTRUCCIÓN NO VÁLIDA");
+                } else {
+                    System.out.println("El módulo o resto es: "+ mod(primernum, segundonum));
+                }
+                break;
             default:
-            System.out.println("Instruccion Invalida");
-            break;
+                System.out.println("Instruccion Invalida");
+                break;
         }
-       
+
     }
     
     public static int sum(int a, int b){ 
