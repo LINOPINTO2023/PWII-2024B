@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 import Metodos.Division;
 import Metodos.Modulo;
-//import Metodos.Division;
-//import Metodos.Modulo;
 import Metodos.Multiplicacion;
 import Metodos.Resta;
 import Metodos.Suma;
