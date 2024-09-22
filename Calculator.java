@@ -7,7 +7,7 @@ public class Calculator {
         primernum = sc.nextInt();
         System.out.println("Ingrese el segundo número");
         segundonum = sc.nextInt();
-        System.out.println("Ingrese el operador\n(1)Suma\n(2)Resta\n(3)Multiplicación\n(4)División"); //falta agregae mas operaciones
+        System.out.println("Ingrese el operador\n(1)Suma\n(2)Resta\n(3)Multiplicación\n(4)División\n(5)Módulo o resto"); //falta agregae mas operaciones
         operador = sc.nextInt();
         switch (operador) {
             case 1:
@@ -22,9 +22,12 @@ public class Calculator {
             case 4:
             System.out.println("La division es: "+ div(primernum, segundonum));
             break;
+            case 5:
+            System.out.println("El módulo o resto es: "+ mod(primernum, segundonum));
+            break;
             default:
             System.out.println("Instruccion Invalida");
-                break;
+            break;
         }
        
     }
@@ -32,13 +35,16 @@ public class Calculator {
     public static int sum(int a, int b){ 
         return a + b;
     }
-    int sub(int a, int b){ return 0; }
-
+    public static int sub(int a, int b){ 
+        return a - b; 
+    }
     public static int mul(int a, int b){
         return a * b; 
     }
     public static int div(int a, int b){ 
         return a / b;    
     }
-    int mod(int a, int b){ return a % b; }
+    public static int mod(int a, int b){ 
+        return a % b; 
+    }
 }
