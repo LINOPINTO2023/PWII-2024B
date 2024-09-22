@@ -4,4 +4,4 @@
 ## • Andres Raul Ore Soto
 ## • Nagin Jazmin Carfer Carpio
 ## • Anthony Jeffry Caracela Challco
-## • Aaron Fernando Quiñones Delgado
+## • Aaron Fernando Quiñonez Delgado
