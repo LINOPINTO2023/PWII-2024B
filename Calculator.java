@@ -16,7 +16,7 @@ class Calculator{
 	
 	} 
 	static int div(int a, int b){ 
-		return 0; 
+		return a/b; 
 	} 
 	
 	static int mod(int a, int b){
