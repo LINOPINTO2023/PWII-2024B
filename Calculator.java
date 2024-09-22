@@ -16,7 +16,12 @@ class Calculator{
 	
 	} 
 	static int div(int a, int b){ 
-		return a/b; 
+		if (b == 0) {
+			System.out.println("División por cero no permitida");
+			return 0; 
+		} else {
+			return a/b;
+		}
 	} 
 	
 	static int mod(int a, int b){
