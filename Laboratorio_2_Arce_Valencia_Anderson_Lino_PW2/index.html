@@ -7,57 +7,72 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Primero coloque el link para usar la biblioteca de bootstrap, hay que aclarar que nunca antes use boostrar asi que estoy experimentantando-->
     <link href="/css/utilities.css" rel="stylesheet">
-    <title>Document</title>
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/564/PNG/512/Ballet_Shoes_icon-icons.com_54208.png" type="image/png">
+    <title>ESCUELA DE DANZA</title>
 </head>
 
 <body>
 
-    <div class="container-fluid d-flex justify-content-center p-5 align-items-end">
+    <div class="container-fluid d-flex justify-content-center align-items-end pt-5 ">
         <!--Aqui investigue de diversas formas como centar mi contenedor. justificarlo en el centro y modificar el paddin y los margenes p
         por ejemplo aqui utilice p-5 -->
-        <div class="fs-4 "> ESCUELA DE DANZA</div>
+        <div class="fs-4 text-blue">ESCUELA DE DANZA</div>
     </div>
     <!--Aqui abajo intente crear un navbar, lo hice de la forma mas simple mas simple posible -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-            <li class="nav-item mx-4">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#"><img src="https://cdn.icon-icons.com/icons2/564/PNG/512/Ballet_Shoes_icon-icons.com_54208.png" alt="logo danza" width="50" height="50 p-2"></a>
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
+            <li class="nav-item mx-4 ">
                 <!--mx siginfica la cantidad de espacio a ampliar en los MARGENES HORIZONTALES-->
-                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link " href="# ">Nosotros</a>
             </li>
-            <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Clases</a>
+            <li class="nav-item mx-4 ">
+                <a class="nav-link " href="# ">Clases</a>
             </li>
-            <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Blog</a>
+            <li class="nav-item mx-4 ">
+                <a class="nav-link " href="# ">Blog</a>
             </li>
-            <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Contactanos</a>
+            <li class="nav-item mx-4 ">
+                <a class="nav-link " href="# ">Contactanos</a>
             </li>
         </ul>
     </nav>
     </div>
 
     <!--Aqui abajo agregue una imagen responsiva, aun falta modificar lo que solo se debe ver -->
-    <div class="container-fluid">
-        <img src="img\dance_1.jpg" class="img-fluid img-thumbnail" width="100%">
+    <!--Agrege texto sobre la imagen por alguna razon no me conecta el css con el html, asi que estoy usando css incrustrado -->
+    <div class="container-fluid ">
+        <div class="image-container position-relative">
+            <img src="img\dance_1.jpg " class="img-fluid">
 
+            <div class="card-img-overlay position-absolute top-50 rounded-start-20 pb-3 translate-middle-y text-white text-opacity-75" style="margin-left: 120px; margin-top: -20px; font-family:Arial, Helvetica, sans-serif;">
+                <div style="margin-bottom: 20px;">
+                    <h1 class="h1 card-title" style="font-size:75px; ">STUDIO </h1>
+                </div>
+                <h5 class="h6 card-text" style="font-size: 12px;">Julliart Studios is the perfect place
+                    <h5 class="h6 card-text" style="font-size: 12px;"> to find your feet with over 20
+                        <h5 class="h6 card-text" style="font-size: 12px;">unique styles of dance and 80
+                            <h5 class="h6 card-text" style="font-size: 12px;">teachers to choose from
+                            </h5>
+            </div>
+        </div>
     </div>
     <!--Aqui abajo es solo un form copiado directamente de la documentacion de boostrap-->
     <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <div class="mb-3 ">
+            <label for="exampleInputEmail1 " class="form-label ">Email address</label>
+            <input type="email " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+            <div id="emailHelp " class="form-text ">We'll never share your email with anyone else.</div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+        <div class="mb-3 ">
+            <label for="exampleInputPassword1 " class="form-label ">Password</label>
+            <input type="password " class="form-control " id="exampleInputPassword1 ">
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div class="mb-3 form-check ">
+            <input type="checkbox " class="form-check-input " id="exampleCheck1 ">
+            <label class="form-check-label " for="exampleCheck1 ">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit " class="btn btn-primary ">Submit</button>
     </form>
 
 </body>
