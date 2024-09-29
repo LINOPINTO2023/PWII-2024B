@@ -73,6 +73,7 @@
 
 .text-white {
     color: white;
+    padding-right: 20px;
 }
 
 .text-gray {
@@ -95,8 +96,80 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.title1-content {
+    margin-left: 15px;
+}
+
 .bg-img-block {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.custom-title {
+    font-size: 4rem;
+    /* Tamaño de fuente responsivo usando vw */
+}
+
+.image-container {
+    position: relative;
+    max-width: 1450px;
+    width: 100%;
+    max-height: 510px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.text1-content {
+    position: absolute;
+    margin-top: -2.1%;
+    left: 10%;
+    transform: translateY(-123%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn-inscribete {
+    padding: 10px 43px;
+    border: none;
+    /* Elimina el borde, si es necesario */
+    text-decoration: none;
+    /* Elimina el subrayado */
+}
+
+.btn-inscribete:hover {
+    color: rgb(255, 255, 255);
+    /* Cambia el color del texto */
+}
+
+
+/* Media Queries para responsividad */
+
+@media (max-width: 768px) {
+    .image-container {
+        max-width: 1550px;
+        width: 135%;
+        max-height: 200px;
+    }
+    .image-container img {
+        height: 270px;
+        /* Mantiene la proporción de la imagen */
+    }
+    .custom-title {
+        font-size: 3vw;
+        /* Tamaño de fuente responsivo usando vw */
+    }
+    .text1-content {
+        top: 50%;
+        left: 10%;
+        /* Mantiene la misma posición en pantallas más pequeñas */
+        font-size: 2vw;
+    }
+    .custom-title {
+        font-size: 10vw;
+        /* Tamaño de fuente más pequeño en pantallas móviles */
+    }
+    .btn-inscribete {
+        padding: 3px 20px;
+        font-size: 2vw;
+    }
 }
