@@ -1,0 +1,155 @@
+/*Global*/
+* {
+    font-family: "Latolight";
+}
+
+@font-face {
+    font-family: LatoHeavy;
+    src: url(../fonts/LatoHeavy.ttf);
+}
+
+@font-face {
+    font-family: Latolight;
+    src: url(../fonts/Latolight.ttf);
+}
+
+@font-face {
+    font-family: DolceVita;
+    src: url(../fonts/DolceVita.ttf);
+}
+
+@font-face {
+    font-family: Neoteric-Bold;
+    src: url(../fonts/Neoteric-Bold.ttf);
+}
+
+/* Shortcuts */
+.pd-0 {
+    padding: 0;
+}
+.pt-5 {
+    padding-top: 5%;
+}
+.pb-5 {
+    padding-bottom: 5%;
+}
+.mg-0 {
+    margin: 0;
+}
+.mg-10 {
+    margin: 30px;
+}
+.w-100 {
+    width: 100%;
+}
+.lh {
+    line-height: 1.5;
+}
+.lh2 {
+    line-height: 2;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-white {
+    color: white;
+}
+.text-gray {
+    color: rgb(83, 88, 95);
+}
+.text-blue {
+    color: #192951;
+}
+.a-none-decoration {
+    text-decoration: none;
+}
+
+.bg-gray {
+    background-color: rgb(244, 244, 244);
+}
+.bg-gray2 {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+h1{
+    color: rgb(26,41,81);
+}
+
+#dance_1 {
+    width: 100vw;
+    height: 350px; 
+    z-index: -1; 
+}
+
+.textStudio{
+	font-size: 50px;;
+}
+
+.textInformation{
+	margin: 10px;
+	font-size: 18px;
+    padding-top: 1%; 
+}
+
+#decoration_1 {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    height: 10%;
+    width: 10%;
+}
+
+.bottonOferta{
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: rgb(26,41,81);
+    color: white;
+    border-radius: 5px;
+}
+
+
+.instructors{
+    border: 2px solid rgb(26,41,81);
+}
+
+.instructor img{
+    height: 100%;
+    width: 100%;
+}
+
+.custom-button{
+    background-color: rgb(26,41,81);
+    color: white;
+    border-radius: 5px;
+}
+
+.nuestrosInstructores {
+    background-color: rgb(26, 41, 81);
+    color: white;
+    font-size: 20px;
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 5px; 
+    position: absolute;
+    left: 44%;
+    z-index: 1;
+    bottom: 0px;
+}
+
+.information{
+    background-color: rgb(26, 41, 81);
+    color: white;
+    margin-top: 5%;
+}
+
+.map {
+    width: 55%;
+    height: 75%;
+    margin: 5% 0% 0% 20%; 
+}
