@@ -141,3 +141,15 @@ h1{
     z-index: 1;
     bottom: 0px;
 }
+
+.information{
+    background-color: rgb(26, 41, 81);
+    color: white;
+    margin-top: 5%;
+}
+
+.map {
+    width: 55%;
+    height: 75%;
+    margin: 5% 0% 0% 20%; 
+}
