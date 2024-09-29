@@ -84,3 +84,18 @@
 .textStudio{
 	font-size: 50px;;
 }
+
+.textInformation{
+	margin: 10px;
+	font-size: 18px;
+    padding-top: 1%; 
+}
+
+#decoration_1 {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    height: 10%;
+    width: 10%;
+}
+
