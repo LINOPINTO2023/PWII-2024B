@@ -1,77 +1,86 @@
 /*Global*/
-*{
-	font-family: "Latolight";
+* {
+    font-family: "Latolight";
 }
 
-@font-face{
-	font-family: LatoHeavy;
-	src: url(../fonts/LatoHeavy.ttf);
+@font-face {
+    font-family: LatoHeavy;
+    src: url(../fonts/LatoHeavy.ttf);
 }
-@font-face{
-	font-family:Latolight ;
-	src: url(../fonts/Latolight.ttf);
+
+@font-face {
+    font-family: Latolight;
+    src: url(../fonts/Latolight.ttf);
 }
-@font-face{
-	font-family: DolceVita;
-	src: url(../fonts/DolceVita.ttf);
+
+@font-face {
+    font-family: DolceVita;
+    src: url(../fonts/DolceVita.ttf);
 }
-@font-face{
-	font-family: Neoteric-Bold;
-	src: url(../fonts/Neoteric-Bold.ttf);
+
+@font-face {
+    font-family: Neoteric-Bold;
+    src: url(../fonts/Neoteric-Bold.ttf);
 }
 
 /* Shortcuts */
+.pd-0 {
+    padding: 0;
+}
+.pt-5 {
+    padding-top: 5%;
+}
+.pb-5 {
+    padding-bottom: 5%;
+}
+.mg-0 {
+    margin: 0;
+}
+.mg-10 {
+    margin: 30px;
+}
+.w-100 {
+    width: 100%;
+}
+.lh {
+    line-height: 1.5;
+}
+.lh2 {
+    line-height: 2;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-white {
+    color: white;
+}
+.text-gray {
+    color: rgb(83, 88, 95);
+}
+.text-blue {
+    color: #192951;
+}
+.a-none-decoration {
+    text-decoration: none;
+}
 
-.pd-0{
-	padding: 0;
+.bg-gray {
+    background-color: rgb(244, 244, 244);
 }
-.pt-5{
-	padding-top: 5%;
+.bg-gray2 {
+    background-color: rgba(0, 0, 0, 0.3);
 }
-.pb-5{
-	padding-bottom: 5%;
+
+/* Hero Section */
+#dance_1 {
+    width: 100vw;
+    height: 350px; 
+    z-index: -1; 
 }
-.mg-0{
-	margin: 0;
-}
-.mg-10{
-	margin: 30px;
-}
-.w-100{
-	width: 100%;
-}
-.lh{
-	line-height: 1.5;
-}
-.lh2{
-	line-height: 2;
-}
-.text-center{
-	text-align: center;
-}
-.text-left{
-	text-align: left;
-}
-.text-white{
-	color: white;
-}
-.text-gray{
-	color: rgb(83, 88, 95);
-}
-.text-blue{
- 	color: #192951;
-}
-.a-none-decoration{
-	text-decoration: none;
-}
-.bg-gray{
-	background-color: rgb(244, 244, 244);
-}
-.bg-gray2{
-	background-color: rgba(0, 0, 0,0.3);
-}
-.bg-img-block{
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+
+.textStudio{
+	font-size: 50px;;
 }
