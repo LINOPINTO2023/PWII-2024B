@@ -27,42 +27,55 @@
 .pd-0 {
     padding: 0;
 }
+
 .pt-5 {
     padding-top: 5%;
 }
+
 .pb-5 {
     padding-bottom: 5%;
 }
+
 .mg-0 {
     margin: 0;
 }
+
 .mg-10 {
     margin: 30px;
 }
+
 .w-100 {
     width: 100%;
 }
+
 .lh {
     line-height: 1.5;
 }
+
 .lh2 {
     line-height: 2;
 }
+
 .text-center {
     text-align: center;
 }
+
 .text-left {
     text-align: left;
 }
+
 .text-white {
     color: white;
 }
+
 .text-gray {
     color: rgb(83, 88, 95);
 }
+
 .text-blue {
     color: #192951;
 }
+
 .a-none-decoration {
     text-decoration: none;
 }
@@ -70,59 +83,61 @@
 .bg-gray {
     background-color: rgb(244, 244, 244);
 }
+
 .bg-gray2 {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-h1{
-    color: rgb(26,41,81);
+h1 {
+    color: rgb(26, 41, 81);
 }
 
 #dance_1 {
     width: 100vw;
-    height: 350px; 
-    z-index: -1; 
+    height: 350px;
+    z-index: -1;
 }
 
-.textStudio{
-	font-size: 50px;;
+.textStudio {
+    font-size: 50px;
+    ;
 }
 
-.textInformation{
-	margin: 10px;
-	font-size: 18px;
-    padding-top: 1%; 
+.textInformation {
+    margin: 10px;
+    font-size: 18px;
+    padding-top: 1%;
 }
 
 #decoration_1 {
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 10%;
     width: 10%;
 }
 
-.bottonOferta{
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
-    background-color: rgb(26,41,81);
+.bottonOferta {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(26, 41, 81);
     color: white;
     border-radius: 5px;
 }
 
 
-.instructors{
-    border: 2px solid rgb(26,41,81);
+.instructors {
+    border: 2px solid rgb(26, 41, 81);
 }
 
-.instructor img{
+.instructor img {
     height: 100%;
     width: 100%;
 }
 
-.custom-button{
-    background-color: rgb(26,41,81);
+.custom-button {
+    background-color: rgb(26, 41, 81);
     color: white;
     border-radius: 5px;
 }
@@ -131,18 +146,18 @@ h1{
     background-color: rgb(26, 41, 81);
     color: white;
     font-size: 20px;
-    padding-top: 2%; 
-    padding-bottom: 2%; 
+    padding-top: 2%;
+    padding-bottom: 2%;
     padding-left: 1%;
     padding-right: 1%;
-    border-radius: 5px; 
+    border-radius: 5px;
     position: absolute;
     left: 44%;
     z-index: 1;
     bottom: 0px;
 }
 
-.information{
+.information {
     background-color: rgb(26, 41, 81);
     color: white;
     margin-top: 5%;
@@ -151,5 +166,58 @@ h1{
 .map {
     width: 55%;
     height: 75%;
-    margin: 5% 0% 0% 20%; 
+    margin: 5% 0% 0% 20%;
+}
+
+.input-group .input-group-text {
+    background-color: white;
+    border-color: #cbd1d6;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+}
+
+.input-group .form-control {
+    border-left: 0;
+
+}
+
+footer {
+    background-color: rgb(26, 41, 81);
+    color: rgb(180, 184, 190);
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+.text-footer {
+    padding-left: 15px;
+}
+
+.input-group-prepend {
+    align-items: flex-start;
+}
+
+button.btn-custom {
+    background-color: rgb(26, 41, 81);
+    color: white;
+    border-radius: 5px;
+    border-color: rgb(26, 41, 81);
+    width: 100%;
+    padding: 10px;
+}
+
+.row-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.row-right img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
