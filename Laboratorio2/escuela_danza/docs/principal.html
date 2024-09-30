@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela de Danza</title>
+    <!-- css de bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <!-- titulo y barra de navegacion -->
+    <header class="text-center">
+        <h1 class="custom-title">ESCUELA DE DANZA</h1>
+        <!-- navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- clases disponibles -->
+    <section class="container text-center mt-5">
+        <h2 class="mb-5">Oferta de Clases</h2>
+        <div class="row">
+            <!-- ballet -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/dance_12.jpg" class="card-img-top" alt="Ballet">
+                    <div class="card-body">
+                        <h5 class="card-title">Ballet</h5>
+                        <p class="card-text">El ballet es la base de casi todos los estilos de baile.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- dance modern -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/breakdance.jpg" class="card-img-top" alt="Dance Modern">
+                    <div class="card-body">
+                        <h5 class="card-title">Dance Modern</h5>
+                        <p class="card-text">Descripción del curso en dos líneas como máximo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- jazz lirico -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/lirical-jazz.jpg" class="card-img-top" alt="Jazz Lírico">
+                    <div class="card-body">
+                        <h5 class="card-title">Jazz Lírico</h5>
+                        <p class="card-text">Descripción del curso en dos líneas como máximo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- arabic dance -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/arabe.jpg" class="card-img-top" alt="Arabic Dance">
+                    <div class="card-body">
+                        <h5 class="card-title">Arabic Dance</h5>
+                        <p class="card-text">Descripción del curso en dos líneas como máximo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- kids class -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/little.jpg" class="card-img-top" alt="Kids Class">
+                    <div class="card-body">
+                        <h5 class="card-title">Kids Class</h5>
+                        <p class="card-text">Descripción del curso en dos líneas como máximo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- yoga dance -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="../img/yoga.jpg" class="card-img-top" alt="Yoga Dance">
+                    <div class="card-body">
+                        <h5 class="card-title">Yoga Dance</h5>
+                        <p class="card-text">Descripción del curso en dos líneas como máximo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contacto -->
+    <section class="container">
+        <h2 class="text-center mb-5">Contáctanos</h2>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- pie de pagina -->
+    <footer class="text-left mt-5">
+        <p>&copy; Escuela de Danza. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
