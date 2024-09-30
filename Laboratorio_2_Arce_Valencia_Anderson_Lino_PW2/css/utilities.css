@@ -73,7 +73,6 @@
 
 .text-white {
     color: white;
-    padding-right: 20px;
 }
 
 .text-gray {
@@ -124,6 +123,7 @@
 
 .custom-title {
     font-size: 5rem;
+    margin-left: 0px;
     /* Tamaño de fuente responsivo usando vw */
 }
 
@@ -251,6 +251,8 @@
     /* Color del texto */
 }
 
+.third-content {}
+
 .main-content img {
     width: 10%;
     /* Ajusta el ancho de la imagen */
@@ -341,6 +343,15 @@
     text-align: center;
 }
 
+img {
+    width: 100%;
+    /* La imagen ocupa el 100% del ancho del contenedor */
+    height: auto;
+    /* Mantiene la proporción original */
+    object-fit: cover;
+    /* Cubre el área sin distorsión */
+}
+
 
 /* Para pantallas medianas y grandes (tabletas y desktop) */
 
@@ -348,6 +359,45 @@
     .text-overlay {
         padding: 18px 150px;
         font-size: medium;
+    }
+}
+
+.text1-overlay {
+    max-width: 80%;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .text1-overlay {
+        max-width: 90%;
+        /* Aumenta el ancho del contenedor en pantallas pequeñas */
+        padding: 15px;
+        /* Reduce el padding */
+    }
+    .text1-overlay h5 {
+        font-size: 1.5rem;
+        /* Reduce el tamaño del título en móviles */
+    }
+    .text1-overlay p {
+        font-size: 1rem;
+        /* Reduce el tamaño del párrafo en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .text1-overlay {
+        max-width: 100%;
+        /* Ocupa todo el ancho en pantallas muy pequeñas */
+        padding: 10px;
+        /* Aún menos padding en pantallas pequeñas */
+    }
+    .text1-overlay h5 {
+        font-size: 1.2rem;
+        /* Reduce aún más el título */
+    }
+    .text1-overlay p {
+        font-size: 0.9rem;
+        /* Reduce el párrafo */
     }
 }
 
@@ -390,6 +440,54 @@
     /* Espaciado interno */
     background: #0d1d46;
     background-size: auto;
+}
+
+.texture {
+    background-image: url('../img/cubes.png');
+    background-size: auto;
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+}
+
+.texture1 {
+    background-size: auto;
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+}
+
+.card-no-border {
+    background-image: url('../img/cubes.png');
+    border: none;
+    /* Elimina el borde */
+}
+
+.card1-no-border {
+    border: none;
+    /* Elimina el borde */
+}
+
+.card1-text {
+    margin-top: -10px;
+    margin-left: -11px;
+}
+
+.card-img img {
+    width: 100%;
+    /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: 290px;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Mantiene la proporción de la imagen recortándola si es necesario */
 }
 
 .contact-content {
