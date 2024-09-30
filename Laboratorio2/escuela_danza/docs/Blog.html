@@ -103,10 +103,82 @@
             </div>
       </div>
     </div>
-    <!-- Pie de página -->
-    <footer class="bg-dark-blue text-gray py-3 mt-5">
-        <div class="container">
-        <p class="mb-0">© Escuela de danza.Todos los derechos reservados.</p>
+    <section class="contact-section">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Contáctanos</h2>
+                    <br></br>
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                </div>
+                                
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                </div>
+                                
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+                                </div>
+                                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="pais" required>
+                                <option value="">País</option>
+                                <option value="argentina">Argentina</option>
+                                <option value="mexico">México</option>
+                                <option value="espana">España</option>
+                                <option value="chile">Chile</option>
+                                <option value="colombia">Colombia</option>
+                                <option value="peru">Perú</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="bi bi-pencil-fill"></i></span>
+                                </div>
+                                <textarea class="form-control" id="mensaje" rows="5" placeholder="Mensaje"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="terminos" required>
+                            <label class="form-check-label" for="terminos">Acepto los términos y
+                                condiciones</label>
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-custom" type="submit">ENVIAR</button>
+
+                    </form>
+                </div>
+                <div class="col-md-6 row-right">
+                    <img src="../img/shoes_!.jpg" class="img-fluid" alt="Shoes 1">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="text-left text-footer">
+            © Escuela de danza. Todos los derechos reservados.
         </div>
     </footer>
 
