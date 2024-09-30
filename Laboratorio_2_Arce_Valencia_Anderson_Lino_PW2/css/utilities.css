@@ -106,26 +106,32 @@
     background-position: center;
 }
 
-.custom-title {
-    font-size: 4rem;
-    /* Tamaño de fuente responsivo usando vw */
-}
-
 .image-container {
     position: relative;
-    max-width: 1450px;
+    max-width: 1550px;
     width: 100%;
     max-height: 510px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.text1-content {
+.image-container img {
+    width: 100%;
+    /* Ajusta la imagen al contenedor */
+    height: 700px;
+    /* Mantiene la proporción de la imagen */
+}
+
+.custom-title {
+    font-size: 5rem;
+    /* Tamaño de fuente responsivo usando vw */
+}
+
+.hero-content {
     position: absolute;
-    margin-top: -2.1%;
+    top: 40%;
     left: 10%;
-    transform: translateY(-123%);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transform: translateY(-50%);
 }
 
 .btn-inscribete {
@@ -139,6 +145,43 @@
 .btn-inscribete:hover {
     color: rgb(255, 255, 255);
     /* Cambia el color del texto */
+}
+
+.btn-ofert {
+    padding: 16px 65px;
+    /* Ajusta el padding del botón */
+    font-size: 1rem;
+    /* Tamaño de fuente del botón */
+    margin-top: 31px;
+    /* Espaciado superior */
+    border: none;
+    background-color: #223d80;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.column-content {
+    display: flex;
+    align-items: normal;
+    /* Centra el contenido verticalmente */
+    justify-content: space-around;
+    /* Centra el contenido horizontalmente */
+    text-align: inherit;
+    /* Centra el texto */
+    align-items: stretch;
+}
+
+.column-content img {
+    max-width: 110%;
+    /* Asegura que la imagen sea responsiva */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin: 20px 62px;
+    /* Espacio entre la imagen y el texto */
+}
+
+.text-container {
+    margin: -39px;
 }
 
 
@@ -158,7 +201,7 @@
         font-size: 3vw;
         /* Tamaño de fuente responsivo usando vw */
     }
-    .text1-content {
+    .hero-content {
         top: 50%;
         left: 10%;
         /* Mantiene la misma posición en pantallas más pequeñas */
@@ -172,4 +215,336 @@
         padding: 3px 20px;
         font-size: 2vw;
     }
+}
+
+
+/* Main content */
+
+.main-content {
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
+    background-size: auto;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+.main-content p {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    /* Ajusta el tamaño del texto */
+    color: #333;
+    /* Color del texto */
+}
+
+.second-content p {
+    margin-top: 25px;
+    font-size: 2.5rem;
+    /* Ajusta el tamaño del texto */
+    color: #333;
+    /* Color del texto */
+}
+
+.main-content img {
+    width: 10%;
+    /* Ajusta el ancho de la imagen */
+    max-width: 300px;
+    /* Tamaño máximo para pantallas más grandes */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-top: -20px;
+    /* Espaciado superior */
+}
+
+.btn-ofert {
+    padding: 19px 100px;
+    /* Ajusta el padding del botón */
+    font-size: 1rem;
+    /* Tamaño de fuente del botón */
+    margin-top: 1px;
+    /* Espaciado superior */
+    border: none;
+    background-color: #192951;
+    text-decoration: none;
+}
+
+.btn-ofert:hover {
+    color: rgb(255, 255, 255);
+    /* Cambia el color del texto */
+}
+
+
+/* Media Queries para responsividad */
+
+@media (max-width: 768px) {
+    .main-content p {
+        font-size: 1.5rem;
+        /* Ajusta el tamaño del texto en móviles */
+        margin-top: -10px;
+    }
+    .main-content img {
+        width: 20%;
+        /* Ancho mayor en móviles */
+        margin-top: -30px;
+    }
+    .btn-ofert {
+        font-size: 0.6rem;
+        /* Tamaño de fuente del botón en móviles */
+        padding: 10px 30px;
+        /* Ajuste de padding en móviles */
+    }
+}
+
+
+/* Media query para pantallas pequeñas */
+
+.second-content {
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
+    background-size: auto;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+@media (max-width: 100px) {
+    .second-content img {
+        width: 100%;
+        /* Las imágenes ocuparán el 100% del ancho de la pantalla en móviles */
+        float: none;
+        /* Quitamos el float para que las imágenes estén una debajo de la otra */
+    }
+    .second-content p {
+        font-size: 1.5rem;
+        /* Ajusta el tamaño del texto en móviles */
+        margin-top: -10px;
+    }
+}
+
+.text-overlay {
+    background-color: rgb(10, 10, 56);
+    padding: 10px 100px;
+    border-radius: 5px;
+    font-size: small;
+    text-align: center;
+}
+
+
+/* Para pantallas medianas y grandes (tabletas y desktop) */
+
+@media (min-width: 768px) {
+    .text-overlay {
+        padding: 18px 150px;
+        font-size: medium;
+    }
+}
+
+
+/* Para pantallas pequeñas (smartphones) */
+
+@media (max-width: 767px) {
+    .text-overlay {
+        width: 90%;
+        /* El fondo ocupará el 90% del ancho de la pantalla */
+        padding: 12px 20px;
+        /* Reducimos el padding para móviles */
+        top: 85%;
+        /* Ajuste de posición en pantallas más pequeñas */
+        font-size: small;
+        /* Tamaño de texto ajustado */
+    }
+}
+
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+
+@media (max-width: 480px) {
+    .text-overlay {
+        padding: 10px 15px;
+        /* Más reducido aún en pantallas pequeñas */
+        font-size: 0.8rem;
+        /* Texto más pequeño */
+    }
+}
+
+.blue {
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    background: #0d1d46;
+    background-size: auto;
+}
+
+.contact-content {
+    position: relative;
+    max-width: 1550px;
+    height: 600px;
+    /* Mantener altura fija */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    color: #fff;
+    overflow: hidden;
+    /* Evita el desbordamiento */
+}
+
+
+/* Sección de texto dentro de Contact Content */
+
+.contact-content .text-section {
+    position: relative;
+    /* Permite la superposición */
+    z-index: 2;
+    /* Asegura que el texto esté por encima de la imagen */
+    padding-top: 80px;
+    padding-left: 100px;
+    /* Ajusta el padding izquierdo */
+    padding-right: 20px;
+    text-align: left;
+    width: 50%;
+    /* Mantener el ancho deseado */
+}
+
+
+/* Sección de imagen dentro de Contact Content */
+
+.contact-content .image-section {
+    position: absolute;
+    /* Permite la superposición */
+    top: -70PX;
+    /* Ajusta según sea necesario */
+    right: -122PX;
+    /* Coloca la imagen a la derecha */
+    z-index: 1;
+    /* Asegura que la imagen esté detrás del texto */
+}
+
+.contact-content .image-section img {
+    width: 900PX;
+    /* Asegura que la imagen ocupe todo el ancho disponible */
+    height: 600px;
+    /* Mantiene la proporción de la imagen */
+}
+
+
+/* Estilos para el formulario de contacto */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    /* Organiza los elementos en una columna */
+    gap: 10px;
+    /* Espaciado entre los elementos del formulario */
+    margin-top: 20px;
+    /* Espacio superior para separar el formulario del texto */
+}
+
+.input-group {
+    position: relative;
+    /* Para posicionar el icono */
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    /* Posiciona el icono */
+    left: 10px;
+    /* Espacio desde la izquierda */
+    top: 50%;
+    /* Centra verticalmente */
+    transform: translateY(-50%);
+    /* Ajusta para centrar el icono */
+    width: 20px;
+    /* Ancho del icono */
+    height: 15px;
+    /* Alto del icono */
+}
+
+.user-icon {
+    width: 20px;
+    /* Ajusta el tamaño específico del ícono de usuario */
+    height: 20px;
+    /* Mantén la proporción o ajusta según sea necesario */
+}
+
+.email-icon {
+    width: 20px;
+    /* Ajusta el tamaño específico del ícono de correo */
+    height: 15px;
+    /* Mantén la proporción o ajusta según sea necesario */
+}
+
+.message-icon {
+    top: 22px;
+    width: 22px;
+    /* Ajusta el tamaño específico del ícono de mensaje */
+    height: 20px;
+    /* Mantén la proporción o ajusta según sea necesario */
+}
+
+.contact-form .mensaje::placeholder {
+    padding-top: 10px;
+    line-height: 1.5;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding-left: 40px;
+    padding-top: 0px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 2.8;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+    /* Evita que el usuario pueda cambiar el tamaño manualmente */
+}
+
+.contact-form button {
+    padding: 16px;
+    background-color: #192951;
+    color: rgb(198, 201, 204);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0f4c75;
+    color: #ffffff;
+}
+
+.footer {
+    max-width: 1550px;
+    margin: 0 auto;
+    height: 80px;
+    background-color: #192951;
+    color: #ffffff;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
 }
