@@ -166,6 +166,7 @@ h1 {
 .map {
     width: 55%;
     height: 75%;
+<<<<<<< HEAD
     margin: 5% 0% 0% 20%;
 }
 
@@ -221,3 +222,7 @@ button.btn-custom {
     max-width: 100%;
     object-fit: cover;
 }
+=======
+    margin: 5% 0% 0% 20%; 
+}
+>>>>>>> 374753f926ee49b6627509609f33b6ce33c2c38e
