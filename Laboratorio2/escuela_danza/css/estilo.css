@@ -96,15 +96,55 @@ p.card-text {
     text-align: center;
 }
 
-/* form de contacto */
-form {
-    max-width: 600px;
-    margin: 0 auto;
+.input-group .input-group-text {
+    background-color: white;
+    border-color: #cbd1d6;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
 }
 
-/* pie de pagina */
+.input-group .form-control {
+    border-left: 0;
+
+}
+
 footer {
-    background-color: #080f4b;
-    color: #fff;
-    padding: 10px 0;
+    background-color: rgb(26, 41, 81);
+    color: rgb(180, 184, 190);
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+.text-footer {
+    padding-left: 15px;
+}
+
+.input-group-prepend {
+    align-items: flex-start;
+}
+
+button.btn-custom {
+    background-color: rgb(26, 41, 81);
+    color: white;
+    border-radius: 5px;
+    border-color: rgb(26, 41, 81);
+    width: 100%;
+    padding: 10px;
+}
+
+.row-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.row-right img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
