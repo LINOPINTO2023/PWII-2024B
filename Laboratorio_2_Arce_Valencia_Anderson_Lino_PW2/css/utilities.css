@@ -105,6 +105,46 @@
     background-position: center;
 }
 
+
+/* Main content */
+
+.main-content {
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 1550px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
+    background-size: auto;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+.main-content p {
+    margin-top: 25px;
+    font-size: 2rem;
+    /* Ajusta el tamaño del texto */
+    color: #333;
+    /* Color del texto */
+}
+
+.main-content img {
+    width: 10%;
+    /* Ajusta el ancho de la imagen */
+    max-width: 300px;
+    /* Tamaño máximo para pantallas más grandes */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-top: -20px;
+    /* Espaciado superior */
+}
+
+
+/*Para la pagina principal*/
+
 .image-container {
     position: relative;
     max-width: 1550px;
@@ -160,6 +200,11 @@
     color: aliceblue;
 }
 
+.btn-ofert:hover {
+    color: rgb(255, 255, 255);
+    /* Cambia el color del texto */
+}
+
 .column-content {
     display: flex;
     align-items: normal;
@@ -183,6 +228,9 @@
 .text-container {
     margin: -39px;
 }
+
+
+/*-------*/
 
 
 /* Media Queries para responsividad */
@@ -218,68 +266,7 @@
 }
 
 
-/* Main content */
-
-.main-content {
-    position: relative;
-    /* Permite posicionar elementos dentro */
-    max-width: 1550px;
-    /* Ajusta según sea necesario */
-    margin: 0 auto;
-    /* Centra el contenedor */
-    padding: 20px;
-    /* Espaciado interno */
-    background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
-    background-size: auto;
-    background-position: top left;
-    background-repeat: repeat;
-}
-
-.main-content p {
-    margin-top: 25px;
-    font-size: 1.5rem;
-    /* Ajusta el tamaño del texto */
-    color: #333;
-    /* Color del texto */
-}
-
-.second-content p {
-    margin-top: 25px;
-    font-size: 2.5rem;
-    /* Ajusta el tamaño del texto */
-    color: #333;
-    /* Color del texto */
-}
-
-.third-content {}
-
-.main-content img {
-    width: 10%;
-    /* Ajusta el ancho de la imagen */
-    max-width: 300px;
-    /* Tamaño máximo para pantallas más grandes */
-    height: auto;
-    /* Mantiene la proporción de la imagen */
-    margin-top: -20px;
-    /* Espaciado superior */
-}
-
-.btn-ofert {
-    padding: 19px 100px;
-    /* Ajusta el padding del botón */
-    font-size: 1rem;
-    /* Tamaño de fuente del botón */
-    margin-top: 1px;
-    /* Espaciado superior */
-    border: none;
-    background-color: #192951;
-    text-decoration: none;
-}
-
-.btn-ofert:hover {
-    color: rgb(255, 255, 255);
-    /* Cambia el color del texto */
-}
+/*Dimensionar las columnas y filas*/
 
 .custom-row {
     margin-left: 70px;
@@ -296,7 +283,10 @@
 }
 
 
-/* Media Queries para responsividad */
+/*__-----------*/
+
+
+/*Contendios principales main */
 
 @media (max-width: 768px) {
     .main-content p {
@@ -318,36 +308,10 @@
 }
 
 
-/* Media query para pantallas pequeñas */
+/*------*/
 
-.second-content {
-    position: relative;
-    /* Permite posicionar elementos dentro */
-    max-width: 1550px;
-    /* Ajusta según sea necesario */
-    margin: 0 auto;
-    /* Centra el contenedor */
-    padding: 20px;
-    /* Espaciado interno */
-    background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
-    background-size: auto;
-    background-position: top left;
-    background-repeat: repeat;
-}
 
-@media (max-width: 100px) {
-    .second-content img {
-        width: 100%;
-        /* Las imágenes ocuparán el 100% del ancho de la pantalla en móviles */
-        float: none;
-        /* Quitamos el float para que las imágenes estén una debajo de la otra */
-    }
-    .second-content p {
-        font-size: 1.5rem;
-        /* Ajusta el tamaño del texto en móviles */
-        margin-top: -10px;
-    }
-}
+/*Apartado Overlay*/
 
 .text-overlay {
     background-color: rgb(10, 10, 56);
@@ -373,11 +337,17 @@ img {
 
 .text2-overlay {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
     background-color: rgba(10, 11, 58, 0.5);
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .text2-overlay p {
@@ -464,6 +434,12 @@ img {
     }
 }
 
+
+/*-----*/
+
+
+/*Ajustes de pantalla y fondo*/
+
 .blue {
     position: relative;
     /* Permite posicionar elementos dentro */
@@ -500,6 +476,12 @@ img {
     padding: 20px;
 }
 
+
+/*----------------*/
+
+
+/*Ajustes card*/
+
 .card-no-border {
     background-image: url('../img/cubes.png');
     border: none;
@@ -508,6 +490,8 @@ img {
 
 .card1-no-border {
     border: none;
+    position: relative;
+    overflow: hidden;
     /* Elimina el borde */
 }
 
@@ -542,6 +526,13 @@ img {
     object-fit: cover;
     /* Mantiene la proporción de la imagen recortándola si es necesario */
 }
+
+.card1-no-border:hover .text2-overlay {
+    opacity: initial;
+}
+
+
+/*-----------*/
 
 .contact-content {
     position: relative;
@@ -688,6 +679,9 @@ img {
     background-color: #0f4c75;
     color: #ffffff;
 }
+
+
+/*footer*/
 
 .footer {
     max-width: 1550px;
