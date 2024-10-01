@@ -102,15 +102,18 @@ body {
   font-size: 1.2rem;
   line-height: 1.5;
 }
+.text1 > h2 {
+  font-size: 1.5rem;
+}
 .button {
-  padding: 16px;
-  width: 35%;
+  padding: 24px;
   background-color: #192951;
   color: white;
-  margin-top: 1.5rem;
+  width: 35%;
+  margin-top: 2rem;
 }
 .buttonInside {
-  width: 50%;
+  width: 60%;
   padding: 12px;
   color: white;
   background-color: #192951;
