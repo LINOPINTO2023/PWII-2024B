@@ -111,15 +111,15 @@
 .main-content {
     position: relative;
     /* Permite posicionar elementos dentro */
-    max-width: 1550px;
+    max-width: 1650px;
     /* Ajusta según sea necesario */
-    margin: 0 auto;
+    margin: 2 auto;
     /* Centra el contenedor */
-    padding: 20px;
+    padding: 25px;
     /* Espaciado interno */
     background-image: url('C:/Users/lenovo/PWII-2024B/Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2/img/textura_2.jpg');
     background-size: auto;
-    background-position: top left;
+    background-position: top right;
     background-repeat: repeat;
 }
 
@@ -337,7 +337,7 @@ img {
 
 .text2-overlay {
     position: absolute;
-    left: 0;
+    left: 1%;
     top: 0;
     width: 90%;
     height: 100%;
@@ -351,7 +351,8 @@ img {
 }
 
 .text2-overlay p {
-    margin: 0;
+    margin: 0 auto;
+    text-align: center;
     /* Elimina márgenes para evitar problemas de alineación */
     color: white;
     /* Cambia el color del texto si es necesario */
@@ -510,9 +511,9 @@ img {
 }
 
 .card1-img img {
-    width: 89%;
+    width: 92%;
     /* La imagen ocupará el 100% del ancho de su contenedor */
-    height: 620px;
+    height: 400px;
     /* Altura fija para todas las imágenes */
     object-fit: cover;
     /* Mantiene la proporción de la imagen recortándola si es necesario */
@@ -596,6 +597,8 @@ img {
     /* Espaciado entre los elementos del formulario */
     margin-top: 20px;
     /* Espacio superior para separar el formulario del texto */
+    margin-right: -130px;
+    margin-left: -20px;
 }
 
 .input-group {
