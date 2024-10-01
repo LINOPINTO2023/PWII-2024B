@@ -33,7 +33,7 @@
                 <a class="nav-link " href="Blog.html">Blog</a>
             </li>
             <li class="nav-item mx-4 ">
-                <a class="nav-link " href="# ">Contactanos</a>
+                <a class="nav-link " href="#formulario">Contactanos</a>
             </li>
         </ul>
     </nav>
@@ -115,41 +115,54 @@
     </div>
 
 
-    <!--formulario-->
-    <!--Contact-->
-    <div class="contact-content text-center p-1 ">
-        <div class="grid-container ">
+    <div class="contact-content text-center p-1" id="formulario">
+        <div class="grid-container">
             <!-- Sección de texto y formulario -->
-            <div class="text-section ">
-                <h2 class="text-blue ">Contáctanos</h2>
-                <form class="contact-form ">
+            <div class="text-section">
+                <h2 class="text-blue">Contáctanos</h2>
+                <form class="contact-form">
+                    <!-- Nuevo elemento: Selección de tema -->
+                    <div class="input-group">
+                        <select required>
+                            <option value="" disabled selected>Selecciona un tema</option>
+                            <option value="Consulta">Consulta</option>
+                            <option value="Soporte">Soporte</option>
+                            <option value="Sugerencias">Sugerencias</option>
+                        </select>
+                    </div>
                     <!-- Grupo de entrada para nombre -->
-                    <div class="input-group ">
-                        <img src="./img/user_icon.png " alt="Icono de usuario " class="input-icon user-icon ">
-                        <input type="text " placeholder="Nombre " required>
+                    <div class="input-group">
+                        <img src="./img/user_icon.png" alt="Icono de usuario" class="input-icon user-icon">
+                        <input type="text" placeholder="Nombre" required>
                     </div>
                     <!-- Grupo de entrada para correo electrónico -->
-                    <div class="input-group ">
-                        <img src="./img/email_icon2.png " alt="Icono de correo " class="input-icon email-icon ">
-                        <input type="email " placeholder="Correo Electrónico " required>
+                    <div class="input-group">
+                        <img src="./img/email_icon2.png" alt="Icono de correo" class="input-icon email-icon">
+                        <input type="email" placeholder="Correo Electrónico" required>
                     </div>
                     <!-- Grupo de entrada para número de teléfono -->
-                    <div class="input-group ">
-                        <img src="./img/telefono-movil.png " alt="Icono de teléfono " class="input-icon number-icon ">
-                        <input type="number " placeholder="Número " required>
+                    <div class="input-group">
+                        <img src="./img/telefono-movil.png" alt="Icono de teléfono" class="input-icon number-icon">
+                        <input type="number" placeholder="Número" required>
                     </div>
                     <!-- Grupo de entrada para mensaje -->
-                    <div class="input-group ">
-                        <img src="./img/pencil_icon.png " alt="Icono de mensaje " class="input-icon message-icon ">
-                        <textarea class="mensaje " placeholder="Mensaje " rows="4 " required></textarea>
+                    <div class="input-group">
+                        <img src="./img/pencil_icon.png" alt="Icono de mensaje" class="input-icon message-icon">
+                        <textarea class="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                    </div>
+
+                    <!-- Nuevo elemento: Subida de archivo -->
+                    <div class="input-group">
+                        <img src="./img/archivo.png" alt="Icono de archivo" class="input-icon file-icon">
+                        <input type="file" required>
                     </div>
                     <!-- Botón enviar -->
-                    <button type="submit " class="btn-enviar ">ENVIAR</button>
+                    <button type="submit" class="btn-enviar">ENVIAR</button>
                 </form>
             </div>
             <!-- Sección de imagen -->
-            <div class="image-section ">
-                <img src="C:\Users\lenovo\PWII-2024B\Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2\img\shoes_1.jpg " class="img-fluid " alt="Descripción de la imagen ">
+            <div class="image-section">
+                <img src="C:\Users\lenovo\PWII-2024B\Laboratorio_2_Arce_Valencia_Anderson_Lino_PW2\img\shoes_1.jpg" class="img-fluid" alt="Descripción de la imagen">
             </div>
         </div>
     </div>
