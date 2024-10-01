@@ -98,7 +98,7 @@
 }
 
 /* Modifica los colores de los botones */
-.btn-custom {
+.cambio {
     background-color: #08294c; /* Color del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Elimina bordes adicionales */
@@ -175,4 +175,7 @@ button.btn-custom {
     height: auto;
     max-width: 100%;
     object-fit: cover;
+}
+.plomo-2{
+    background-color: #d1d1d1;
 }
