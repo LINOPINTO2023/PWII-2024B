@@ -1,0 +1,46 @@
+/* Estilos personalizados */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    color: #007bff;
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #495057;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    padding: 10px 0;
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
