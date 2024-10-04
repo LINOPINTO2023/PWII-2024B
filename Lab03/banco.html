@@ -22,15 +22,25 @@
 
     <body>
         <!--Parte superior-->
-        <section class="container-fluid text-center p-0" style="width: 100%;">
-            <h1>Banco Pichincha</h1>
-            <p>Teclado aleatorio de banco para asegurar la seguridad de tus datos.</p>
+        <section class="container-fluid text-center p-0" style="width: 100%; margin-top: 2%; flex-wrap: wrap;">
+            <div class="row p-0">
+                <div class="col-sm-3">
+                    <img src="/imagenes/logo-banco.png" class="foto1_1" alt="logo banco 1">
+                </div>
+                <div class="col-sm-6">
+                    <h1>Banco Pichincha</h1>
+                    <p>Teclado aleatorio de banco para asegurar la seguridad de tus datos.</p>
+                </div>
+                <div class="col-sm-3">
+                    <img src="/imagenes/logo-banco2.png" class="foto1_2" alt="logo banco 2">
+                </div>
+            </div>
         </section>
 
         <!--Parte central-->
         <section class="container-fluid p-2 container-central">
             <div class="row">
-                <h1>Usted se encuentra en una zona segura</h1>
+                <h1>Usted se encuentra en una <span style="color: red;">zona segura</span></h1>
             </div>
             <div class="row pt-central">
                 <!--Primera linea-->
@@ -104,7 +114,7 @@
                             <p>Ingresa tu clave de internet(06 digitos)</p>
                         </div>
                         <div>
-                            <input type="number" class="area">
+                            <input type="number" class="area" disabled>
                         </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">

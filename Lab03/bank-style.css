@@ -21,6 +21,21 @@
     text-align: center;
 }
 
+/*Cabecera*/
+.foto1_1 {
+    width: 20vw;
+    height: 5vw;
+    margin-top: 3%;
+    justify-content: center;
+
+}
+
+.foto1_2 {
+    width: 7vw;
+    height: 7vw;
+    justify-content: center;
+}
+
 /*Fila 1*/
 
 .fila1 {
