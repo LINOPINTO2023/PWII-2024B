@@ -6,35 +6,30 @@
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ac0e50e85b.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/ac0e50e85b.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
     <title>Calculadora</title>
 </head>
 <body>
     .
-    <div class="container-fluid">
-        <div class="row border-bottom">
-            <div class="col">
-                <button class="btn btn-light w-100 h-100">Deshacer</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-light w-100 h-100">Básica</button>
-            </div>
-            <div class="col text-center">
-                <button><i class="fa-solid fa-window-minimize rounded-circle bg-secondary-subtle p-3"></i></button>
-                <button><i class="fa-solid fa-window-maximize rounded-circle bg-secondary-subtle p-3"></i></button>
-                <button><i class="fa-solid fa-x rounded-circle bg-secondary-subtle p-3"></i></button>
+    <div class="texture1 container-fluid h-100 justify-content-center align-items-end pt-5">
+        <h1>Calculadora</h1>
+        <div class="row border-bottom" style="background-color: azure;">
+            <div class="col d-flex p-0">
+                <button class="btn btn-light text-center w-100" style="background-color: aquamarine;" id="Deshacer" value="Deshacer">Deshacer</button>
             </div>
         </div>
-        <div class="row bg-primary">
+    
+     
+        <div class="row bg-secondary-subtle text-center " style="position:sticky; text-transform: uppercase;">
             <!--Guardar las operaciones en pila-->
-            <p>Operaciones</p>
+            <p style="text-align: left; margin-top: 20px;">Calculo</p>
         </div>
-        <div class="row border-bottom border-top">
+        <div class="row border-bottom border-top pt-2">
             <!--Espacio para introducir números y operaciones-->
-            <input type="text" placeholder="0" class="text-end">
+            <input type="text" placeholder="0" class="text-end" style="padding-top: 5px;">
         </div>
         <!--Teclado-->
-        <div class="row p-2">
+        <div class="row p-3 pt-4">
             <!--Primera fila-->
             <div class="row my-1">
                 <div class="col">
@@ -50,7 +45,7 @@
                     <button class="btn btn-light w-100">mod</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-light w-100">π</button>
+                    <button class="btn btn-light w-100">E</button>
                 </div>
             </div>
             <!--Segunda fila-->
@@ -116,16 +111,17 @@
                     <button class="btn btn-light w-100">.</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-light w-100">%</button>
+                    <button class="btn btn-light w-100">=</button>
                 </div>
                 <div class="col">
                     <button class="btn btn-light w-100">+</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-light w-100">π</button>
+                    <button class="btn btn-light w-100">%</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="C:\Users\lenovo\PWII-2024B\Lab03\sript.js" ></script>
 </body>
 </html>
