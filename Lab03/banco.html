@@ -28,16 +28,18 @@
         </section>
 
         <!--Parte central-->
-        <section class="container p-2 d-flex-row justify-content-center container-central">
-            <h1>Usted se encuentra en una zona segura</h1>
-            <div class="row pt-central" style="width: 90%;">
+        <section class="container-fluid p-2 container-central">
+            <div class="row">
+                <h1>Usted se encuentra en una zona segura</h1>
+            </div>
+            <div class="row pt-central">
                 <!--Primera linea-->
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row fila1">
+                    <div class="col-sm-6 texto-columna1">
                         Seleccione
                     </div>
                     <div class="col-sm-6">
-                        <select>
+                        <select class="opcion1">
                             <option value="1">Visa</option>
                             <option value="2">Mastercard</option>
                             <option value="3">American Express</option>
@@ -46,92 +48,94 @@
                     </div>
                 </div>
                 <!--Segunda linea-->
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row fila2">
+                    <div class="col-sm-6 texto-columna1">
                         Numero de tarjeta
                     </div>
                     <div class="col-sm-6">
                         <div>
-                            <input type="number" placeholder="123456">
+                            <input type="number" placeholder="123456" class="area">
                         </div>
                     </div>
                 </div>
                 <!--Tercera linea-->
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row fila3">
+                    <div class="col-sm-6 texto-columna1">
                         Tipo y N° Documento
                     </div>
                     <div class="col-sm-3">
-                        <select>
+                        <select class="opcion3">
                             <option value="1">DNI</option>
                             <option value="2">Carnet de extranjeria</option>
                             <option value="3">Libreta militar</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="number">
+                        <input type="number" class="area">
                     </div>
                 </div>
 
                 <!--Cuarta linea-->
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row fila4">
+                    <div class="col-sm-6 texto-columna1">
                         Ingresa tu clave usando el teclado virtual
                     </div>
                     <div class="col-sm-3">
-                        <button>a</button>
-                        <button>b</button>
-                        <button>c</button>
-                        <button>d</button>
-                        <button>e</button>
-                        <button>f</button>
-                        <button>g</button>
-                        <button>h</button>
-                        <button>i</button>
-                        <button>j</button>
-                        <button>Limpiar</button>
+                        <button class="numeros4">a</button>
+                        <button class="numeros4">b</button>
+                        <button class="numeros4">c</button>
+                        <button class="numeros4">d</button>
+                        <button class="numeros4">e</button>
+                        <button class="numeros4">f</button>
+                        <button class="numeros4">g</button>
+                        <button class="numeros4">h</button>
+                        <button class="numeros4">i</button>
+                        <button class="numeros4">j</button>
+                        <button class="limpiar4">Limpiar</button>
                     </div>
                     <div class="col-sm-3">
-                        <div>
-                            Genera tu clave de internet
+                        <div class="texto4_1">
+                            <icon href="#">ico</icon>
+                            <a href="https://google.com">Genera tu clave de internet</a>
+                        </div>
+                        <div class="texto4_2">
+                            <p>Ingresa tu clave de internet(06 digitos)</p>
                         </div>
                         <div>
-                            Ingresa tu clave de internet(06 digitos)
+                            <input type="number" class="area">
                         </div>
                         <div>
-                            <input type="number">
-                        </div>
-                        <div>
-                            Olvide mi clave
+                            <icon href="#">ic</icon>
+                            <a href="https://google.com">Olvide mi clave</a>
                         </div>
                     </div>
                 </div>
 
                 <!--Quinta linea-->
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row fila5">
+                    <div class="col-sm-6 texto-columna1">
                         Ingresa el texto de la imagen
                     </div>
                     <div class="col-sm-3">
                         <div>
-                            <img src="/imagenes/captcha-banco.jpg" style="height:50px; width: 100px;" alt="Teclado aleatorio">
+                            <img src="/imagenes/captcha-banco.jpg" class="imagen5" alt="Teclado aleatorio">
                         </div>
                         <div>
-                            cambiar texto
+                            <icon>ico</icon>
+                            <a href="https://google.com">Cambiar texto</a>
                         </div>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text">
+                        <input type="text" class="area">
                     </div>
                 </div>
 
                 <!--Seccion del boton-->
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit" class="btn btn-primary boton-final">Ingresar</button>
                     </div>
                 </div>
-
             </div>
         </section>
 
