@@ -17,6 +17,8 @@ function comenzarJuego() {
     aciertos = Array(palabraSecreta.length).fill("_");
     fallos = [];
     cantidadErrores = 0;
+    contexto.clearRect(0, 0, lienzo.width, lienzo.height);  // limpia el canvas.
+    dibujarHorca();  // volver a dibujar la horca
     mostrarPalabra();
     mostrarFallos();
     document.getElementById('resultado').innerHTML = '';  // limpia el mensaje de resultado
