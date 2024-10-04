@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    margin: 40px 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 100px;
+    width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: block;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 45px);
+    gap: 4px;
+    margin: 10px 0;
+}
+
+.teclado button {
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.teclado-container {
+    display: flex;
+    justify-content: space-between; /* Hace que se alineen los dos elementos */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin-bottom: 15px;
+    margin-left: 60px;
+}
+
+.column-right {
+    display: block; /* Asegura que el label esté encima del input */
+    margin-right: 20px; /* Espacio entre el input y el teclado */    
+}
+
+.captcha {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.captcha img {
+    margin-right: 10px;
+}
+
+.captcha a {
+    font-size: 12px;
+}
+
+button[type="submit"] {
+    background-color: #b81f32;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 12px;
+}
+
+.actions a {
+    color: #b81f32;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
