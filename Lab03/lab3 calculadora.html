@@ -3,132 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleCalculator.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ac0e50e85b.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/ac0e50e85b.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
     <title>Calculadora</title>
 </head>
 <body>
     .
-    <div class="container-fluid">
-        <div class="row border-bottom">
-            <div class="col">
-                <button class="btn btn-light w-100 h-100">Deshacer</button>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-light dropdown-toggle w-100 h-100" data-bs-toggle="dropdown" aria-expanded="false">Básica</button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-            </div>
-            <div class="col text-center window">
-                <button><i class="fa-solid fa-window-minimize rounded-circle bg-secondary-subtle p-3"></i></button>
-                <button><i class="fa-solid fa-window-maximize rounded-circle bg-secondary-subtle p-3"></i></button>
-                <button><i class="fa-solid fa-x rounded-circle bg-secondary-subtle p-3"></i></button>
+    <div class="texture1 container-fluid h-100 justify-content-center align-items-end pt-5">
+        <h1>Calculadora</h1>
+        <div class="row border-bottom" style="background-color: azure;">
+            <div class="col d-flex p-0">
+                <button class="btn btn-light text-center w-100" style="background-color: aquamarine;" id="Deshacer" value="Deshacer">Deshacer</button>
             </div>
         </div>
-        <div class="row bg-primary">
+    
+     
+        <div class="row bg-secondary-subtle text-center " style="position:sticky; text-transform: uppercase;">
             <!--Guardar las operaciones en pila-->
-            <p class="text-end">Operaciones</p>
+            <p style="text-align: left; margin-top: 20px;">Calculo</p>
         </div>
-        <div class="row border-bottom border-top">
+        <div class="row border-bottom border-top pt-2">
             <!--Espacio para introducir números y operaciones-->
-            <input type="text" placeholder="0" class="text-end" disabled>
+            <input type="text" placeholder="0" class="text-end" style="padding-top: 5px;">
         </div>
         <!--Teclado-->
-        <div class="row p-2">
-            <!--Primera columna-->
-            <div class="col m-2">
-                <div class="row my-2">
+        <div class="row p-3 pt-4">
+            <!--Primera fila-->
+            <div class="row my-1">
+                <div class="col">
                     <button class="btn btn-light w-100">⌫</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">7</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">4</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">1</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">0</button>
-                </div>
-            </div>
-            <!--Segunda columna-->
-            <div class="col m-2">
-                <div class="row my-2">
+                <div class="col">
                     <button class="btn btn-light w-100">(</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">8</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">5</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">2</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">,</button>
-                </div>
-            </div>
-            <!--Tercera columna-->
-            <div class="col m-2">
-                <div class="row my-2">
+                <div class="col">
                     <button class="btn btn-light w-100">)</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">9</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">6</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100 number">3</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">%</button>
-                </div>
-            </div>
-            <!--Cuarta columna-->
-            <div class="col m-2">
-                <div class="row my-2">
+                <div class="col">
                     <button class="btn btn-light w-100">mod</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">÷</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">x</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">-</button>
-                </div>
-                <div class="row my-2">
-                    <button class="btn btn-light w-100">+</button>
+                <div class="col">
+                    <button class="btn btn-light w-100">E</button>
                 </div>
             </div>
-            <!--Quinta columna-->
-            <div class="col m-2">
-                <div class="row my-2">
-                    <button class="btn btn-light">π</button>
+            <!--Segunda fila-->
+            <div class="row my-1">
+                <div class="col">
+                    <button class="btn btn-light w-100">7</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light">√</button>
+                <div class="col">
+                    <button class="btn btn-light w-100">8</button>
                 </div>
-                <div class="row my-2">
-                    <button class="btn btn-light">x²</button>
+                <div class="col">
+                    <button class="btn btn-light w-100">9</button>
                 </div>
-                <div class="row my-2 equal">
-                    <button class="btn">=</button>
+                <div class="col">
+                    <button class="btn btn-light w-100">÷</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">√</button>
+                </div>
+            </div>
+            <!--Tercera fila-->
+            <div class="row my-1">
+                <div class="col">
+                    <button class="btn btn-light w-100">4</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">5</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">6</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">x</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">x²</button>
+                </div>
+            </div>
+            <!--Cuarta fila-->
+            <div class="row my-1">
+                <div class="col">
+                    <button class="btn btn-light w-100">1</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">2</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">3</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">-</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">π</button>
+                </div>
+            </div>
+            <!--Quinta fila-->
+            <div class="row my-1">
+                <div class="col">
+                    <button class="btn btn-light w-100">0</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">.</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">=</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">+</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light w-100">%</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="C:\Users\lenovo\PWII-2024B\Lab03\sript.js" ></script>
 </body>
 </html>
