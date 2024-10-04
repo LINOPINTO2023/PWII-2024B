@@ -126,19 +126,6 @@ function comprobarLetra(letra) {
     revisarEstadoJuego();
 }
 
-// descenlace / ganste o perdiste 
-function revisarEstadoJuego() {
-    if (!aciertos.includes("_")) {
-        document.getElementById('resultado').innerHTML = "¡Lo hiciste bien! Adivinaste la palabra: " + palabraSecreta;
-        document.getElementById('reiniciarBtn').style.display = 'block';  // muestra el botón de reinicio
-        document.getElementById('letraInput').disabled = true;  // deshabilita la entrada de letras
-    } else if (cantidadErrores >= maxFallos) {
-        document.getElementById('resultado').innerHTML = "Se te acabaron los intentos para adivinar. La palabra que necesitabas era: " + palabraSecreta;
-        document.getElementById('reiniciarBtn').style.display = 'block';  // muestra el botón de reinicio
-        document.getElementById('letraInput').disabled = true;  // deshabilita la entrada de letras
-    }
-}
-
 // da al boton la funcion de comprobar
 document.getElementById('adivinarBtn').onclick = function() {
     let letraIngresada = document.getElementById('letraInput').value.toUpperCase();
