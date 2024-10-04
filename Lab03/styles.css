@@ -1,0 +1,19 @@
+.texture1 {
+    background-size: auto;
+    position: relative;
+    /* Permite posicionar elementos dentro */
+    max-width: 650px;
+    max-height: 700px;
+    /* Ajusta según sea necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    border: 2px solid black;
+}
+h1{
+    align-items:center;
+    color:rgb(16, 158, 111);
+    margin-top: -25px;
+    text-align: center;
+    padding: 5px;
+}
