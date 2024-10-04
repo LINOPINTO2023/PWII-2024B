@@ -154,4 +154,10 @@ document.getElementById('adivinarBtn').onclick = function() {
 document.getElementById('reiniciarBtn').onclick = function() {
     comenzarJuego();  // restart
 }
+// funcion para manejar el cambio del menu al juego
+document.getElementById('startBtn').onclick = function() {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('game').style.display = 'block';
+    comenzarJuego();  // start
+}
 
