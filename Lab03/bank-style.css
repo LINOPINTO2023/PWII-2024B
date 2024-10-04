@@ -16,6 +16,9 @@
 
 .area {
     width: 100%;
+    border-radius: 9px;
+    border: 1px solid black;
+    text-align: center;
 }
 
 /*Fila 1*/
@@ -58,11 +61,16 @@
     width: 25%;
     border-radius: 7px;
     padding: 2%;
+    background-color: rgb(231, 231, 231);
 }
 
 .limpiar4 {
     font-size: 2.5vh;
     width: 53%;
+    background-color: rgb(53, 73, 255);
+    border-radius: 7px;
+    border: 1px solid black;
+    color: white;
 }
 
 .texto4_1 {
