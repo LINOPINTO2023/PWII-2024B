@@ -1,163 +1,163 @@
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
+let lienzo = document.getElementById('canvas');
+let contexto = lienzo.getContext('2d');
 
-// Lista de palabras
-let palabras = ["JAVASCRIPT", "PROGRAMACION", "DESARROLLO", "FRONTEND", "BACKEND", "ALGORITMO", "INTERFAZ", "FUNCION", "OBJETO", "VARIABLE"];
+// opciones de palabras para el juego
+let listaPalabras = ["PROGRAMACION", "CANVAS", "JAVASCRIPT", "INGENIERIA", "DUTIC", "SISTEMAS"];
 
-// Variables de juego
-let palabra;
-let letrasCorrectas;
-let letrasIncorrectas;
-let maxErrores = 6;
-let errores = 0;
+// contadores y variables
+let palabraSecreta;
+let aciertos;
+let fallos;
+let maxFallos = 6;
+let cantidadErrores = 0;
 
-// Función para iniciar el juego
-function iniciarJuego() {
-    palabra = palabras[Math.floor(Math.random() * palabras.length)].toUpperCase();  // Selecciona una palabra aleatoria
-    letrasCorrectas = Array(palabra.length).fill("_");
-    letrasIncorrectas = [];
-    errores = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpiar el canvas completamente
-    drawGallows();  // Redibujar la horca vacía
+// funcion que inicia el juego
+function comenzarJuego() {
+    palabraSecreta = listaPalabras[Math.floor(Math.random() * listaPalabras.length)].toUpperCase();  // palabra aleatoria
+    aciertos = Array(palabraSecreta.length).fill("_");
+    fallos = [];
+    cantidadErrores = 0;
+    contexto.clearRect(0, 0, lienzo.width, lienzo.height);  // limpia el canvas 
+    dibujarHorca();  // volver a dibujar la horca
     mostrarPalabra();
-    mostrarLetrasIncorrectas();
-    document.getElementById('resultado').innerHTML = '';  // Limpia el mensaje de resultado
-    document.getElementById('reiniciarBtn').style.display = 'none';  // Oculta el botón de reinicio
-    document.getElementById('letraInput').disabled = false;  // Habilitar la entrada de letras
+    mostrarFallos();
+    document.getElementById('resultado').innerHTML = '';  // limpia el mensaje de resultado
+    document.getElementById('reiniciarBtn').style.display = 'none';  // oculta el botón de reinicio
+    document.getElementById('letraInput').disabled = false;  // habilita la entrada de letras
 }
 
-// Dibujar la horca vacía
-function drawGallows() {
-    ctx.lineWidth = 2;
-    ctx.beginPath();
+// Dibuja la horca en el canvas
+function dibujarHorca() {
+    contexto.lineWidth = 2;
+    contexto.beginPath();
 
-    // Base de la horca
-    ctx.moveTo(50, 180);
-    ctx.lineTo(150, 180);
+    // base
+    contexto.moveTo(50, 180);
+    contexto.lineTo(150, 180);
 
-    // Poste vertical
-    ctx.moveTo(100, 180);
-    ctx.lineTo(100, 50);
+    // poste
+    contexto.moveTo(100, 180);
+    contexto.lineTo(100, 50);
 
-    // Poste horizontal
-    ctx.moveTo(100, 50);
-    ctx.lineTo(150, 50);
+    // travesaño
+    contexto.moveTo(100, 50);
+    contexto.lineTo(150, 50);
 
-    // Cuerda
-    ctx.moveTo(150, 50);
-    ctx.lineTo(150, 70);
+    // soga
+    contexto.moveTo(150, 50);
+    contexto.lineTo(150, 70);
 
-    ctx.stroke();
+    contexto.stroke();
 }
 
-// Dibujar las diferentes partes del cuerpo paso a paso
-function drawHangman(step) {
-    ctx.lineWidth = 2;
+// dibuja las partes del ahorcado en el canvas segun vaya el juego
+function dibujarAhorcado(paso) {
+    contexto.lineWidth = 2;
 
-    switch (step) {
+    switch (paso) {
         case 1:
-            // Cabeza
-            ctx.beginPath();
-            ctx.arc(150, 80, 10, 0, Math.PI * 2, true);
-            ctx.stroke();
+            // cabeza
+            contexto.beginPath();
+            contexto.arc(150, 80, 10, 0, Math.PI * 2, true);
+            contexto.stroke();
             break;
         case 2:
-            // Cuerpo
-            ctx.moveTo(150, 90);
-            ctx.lineTo(150, 130);
-            ctx.stroke();
+            // cuerpo
+            contexto.moveTo(150, 90);
+            contexto.lineTo(150, 130);
+            contexto.stroke();
             break;
         case 3:
-            // Brazo izquierdo
-            ctx.moveTo(150, 100);
-            ctx.lineTo(130, 110);
-            ctx.stroke();
+            // braz-1
+            contexto.moveTo(150, 100);
+            contexto.lineTo(130, 110);
+            contexto.stroke();
             break;
         case 4:
-            // Brazo derecho
-            ctx.moveTo(150, 100);
-            ctx.lineTo(170, 110);
-            ctx.stroke();
+            // braz-2
+            contexto.moveTo(150, 100);
+            contexto.lineTo(170, 110);
+            contexto.stroke();
             break;
         case 5:
-            // Pierna izquierda
-            ctx.moveTo(150, 130);
-            ctx.lineTo(130, 160);
-            ctx.stroke();
+            // pierna-1
+            contexto.moveTo(150, 130);
+            contexto.lineTo(130, 160);
+            contexto.stroke();
             break;
         case 6:
-            // Pierna derecha
-            ctx.moveTo(150, 130);
-            ctx.lineTo(170, 160);
-            ctx.stroke();
+            // pierna-2
+            contexto.moveTo(150, 130);
+            contexto.lineTo(170, 160);
+            contexto.stroke();
             break;
         default:
             console.log("Juego terminado.");
     }
 }
 
-// Mostrar la palabra oculta
+// muestra la palabra oculta obtenida del array de palabras
 function mostrarPalabra() {
-    document.getElementById('palabra').innerHTML = letrasCorrectas.join(" ");
+    document.getElementById('palabra').innerHTML = aciertos.join(" ");
 }
 
-// Actualizar letras incorrectas
-function mostrarLetrasIncorrectas() {
-    document.getElementById('letrasIncorrectas').innerHTML = "Letras incorrectas: " + letrasIncorrectas.join(", ");
+// muestra las letras incorrectas que el jugador haya puesto
+function mostrarFallos() {
+    document.getElementById('letrasIncorrectas').innerHTML = "Letras incorrectas: " + fallos.join(", ");
 }
 
-// Verificar si la letra es correcta o incorrecta
-function verificarLetra(letra) {
-    if (palabra.includes(letra)) {
-        for (let i = 0; i < palabra.length; i++) {
-            if (palabra[i] === letra) {
-                letrasCorrectas[i] = letra;
+// Verifica si la letra es o no es correcta
+function comprobarLetra(letra) {
+    if (palabraSecreta.includes(letra)) {
+        for (let i = 0; i < palabraSecreta.length; i++) {
+            if (palabraSecreta[i] === letra) {
+                aciertos[i] = letra;
             }
         }
     } else {
-        if (!letrasIncorrectas.includes(letra)) {
-            letrasIncorrectas.push(letra);
-            errores++;
-            drawHangman(errores);
+        if (!fallos.includes(letra)) {
+            fallos.push(letra);
+            cantidadErrores++;
+            dibujarAhorcado(cantidadErrores);
         }
     }
     mostrarPalabra();
-    mostrarLetrasIncorrectas();
-    verificarEstadoJuego();
+    mostrarFallos();
+    revisarEstadoJuego();
 }
 
-// Verificar si el jugador ha ganado o perdido
-function verificarEstadoJuego() {
-    if (!letrasCorrectas.includes("_")) {
-        document.getElementById('resultado').innerHTML = "¡Felicidades! Ganaste. La palabra era: " + palabra;
-        document.getElementById('reiniciarBtn').style.display = 'block';  // Mostrar botón de reinicio
-        document.getElementById('letraInput').disabled = true;  // Deshabilitar la entrada de letras
-    } else if (errores >= maxErrores) {
-        document.getElementById('resultado').innerHTML = "Lo siento, perdiste. La palabra era: " + palabra;
-        document.getElementById('reiniciarBtn').style.display = 'block';  // Mostrar botón de reinicio
-        document.getElementById('letraInput').disabled = true;  // Deshabilitar la entrada de letras
+// descenlace / ganste o perdiste 
+function revisarEstadoJuego() {
+    if (!aciertos.includes("_")) {
+        document.getElementById('resultado').innerHTML = "¡Lo hiciste bien! Adivinaste la palabra: " + palabraSecreta;
+        document.getElementById('reiniciarBtn').style.display = 'block';  // muestra el botón de reinicio
+        document.getElementById('letraInput').disabled = true;  // deshabilita la entrada de letras
+    } else if (cantidadErrores >= maxFallos) {
+        document.getElementById('resultado').innerHTML = "Se te acabaron los intentos para adivinar. La palabra que necesitabas era: " + palabraSecreta;
+        document.getElementById('reiniciarBtn').style.display = 'block';  // muestra el botón de reinicio
+        document.getElementById('letraInput').disabled = true;  // deshabilita la entrada de letras
     }
 }
 
-// Manejo del botón para adivinar letra
+// da al boton la funcion de comprobar
 document.getElementById('adivinarBtn').onclick = function() {
-    let letra = document.getElementById('letraInput').value.toUpperCase();
+    let letraIngresada = document.getElementById('letraInput').value.toUpperCase();
     document.getElementById('letraInput').value = "";
-    if (letra && letra.length === 1 && /^[A-ZÑ]$/.test(letra)) {
-        verificarLetra(letra);
+    if (letraIngresada && letraIngresada.length === 1 && /^[A-ZÑ]$/.test(letraIngresada)) {
+        comprobarLetra(letraIngresada);
     } else {
         alert("Por favor, ingresa una letra válida.");
     }
 }
 
-// Manejo del botón de reinicio
+// funcion para el reinicio del jujego 
 document.getElementById('reiniciarBtn').onclick = function() {
-    iniciarJuego();  // Reiniciar el juego
+    comenzarJuego();  // restart
 }
 
-// Manejo del botón de inicio (Start)
+// funcion para manejar el cambio del menu al juego
 document.getElementById('startBtn').onclick = function() {
     document.getElementById('menu').style.display = 'none';
     document.getElementById('game').style.display = 'block';
-    iniciarJuego();  // Iniciar el juego por primera vez
+    comenzarJuego();  // start
 }
