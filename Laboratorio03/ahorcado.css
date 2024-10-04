@@ -1,0 +1,39 @@
+/* body ocupe el 100% de la altura de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: verdana; /* Tipo de letra */
+    text-align: center;
+}
+
+/* footer siempre al final */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /*  main ocupa el espacio restante */
+}
+
+#canvas {
+    border: 2px solid black;
+}
+
+#menuCanvas{
+    border: 2px solid black;
+}
+#palabra {
+    font-family: verdana;
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+#letrasIncorrectas {
+    color: red;
+    margin-top: 10px;
+}
+
+#footer-ahorcado {
+    color: aliceblue;
+    background-color: #b1601f;
+}

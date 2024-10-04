@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ahorcado.css">
+    <title>Juego del Ahorcado</title>
+</head>
+<body>
+
+    <main>
+        <!-- Menu -->
+        <section id="menu">
+            <h1>AHORCADO</h1>
+            <img src="img ahorcado.png"  id="menuCanvas" width="200" height="200">
+            <br>
+            <br>
+            <button id="startBtn">EMPEZAR</button>
+        </section>
+
+        <!-- Juego-->
+        <section id="game" style="display: none;">
+            <h1>JUEGO DEL AHORCADO</h1>
+            <canvas id="canvas" width="200" height="200"></canvas>
+            <br>
+            <div id="palabra"></div>
+            <br>
+            <input type="text" id="letraInput" maxlength="1" placeholder="Ingrese una letra">
+            <button id="adivinarBtn">Comprobar</button>
+            <div id="letrasIncorrectas">Letras incorrectas: </div>
+            <br>
+            <div id="resultado"></div>
+            <!-- Jugar de Nuevo-->
+            <button id="reiniciarBtn" style="display: none;">Jugar de nuevo</button>
+        </section>
+    </main>
+    
+    <footer>
+        <div id="footer-ahorcado">
+            © Juego del Ahorcado. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="ahorcado.js"></script>
+</body>
+</html>
