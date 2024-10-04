@@ -1,6 +1,7 @@
+
 body {
-    font-size: 1.7em;
-    background-image:url(3179878.jpg);
+    font-size: 1em; /* Reducido de 1.2em a 1em */
+    background-image: url(3179878.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -17,8 +18,7 @@ main {
     align-items: center;
     text-align: center;
     width: 100%;
-    width: 1000px;
-    padding: 600px;
+    padding: 50px; /* Reducido de 600px a 500px */
     background-image: linear-gradient(135deg, #4d2100 0%, #040070 100%);
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ main {
 /* Títulos */
 h1 {
     color: #ff8640;
-    font-size: 3em;
+    font-size: 1.8em; /* Reducido de 2em a 1.8em */
     margin-bottom: 20px;
     text-transform: uppercase;
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4), 4px 4px 0px rgba(0, 0, 0, 0.2);
@@ -36,7 +36,7 @@ h1 {
 /* Menu */
 #menu img {
     margin-top: 10px;
-    width: 400px;
+    width: 250px; /* Reducido de 300px a 250px */
     height: auto;
     border-radius: 50%;
     border: 5px solid #fb7aa5;
@@ -44,8 +44,8 @@ h1 {
 }
 
 #startBtn {
-    padding: 20px 40px; /* Cambia de 15px 30px a algo más grande */
-    font-size: 3em;
+    padding: 12px 25px; /* Reducido de 15px 30px a 12px 25px */
+    font-size: 1.8em; /* Reducido de 2em a 1.8em */
     background-color: #ff4800;
     color: white;
     border: none;
@@ -75,7 +75,7 @@ h1 {
 }
 
 #canvas {
-    width: 600px; /* Aumentar el tamaño del canvas */
+    width: 450px; /* Reducido de 500px a 450px */
     border: 5px solid #ff7621;
     background-color: #fff;
     border-radius: 10px;
@@ -84,7 +84,7 @@ h1 {
 }
 
 #palabra {
-    font-size: 2em;
+    font-size: 1.3em; /* Reducido de 1.5em a 1.3em */
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -92,9 +92,9 @@ h1 {
 }
 
 input[type="text"] {
-    padding: 10px;
-    font-size: 1.9em;
-    width: 250px;
+    padding: 8px;
+    font-size: 1.3em; /* Reducido de 1.5em a 1.3em */
+    width: 180px; /* Reducido de 200px a 180px */
     border: 3px solid #00f2ff;
     border-radius: 10px;
     margin-right: 10px;
@@ -106,8 +106,8 @@ input[type="text"] {
 }
 
 #adivinarBtn {
-    padding: 15px 30px;
-    font-size: 1.8em;
+    padding: 10px 20px; /* Reducido de 12px 25px a 10px 20px */
+    font-size: 1.3em; /* Reducido de 1.5em a 1.3em */
     background-color: #fa953d;
     color: white;
     border: none;
@@ -127,21 +127,21 @@ input[type="text"] {
 }
 
 #letrasIncorrectas {
-    font-size: 2.5em;
+    font-size: 1.8em; /* Reducido de 2em a 1.8em */
     color: #00eeff;
     margin-top: 15px;
 }
 
 #resultado {
-    font-size: 2em;
+    font-size: 1.3em; /* Reducido de 1.5em a 1.3em */
     margin-top: 60px;
     color: #f6ff00;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.541);
 }
 
 #reiniciarBtn {
-    padding: 15px 30px;
-    font-size: 1.3em;
+    padding: 10px 20px; /* Reducido de 12px 25px a 10px 20px */
+    font-size: 1em; /* Reducido de 1.1em a 1em */
     background-color: #f671486e;
     color: white;
     border: none;
@@ -164,9 +164,9 @@ input[type="text"] {
 
 /* Footer */
 footer {
-    font-size: 1.1em;
+    font-size: 0.9em; /* Reducido de 1em a 0.9em */
     margin-top: auto;
-    padding: 20px 0;
+    padding: 15px 0;
     width: 100%;
     background-color: #333;
     color: white;
@@ -177,23 +177,23 @@ footer {
 /* Responsive Design */
 @media screen and (max-width: 600px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.3em; /* Reducido de 1.8em a 1.5em */
     }
 
     #canvas {
-        width: 90%;
+        width: 80%;
         height: auto;
     }
 
     #startBtn, #adivinarBtn, #reiniciarBtn {
-        width: 100%;
+        width: 50%;
     }
 
     input[type="text"] {
-        width: 45px;
+        width: 60px;
     }
 
     #letraInput, #adivinarBtn {
-        font-size: 1.2em;
+        font-size: 1em; /* Reducido de 1.2em a 1em */
     }
 }
