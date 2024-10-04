@@ -17,8 +17,6 @@ function comenzarJuego() {
     aciertos = Array(palabraSecreta.length).fill("_");
     fallos = [];
     cantidadErrores = 0;
-    contexto.clearRect(0, 0, lienzo.width, lienzo.height);  // limpia el canvas.
-    dibujarHorca();  // volver a dibujar la horca
     mostrarPalabra();
     mostrarFallos();
     document.getElementById('resultado').innerHTML = '';  // limpia el mensaje de resultado
@@ -154,7 +152,8 @@ document.getElementById('adivinarBtn').onclick = function() {
 document.getElementById('reiniciarBtn').onclick = function() {
     comenzarJuego();  // restart
 }
-// funcion para manejar el cambio del menu al juego
+
+// logica para manejar el cambio del menu al juego
 document.getElementById('startBtn').onclick = function() {
     document.getElementById('menu').style.display = 'none';
     document.getElementById('game').style.display = 'block';
