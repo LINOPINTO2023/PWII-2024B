@@ -31,4 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
             this.value = this.value.slice(0, 6);
         }
     });
+
+    document.getElementById('changeButton').addEventListener('click', function () {
+        const randomNumber = Math.floor(Math.random() * 6) + 1;
+        
+        const newSrc = `/imagenes/captcha/${randomNumber}.png`;
+        document.getElementById('captchaImage').src = newSrc;
+    });
 });
