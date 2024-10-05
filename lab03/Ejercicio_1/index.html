@@ -9,34 +9,44 @@
   <body>
     <img src="./img/BANCA_SEGUROS.jpg" style="width: 100%" />
     <h1>BANCA SEGUROS</h1>
-    <div class="contentInput">
-      <label>Seleccione:</label>
-      <select>
-        <option>Multired Global Debito</option>
-      </select>
-    </div>
-    <div class="contentInput">
-      <label>Numero de Tarjeta</label>
-      <input type="number" />
-    </div>
-    <div class="contentInput">
-      <label>Tipo y N° Documento</label>
-      <select>
-        <option>DNI</option>
-        <option>RUC</option>
-      </select>
-      <input type="number" />
-    </div>
-    <div class="contentInput">
-      <label>Ingresa tu clave Usando el teclado virtual.</label>
-      <div id="buttonContainer"></div>
-      <div class="columnContent">
-        <a href="https://www.bn.com.pe/">Genera tu clave de Internet</a>
-        <label>Ingresa tu clave de internet (06 digitos)</label>
+    <div class="bodyContent">
+      <div class="contentInput">
+        <label>Seleccione:</label>
+        <select>
+          <option>Multired Global Débito</option>
+          <option>DNI(Cuenta Corriente)</option>
+        </select>
+      </div>
+      <div class="contentInput">
+        <label>Numero de Tarjeta</label>
         <input type="number" />
       </div>
+      <div class="contentInput">
+        <label>Tipo y N° Documento</label>
+        <select>
+          <option>DNI</option>
+          <option>RUC</option>
+          <option>Pasaporte</option>
+          <option>C. Extranjeria</option>
+        </select>
+        <input type="number" />
+      </div>
+      <div class="contentInput">
+        <label>Ingresa tu clave Usando el teclado virtual.</label>
+        <div id="buttonContainer"></div>
+        <div class="columnContent">
+          <a href="https://bancaporinternet.bn.com.pe/BNWeb/Afiliacion"
+            >Genera tu clave de Internet</a
+          >
+          <label>Ingresa tu clave de internet (06 digitos)</label>
+          <input type="number" />
+          <a href="https://bancaporinternet.bn.com.pe/BNWeb/Olvido"
+            >Olvidé mi clave</a
+          >
+        </div>
+      </div>
+      <button>INGRESAR</button>
     </div>
-    <button>INGRESAR</button>
   </body>
   <script src="./index.js"></script>
 </html>

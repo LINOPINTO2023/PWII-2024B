@@ -82,6 +82,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 24px;
+  background-image: url(../img/textura_2.jpg);
 }
 .enlaces {
   display: flex;
@@ -153,4 +154,20 @@ body {
   width: 150px;
   height: 80px;
   object-fit: cover;
+}
+.contactanos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-left: 100px;
+}
+input {
+  width: 30%;
+}
+.textArea {
+  width: 30%;
+}
+.buttonContact {
+  width: 30%;
 }

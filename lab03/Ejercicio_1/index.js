@@ -19,7 +19,7 @@ function CrearBotones() {
   });
   const limpiar = document.createElement("button");
   limpiar.textContent = "LIMPIAR";
-  limpiar.className = "button";
+  limpiar.className = "button limpiar";
 
   limpiar.addEventListener("click", () => {
     inputClave.value = "";

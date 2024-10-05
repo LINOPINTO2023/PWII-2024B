@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  background-color: lightgray;
 }
 h1 {
   color: aqua;
@@ -20,4 +21,31 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
+}
+.bodyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  padding: 24px;
+  width: 550px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: auto;
+}
+.limpiar {
+  padding: 10px;
+  grid-column: span 2;
+  width: 100%;
+}
+a {
+  color: red;
+}
+label {
+  display: flex;
 }
