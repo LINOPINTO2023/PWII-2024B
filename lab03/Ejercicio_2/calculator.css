@@ -41,7 +41,7 @@ body {
   gap: 10px;
 }
 
-button {
+.button {
   height: 50px;
   font-size: 1.2em;
   border: none;
@@ -52,6 +52,14 @@ button {
 
 button:hover {
   background-color: #ddd;
+}
+
+.result {
+  background-color: orange;
+  color: white;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: none;
 }
 
 .history {
