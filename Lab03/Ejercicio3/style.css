@@ -7,3 +7,20 @@
         margin: 0;
         font-family: Arial, sans-serif;
     }
+/*TECLADO EN GENERAL*/
+    #teclado {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); /* 8 teclas por fila */
+        gap: 5px;
+    }
+/*BUTTON REINICIO*/
+    #botonReiniciar {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #343a40; 
+        color: white;
+        border-radius: 5px; 
+        cursor: pointer;
+        font-size: 16px;
+    }
