@@ -18,6 +18,34 @@ function inicializarJuego() {
         palabraOculta = Array(palabra.length).fill('_');/*Se crea un nuevo array vacío con la misma longitud que la palabra seleccionada. 
             Luego, fill('_') llena ese array con guiones bajos (_)*/
         errores = 0;
+        // Limpiar el canvas completamente y reiniciar el contexto
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar todo el canvas
+            ctx.beginPath(); // Reiniciar el camino de dibujo (muy importante)
+
+        // Limpiar el mensaje final
+            mensajeFinal.textContent = '';
+            mensajeFinal.style.display = 'none'; // Ocultar el cuadro del mensaje al reiniciar
+
+        // Dibujar la base y el poste al inicio
+            dibujarBaseYPoste();
+
+        // Mostrar la palabra oculta
+            palabraHTML.textContent = palabraOculta.join(' ');
+
+        // Limpiar el teclado
+        teclado.innerHTML = '';
+        //Crear un botón para cada letra del alfabeto y agregarlo al teclado.
+            const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('');
+            letras.forEach(letra => {
+                const botonLetra = document.createElement('div');//Se crea un nuevo elemento <div> que representará un botón para la letra actual
+                botonLetra.textContent = letra; //Se establece el contenido de texto del botón como la letra actual
+                botonLetra.classList.add('tecla'); //Se añade la clase CSS tecla al botón
+                botonLetra.addEventListener('click', () => manejarLetra(letra, botonLetra)); //evento de clic al botón
+                teclado.appendChild(botonLetra); //el botón creado se agrega al elemento teclado
+            });
+
+        // Ocultar el botón "Volver a Jugar"
+            botonReiniciar.style.display = 'none';
        
 }
 // Función para dibujar la base y el poste (dibujados al inicio del juego)
