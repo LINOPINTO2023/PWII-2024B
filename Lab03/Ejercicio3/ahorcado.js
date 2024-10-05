@@ -110,3 +110,10 @@ function inicializarJuego() {
         const teclas = document.querySelectorAll('.tecla'); //seleccionar todos los elementos  que tienen la clase CSS .tecla
         teclas.forEach(tecla => tecla.classList.add('disabled')); //agrega la clase disabled a su lista de clases
     }
+// Función para mostrar el mensaje final
+    function mostrarMensajeFinal(mensaje, esVictoria) {
+        mensajeFinal.textContent = mensaje;
+        mensajeFinal.style.display = 'block'; // Mostrar el cuadro del mensaje
+        desactivarTeclado(); // Desactivar todo el teclado
+        mostrarBotonReiniciar(); // Mostrar el botón para volver a jugar
+    }
