@@ -43,3 +43,17 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px; 
 }
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.dax{
+padding: 0;
+border: 0;
+text-decoration: none;
+vertical-align: text-top;
+color: #343434;
+margin: 0px 0px 20px 0px;
+text-align: center;
+font: 24px 'daxcompact-mediumregular';
+}
