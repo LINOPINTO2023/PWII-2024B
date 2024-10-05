@@ -41,3 +41,40 @@ function inicializarJuego() {
         ctx.lineTo(120, 80);
         ctx.stroke();
     }
+// Función para dibujar las partes del ahorcado
+    function dibujarAhorcado(errores) {
+        ctx.beginPath(); // Reiniciar el camino de dibujo antes de cada nuevo trazo
+        switch (errores) {
+            case 1: // Dibujar la cabeza
+                ctx.beginPath();
+                ctx.arc(120, 90, 10, 0, Math.PI * 2);
+                ctx.stroke();
+                break;
+            case 2: // Dibujar el cuerpo
+                ctx.moveTo(120, 100);
+                ctx.lineTo(120, 140);
+                ctx.stroke();
+                break;
+            case 3: // Dibujar brazo izquierdo
+                ctx.moveTo(120, 110);
+                ctx.lineTo(100, 130);
+                ctx.stroke();
+                break;
+            case 4: // Dibujar brazo derecho
+                ctx.moveTo(120, 110);
+                ctx.lineTo(140, 130);
+                ctx.stroke();
+                break;
+            case 5: // Dibujar pierna izquierda
+                ctx.moveTo(120, 140);
+                ctx.lineTo(100, 170);
+                ctx.stroke();
+                break;
+            case 6: // Dibujar pierna derecha (fin del juego)
+                ctx.moveTo(120, 140);
+                ctx.lineTo(140, 170);
+                ctx.stroke();
+                mostrarMensajeFinal(`¡Juego terminado! Has perdido. La palabra correcta era "${palabra}".`, false);
+                break;
+        }
+    }
