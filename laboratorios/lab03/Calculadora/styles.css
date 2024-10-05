@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .calculator {
+    margin-bottom: 20px;
+  }
+  
+  .calculator input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .buttons {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajustar el tamaño de la tabla */
+  .buttons table {
+    margin: 0 auto;
+    border-collapse: collapse; /* Para evitar doble borde entre celdas */
+  }
+  
+  /* Ajustar las celdas de la tabla */
+  .buttons td {
+    padding: 5px;  /* Ajusta el espacio entre botones */
+    border: 1px solid #ccc; /* Añadir borde si deseas */
+  }
+  
+  /* Modificar tamaño de los botones */
+  .buttons button {
+    padding: 20px;    /* Aumenta o disminuye el padding para cambiar el tamaño */
+    font-size: 18px;  /* Aumenta o disminuye el tamaño del texto */
+    margin: 5px;      /* Espacio entre los botones */
+    width: 60px;      /* Ancho fijo para todos los botones */
+    height: 60px;     /* Alto fijo para todos los botones */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efecto hover para los botones */
+  .buttons button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .stack {
+    margin-top: 20px;
+  }
+  
+  .stack h3 {
+    margin-bottom: 5px;
+  }
+  
+  .color-picker {
+    margin-top: 20px;
+  }
+  
+  .color-picker h3 {
+    margin-bottom: 10px;
+  }
+  
+  #colorPicker {
+    padding: 5px;
+    width: 60px;
+    height: 30px;
+  }
+  
