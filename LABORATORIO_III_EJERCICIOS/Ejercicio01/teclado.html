@@ -52,22 +52,24 @@
             </div>
             <label for="clave-teclado">Ingresa tu clave usando el teclado virtual:</label>
             <div class="grid">
-                <button class="casilla" id="casilla0"></button>
-                <button class="casilla" id="casilla1"></button>
-                <button class="casilla" id="casilla2"></button>
-                <button class="casilla" id="casilla3"></button>
-                <button class="casilla" id="casilla4"></button>
-                <button class="casilla" id="casilla5"></button>
-                <button class="casilla" id="casilla6"></button>
-                <button class="casilla" id="casilla7"></button>
-                <button class="casilla" id="casilla8"></button>
-                <button type="button">Limpiar</button>
+                <button class="casilla" id="casilla0" onclick="agregarNumero(0)"></button>
+                <button class="casilla" id="casilla1" onclick="agregarNumero(1)"></button>
+                <button class="casilla" id="casilla2" onclick="agregarNumero(2)"></button>
+                <button class="casilla" id="casilla3" onclick="agregarNumero(3)"></button>
+                <button class="casilla" id="casilla4" onclick="agregarNumero(4)"></button>
+                <button class="casilla" id="casilla5" onclick="agregarNumero(5)"></button>
+                <button class="casilla" id="casilla6" onclick="agregarNumero(6)"></button>
+                <button class="casilla" id="casilla7" onclick="agregarNumero(7)"></button>
+                <button class="casilla" id="casilla8" onclick="agregarNumero(8)"></button>
+                <button class="casilla" id="casilla9" onclick="agregarNumero(9)"></button>
+                <button type="button" id="btn-limpiar" onclick="limpiarFormulario()">Limpiar</button>
             </div>
             <div class="clave-internet">
-                <a href="claveInter.jpg">Genera tu clave de internet</a>
+                <a class="boton_genera" href="claveInter.jpg">Genera tu clave de internet</a>
                 <p>Ingresa tu clave de internet (06 dígitos)</p>
                 <input type="password" id="clave-internet">
-                <a href="signo.jpg">Olvidé mi clave</a>
+                <a class="boton_clave " href="signo.jpg">Olvidé mi clave</a>
+
             </div>
             <label for="captcha">Ingresa el texto de la imagen:</label>
             <div class="captcha-container">
@@ -77,7 +79,8 @@
                 <input type="text" id="captcha">
             </div>
             <div class="linea-puntos"></div>
-            <button class="btn btn-primary mt-4" onclick="generarNumeros()">GENERÉ SU CONTRASEÑA</button>
+            <button class="btn btn-primary mt-4" style="display: none;">GENERÉ SU CONTRASEÑA</button>
+
             <button type="submit" class="btn-ingresar">Ingresar</button>
         </form>
     </div>
@@ -93,7 +96,7 @@
 
 
 
-    <script src=" components.js"></script>
+    <script src="components.js"></script>
 
 </body>
 
