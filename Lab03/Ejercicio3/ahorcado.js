@@ -18,6 +18,7 @@ function inicializarJuego() {
         palabraOculta = Array(palabra.length).fill('_');/*Se crea un nuevo array vacío con la misma longitud que la palabra seleccionada. 
             Luego, fill('_') llena ese array con guiones bajos (_)*/
         errores = 0;
+       
 }
 // Función para dibujar la base y el poste (dibujados al inicio del juego)
     function dibujarBaseYPoste() {
@@ -78,3 +79,26 @@ function inicializarJuego() {
                 break;
         }
     }
+// Función para manejar la letra seleccionada
+    function manejarLetra(letra, boton) {
+        boton.classList.add('disabled'); // Desactivar la tecla
+        if (palabraArray.includes(letra)) { //Comprobar si el array palabraArray incluye la letra que el jugador acaba de adivinar.
+            // La letra es correcta, actualizar la palabra oculta
+                palabraArray.forEach((letraPalabra, index) => {
+                    if (letraPalabra === letra) {
+                        palabraOculta[index] = letra;
+                    }
+                });
+                palabraHTML.textContent = palabraOculta.join(' '); //muestra la palabra oculta actualizada en el HTML.
+
+            // Verificar si se ha ganado
+                if (palabraOculta.join('') === palabra) {
+                    mostrarMensajeFinal('¡Felicidades! Has ganado.', true);
+                }
+        } else {
+            // La letra es incorrecta, agregar error
+                errores++;
+                dibujarAhorcado(errores);
+        }
+    }
+
