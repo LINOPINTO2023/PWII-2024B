@@ -117,3 +117,8 @@ function inicializarJuego() {
         desactivarTeclado(); // Desactivar todo el teclado
         mostrarBotonReiniciar(); // Mostrar el botón para volver a jugar
     }
+// Función para reiniciar el juego cuando se hace clic en el botón
+    function reiniciarJuego() {
+        inicializarJuego();
+    }
+
