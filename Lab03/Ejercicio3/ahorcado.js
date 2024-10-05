@@ -19,3 +19,25 @@ function inicializarJuego() {
             Luego, fill('_') llena ese array con guiones bajos (_)*/
         errores = 0;
 }
+// Función para dibujar la base y el poste (dibujados al inicio del juego)
+    function dibujarBaseYPoste() {
+        // Dibujar la base
+        ctx.moveTo(10, 190);
+        ctx.lineTo(100, 190);
+        ctx.stroke();
+
+        // Dibujar el poste vertical
+        ctx.moveTo(55, 190);
+        ctx.lineTo(55, 50);
+        ctx.stroke();
+
+        // Dibujar el brazo horizontal
+        ctx.moveTo(55, 50);
+        ctx.lineTo(120, 50);
+        ctx.stroke();
+
+        // Dibujar la cuerda
+        ctx.moveTo(120, 50);
+        ctx.lineTo(120, 80);
+        ctx.stroke();
+    }
