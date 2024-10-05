@@ -101,4 +101,7 @@ function inicializarJuego() {
                 dibujarAhorcado(errores);
         }
     }
-
+// Función para mostrar el botón "Volver a Jugar"
+    function mostrarBotonReiniciar() {
+        botonReiniciar.style.display = 'inline-block';
+    }
