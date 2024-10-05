@@ -7,6 +7,15 @@
         margin: 0;
         font-family: Arial, sans-serif;
     }
+/*CONTENEDOR PRINCIPAL  DEL AHORCADO*/
+    .container {
+        text-align: center;
+    }
+/*LIENZO*/
+    canvas {
+        border: 1px solid #000;
+        margin-bottom: 20px;
+    }
 /*TECLADO EN GENERAL*/
     #teclado {
         width: 100%;
@@ -23,4 +32,7 @@
         border-radius: 5px; 
         cursor: pointer;
         font-size: 16px;
+    }
+#botonReiniciar:hover {
+        background-color: #495057; 
     }
