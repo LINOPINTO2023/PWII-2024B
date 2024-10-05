@@ -16,6 +16,24 @@
         border: 1px solid #000;
         margin-bottom: 20px;
     }
+/*TECLADO DE LETRAS*/
+    /*TECLAS INDIVIDUALES*/
+    .tecla {
+        display: inline-block; /* Permite el alineamiento horizontal */
+        margin: 5px;
+        padding: 8px;
+        border: 1px solid #000;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .tecla.disabled {
+        background-color: grey;
+        pointer-events: none; /* Deshabilitar doble interaccion */ 
+    }
 /*TECLADO EN GENERAL*/
     #teclado {
         width: 100%;
