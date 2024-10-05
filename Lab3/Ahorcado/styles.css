@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.word-display {
+    font-size: 1.8em;
+    letter-spacing: 5px;
+    margin: 20px 0;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #ff0000;
+}
+
+.keyboard button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.keyboard button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#ahorcadoCanvas {
+    display: block;
+    margin: 20px auto;
+}
+
+#resetButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resetButton:hover {
+    background-color: #218838;
+}
