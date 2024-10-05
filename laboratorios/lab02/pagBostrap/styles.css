@@ -1,0 +1,150 @@
+/* Estilos personalizados para el header */
+header {
+    height: 18vh; /* Ocupa el 18% de la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+/* Estilos para el contenedor de la imagen */
+.imagen {
+    position: relative; /* Posiciona el contenedor para que los elementos absolutos se posicionen en relación a él */
+    width: 100%; /* Ancho completo */
+    max-height: 55vh; /* Altura máxima, ajusta según lo necesites */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+/* Estilos para la imagen */
+.imagen img {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+/* Estilos para el texto dentro de la imagen */
+.textos {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 50%; /* Centra verticalmente */
+    left: 15%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centrar el texto */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+/* Estilo opcional para dar espacio entre el título y los enlaces */
+nav {
+    margin-top: 10px;
+}
+/* Estilos generales del formulario */
+.container {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+footer {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centra el texto */
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espacio encima del footer */
+}
+
+footer p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    color: #333; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+/* Estilos para el footer */
+.footer {
+    
+    background-color: #f8f9fa; /* Color de fondo, ajusta según tus preferencias */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Posicionamiento relativo para que se mantenga en su lugar */
+    bottom: 0; /* Mantiene el footer al fondo si se utiliza un diseño de página más largo */
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espacio encima del footer */
+}
+
+.footer p {
+    
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    color: #333; /* Color del texto, ajusta según tus preferencias */
+    font-size: 1rem; /* Tamaño de fuente, ajusta según sea necesario */
+}
+
+/* Estilos para las clases */
+.card {
+    height: 100%; /* Hace que las tarjetas tengan la misma altura */
+}
+
+.card-img-top {
+    height: 200px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Cubre el área de la imagen sin distorsionarla */
+}
+
+footer {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centra el texto */
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espacio encima del footer */
+}
+
+footer p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    color: #333; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+/* Imagen con texto */
+.imagen-con-texto {
+    position: relative;
+    height: 40vh; /* 40% de la altura de la ventana */
+}
+
+.imagen-con-texto img {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa el 40% de la altura de la ventana */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+.texto-sobre-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 20px;
+}
+
+.texto-sobre-imagen h2 {
+    font-size: 2rem;
+}
+
+.texto-sobre-imagen p {
+    font-size: 1.2rem;
+}
+
+/* Pilares importantes */
+.pilares-importantes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pilares-importantes p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
