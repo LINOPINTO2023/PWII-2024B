@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca por Internet</title>
+
+    <!-- Vinculamos el archivo CSS y JavaScript externos -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form>
+        <!-- Sección 1: Ingreso de número de tarjeta -->
+        <div id="seleccionar" class="seccion-formulario">
+            <h2>Ingrese su número de tarjeta</h2>
+            <label for="numero">Número de tarjeta:</label>
+            <input type="tel" id="numero" name="numero" pattern="[0-9]{1,16}" maxlength="16" required>
+            <small>Solo números, máximo 16 dígitos.</small>
+        </div>
+
+        <!-- Sección 2: Selección de tipo de documento -->
+        <div id="documento" class="seccion-formulario">
+            <h2>Seleccione su tipo de documento</h2>
+            <label for="tipoDocumento">Tipo de documento:</label>
+            <select id="tipoDocumento" name="tipoDocumento" onchange="actualizarCampo()" required>
+                <option value="">Seleccione</option>
+                <option value="dni">DNI</option>
+                <option value="ce">Carnet de Extranjería</option>
+                <option value="pasaporte">Pasaporte</option>
+            </select>
+
+            <br><br>
+
+            <label id="labelNumero" for="numeroDocumento">Número de documento:</label>
+            <input type="tel" id="numeroDocumento" name="numeroDocumento" pattern="[0-9]*" required>
+        </div>
+
+        <!-- Sección 3: Teclado numérico virtual (3x3) -->
+        <div id="teclado" class="seccion-formulario">
+            <h2>Ingrese su número de documento (Teclado virtual)</h2>
+            <label for="numeroDocumentoTeclado">Número de documento:</label>
+            <input type="tel" id="numeroDocumentoTeclado" name="numeroDocumentoTeclado" pattern="[0-9]*" readonly required>
+
+            <!-- Teclado virtual (3x3) -->
+            <div class="teclado">
+                <button type="button" onclick="ingresarNumero('1')">1</button>
+                <button type="button" onclick="ingresarNumero('2')">2</button>
+                <button type="button" onclick="ingresarNumero('3')">3</button>
+                <button type="button" onclick="ingresarNumero('4')">4</button>
+                <button type="button" onclick="ingresarNumero('5')">5</button>
+                <button type="button" onclick="ingresarNumero('6')">6</button>
+                <button type="button" onclick="ingresarNumero('7')">7</button>
+                <button type="button" onclick="ingresarNumero('8')">8</button>
+                <button type="button" onclick="ingresarNumero('9')">9</button>
+                <button type="button" onclick="ingresarNumero('0')">0</button>
+            </div>
+
+            <!-- Botón "Limpiar" -->
+            <div id="boton-limpiar" class="btn-limpiar" onclick="limpiarEntrada()">Limpiar</div>
+        </div>
+    </form>
+</body>
+</html>
