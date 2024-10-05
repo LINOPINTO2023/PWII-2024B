@@ -73,22 +73,17 @@ button {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    gap: 10px;
+    margin: 20px;
 }
 
 .casilla {
-    border: 2px solid sandybrown;
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    margin: 5px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    font-size: 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 .casilla:hover {
