@@ -1,0 +1,57 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Estilo para el canvas */
+canvas {
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la palabra adivinada */
+#wordDisplay {
+    font-size: 30px;
+    margin: 20px;
+}
+
+/* Estilo para el mensaje */
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para el input y el botón */
+#letterInput {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para las oportunidades restantes */
+#opportunities {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f;
+}

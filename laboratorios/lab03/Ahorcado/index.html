@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Juego del Ahorcado</h1>
+<canvas id="hangmanCanvas" width="400" height="400"></canvas>
+
+<p id="wordDisplay">Palabra: _ _ _ _ _</p>
+<p id="message"></p>
+<p id="opportunities">Oportunidades restantes: 6</p>
+
+<input type="text" id="letterInput" maxlength="1">
+<button onclick="guessLetter()">Adivinar letra</button>
+
+<script src="script.js"></script>
+</body>
+</html>
