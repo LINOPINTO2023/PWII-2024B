@@ -105,3 +105,8 @@ function inicializarJuego() {
     function mostrarBotonReiniciar() {
         botonReiniciar.style.display = 'inline-block';
     }
+// Función para desactivar todo el teclado
+    function desactivarTeclado() {
+        const teclas = document.querySelectorAll('.tecla'); //seleccionar todos los elementos  que tienen la clase CSS .tecla
+        teclas.forEach(tecla => tecla.classList.add('disabled')); //agrega la clase disabled a su lista de clases
+    }
