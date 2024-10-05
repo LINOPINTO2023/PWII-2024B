@@ -11,6 +11,9 @@ const teclado = document.getElementById('teclado');
 const botonReiniciar = document.getElementById('botonReiniciar');
 const mensajeFinal = document.getElementById('mensajeFinal');
 
+// Inicialización del juego
+inicializarJuego();
+   
 // Función para inicializar o reiniciar el juego
 function inicializarJuego() {
         palabra = palabrasSimples[Math.floor(Math.random() * palabrasSimples.length)];
