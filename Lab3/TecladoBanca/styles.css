@@ -46,12 +46,6 @@ h1 {
     border-radius: 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 label {
     text-align: left;
     font-weight: bold;
