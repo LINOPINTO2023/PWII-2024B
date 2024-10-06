@@ -106,7 +106,7 @@ button {
     text-align: left;
     margin: 0;
     border: 0;
-    background: url(cambiar-capcha.jpg) no-repeat;
+    background: url(img/cambiar-capcha.jpg) no-repeat;
     color: rgb(199, 27, 27);
     display: block;
     font: 12px Arial, sans-serif;
@@ -115,7 +115,7 @@ button {
 }
 .boton_clave {
     display: inline-block; 
-    background: url(signo.jpg) no-repeat;
+    background: url(img/signo.jpg) no-repeat;
     background-size: contain;
     color: rgb(199, 27, 27);
     text-decoration: underline; 
@@ -127,7 +127,7 @@ button {
 .boton_genera {
     text-align: right;
        display: inline-block; 
-       background: url(claveInter.jpg) no-repeat;
+       background: url(img/claveInter.jpg) no-repeat;
        background-size: contain;
        color: rgb(199, 27, 27);
        text-decoration: underline; 
