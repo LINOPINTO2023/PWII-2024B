@@ -44,3 +44,12 @@ button {
   color: red;
   font-weight: bold;
 }
+
+#Canvas {
+  display: none;
+}
+
+.game-container {
+  text-align: center;
+  margin-top: 20px;
+}

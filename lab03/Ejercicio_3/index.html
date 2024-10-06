@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1>Juego del Ahorcado</h1>
+    <button id="btnEmpezar" onclick="empezarJuego()">EMPEZAR</button>
     <canvas id="Canvas" width="300" height="400"></canvas>
 
     <div class="game-container">
@@ -17,10 +18,17 @@
         id="letraInput"
         maxlength="1"
         placeholder="Ingresa una letra"
+        style="display: none"
       />
-      <button onclick="verificarLetra()">Adivinar letra</button>
+      <button id="btnAdivinar" onclick="verificarLetra()" style="display: none">
+        Adivinar letra
+      </button>
       <p id="mensaje"></p>
     </div>
+    <button id="btnReiniciar" onclick="reiniciarJuego()" style="display: none">
+      REINICIAR
+    </button>
+
+    <script src="./index.js"></script>
   </body>
-  <script src="./index.js"></script>
 </html>

@@ -1,12 +1,33 @@
 const canvas = document.getElementById("Canvas");
 const ctx = canvas.getContext("2d");
 
-const palabraSecreta = "Ahorcamela".toLowerCase();
+let listaPalabras = [
+  "PROGRAMACION",
+  "CANVAS",
+  "HTML",
+  "CSS",
+  "JAVASCRIPT",
+  "CHISTEMAS",
+];
+let palabraSecreta;
 let letrasAdivinadas = [];
 let intentosFallidos = 0;
 const maxIntentos = 6;
 
-function iniciarJuego() {
+function empezarJuego() {
+  // Mostrar el canvas y los elementos del juego
+  document.getElementById("Canvas").style.display = "block";
+  document.getElementById("letraInput").style.display = "inline-block";
+  document.getElementById("btnAdivinar").style.display = "inline-block";
+
+  // Ocultar el botón "Empezar"
+  document.getElementById("btnEmpezar").style.display = "none";
+
+  // Inicializar el juego
+  palabraSecreta =
+    listaPalabras[
+      Math.floor(Math.random() * listaPalabras.length)
+    ].toLowerCase();
   letrasAdivinadas = Array(palabraSecreta.length).fill("_");
   document.getElementById("palabraGuiones").innerText =
     letrasAdivinadas.join(" ");
@@ -24,13 +45,14 @@ function verificarLetra() {
           letrasAdivinadas[i] = letra;
         }
       }
-      document.getElementById("palabraGuiones").innerText = letrasAdivinadas
-        .join(" ")
-        .replace(/\b\w/g, (c) => c.toUpperCase());
+      document.getElementById("palabraGuiones").innerText =
+        letrasAdivinadas.join(" ");
 
       if (!letrasAdivinadas.includes("_")) {
         document.getElementById("mensaje").innerText = "¡Ganaste!";
-        document.querySelector("button").disabled = true;
+        document.getElementById("btnReiniciar").style.display = "inline-block";
+        document.getElementById("letraInput").disabled = true;
+        document.getElementById("btnAdivinar").disabled = true;
       }
     } else {
       intentosFallidos++;
@@ -38,10 +60,10 @@ function verificarLetra() {
 
       if (intentosFallidos === maxIntentos) {
         document.getElementById("mensaje").innerText =
-          "¡Perdiste! La palabra era: " +
-          palabraSecreta.charAt(0).toUpperCase() +
-          palabraSecreta.slice(1);
-        document.querySelector("button").disabled = true;
+          "¡Perdiste! La palabra era: " + palabraSecreta;
+        document.getElementById("btnReiniciar").style.display = "inline-block";
+        document.getElementById("letraInput").disabled = true;
+        document.getElementById("btnAdivinar").disabled = true;
       }
     }
   }
@@ -91,6 +113,17 @@ function dibujarAhorcado(paso) {
       ctx.stroke();
       break;
   }
+}
+
+function reiniciarJuego() {
+  intentosFallidos = 0;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById("mensaje").innerText = "";
+  document.getElementById("btnReiniciar").style.display = "none";
+  document.getElementById("letraInput").disabled = false;
+  document.getElementById("btnAdivinar").disabled = false;
+
+  empezarJuego();
 }
 
 iniciarJuego();
