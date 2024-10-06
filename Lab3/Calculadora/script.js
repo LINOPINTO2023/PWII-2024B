@@ -2,7 +2,7 @@ const display = document.querySelector('.display');
 let currentValue = '';
 let operator = '';
 let previousValue = '';
-
+let stack = [];
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', function() {
@@ -43,6 +43,10 @@ function deleteNumber() {
 
 function calcular() {
     if (previousValue && currentValue && operator) {
+        const result = eval(previousValue + operator + currentValue);
+        display.value = result;
+        stack.push(`${previousValue} ${operator} ${currentValue} = ${result}`);
+        updateStackDisplay();
         previousValue = eval(previousValue + operator + currentValue);
         display.value = previousValue;
         currentValue = '';
@@ -54,6 +58,8 @@ function sqrt() {
     if (currentValue) {
         currentValue = Math.sqrt(parseFloat(currentValue)).toString();
         display.value = currentValue;
+        stack.push(`sqrt(${currentValue}) = ${currentValue}`);
+        updateStackDisplay();
     }
 }
 
@@ -69,4 +75,8 @@ function incluirNumero(num) {
     if (num === '.' && currentValue.includes('.')) return;
     currentValue += num;
     display.value = currentValue;
+}
+function updateStackDisplay() {
+    const stackDisplay = document.querySelector('.stack'); 
+    stackDisplay.innerHTML = stack.join('<br>'); 
 }
