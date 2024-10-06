@@ -5,23 +5,28 @@ body {
   gap: 16px;
   background-color: lightgray;
 }
+
 h1 {
   color: aqua;
 }
+
 .contentInput {
   display: flex;
   gap: 16px;
 }
+
 .columnContent {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 #buttonContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
 }
+
 .bodyContent {
   display: flex;
   flex-direction: column;
@@ -31,6 +36,7 @@ h1 {
   padding: 24px;
   width: 550px;
 }
+
 .button {
   display: flex;
   align-items: center;
@@ -38,14 +44,37 @@ h1 {
   height: 30px;
   width: auto;
 }
+
 .limpiar {
   padding: 10px;
   grid-column: span 2;
   width: 100%;
 }
+
 a {
   color: red;
 }
+
 label {
   display: flex;
+}
+
+.message-container {
+  margin-top: 10px;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.message-container p {
+  margin: 0;
+  padding: 8px;
+}
+
+.message-container p.red {
+  color: red;
+}
+
+.message-container p.green {
+  color: green;
 }
