@@ -113,30 +113,32 @@ button {
     text-decoration: underline;
     padding: 3px 0px 2px 22px;
 }
+
 .boton_clave {
-    display: inline-block; 
+    display: inline-block;
     background: url(img/signo.jpg) no-repeat;
     background-size: contain;
     color: rgb(199, 27, 27);
-    text-decoration: underline; 
-    padding: 5px 30px; 
-    border: 1px solid rgb(199, 27, 27); 
-    border-radius: 5px; 
-    margin-top: 5px; 
+    text-decoration: underline;
+    padding: 5px 30px;
+    border: 1px solid rgb(199, 27, 27);
+    border-radius: 5px;
+    margin-top: 5px;
 }
+
 .boton_genera {
     text-align: right;
-       display: inline-block; 
-       background: url(img/claveInter.jpg) no-repeat;
-       background-size: contain;
-       color: rgb(199, 27, 27);
-       text-decoration: underline; 
-       padding: 5px 40px; 
-       border: 1px solid rgb(199, 27, 27); 
-       border-radius: 5px; 
-       margin-top: 5px; 
-   }
-   
+    display: inline-block;
+    background: url(img/claveInter.jpg) no-repeat;
+    background-size: contain;
+    color: rgb(199, 27, 27);
+    text-decoration: underline;
+    padding: 5px 40px;
+    border: 1px solid rgb(199, 27, 27);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
 
 .btn-ingresar {
     background-color: rgb(199, 27, 27);
@@ -147,6 +149,8 @@ button {
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -175,6 +179,6 @@ button {
 
 
 .linea-puntos {
-    border-top: 1px dashed #000; 
-    margin: 20px 0; 
+    border-top: 1px dashed #000;
+    margin: 20px 0;
 }
