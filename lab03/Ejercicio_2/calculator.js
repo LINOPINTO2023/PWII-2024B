@@ -81,7 +81,8 @@ function clearDisplay() {
 function calculate() {
   const display = document.getElementById("display");
   try {
-    const result = eval(display.value.replace(/x²/g, "**"));
+    let expression = display.value.replace(/x²/g, "**2").replace(/\^/g, "**");
+    const result = eval(expression);
     addToHistory(display.value + " = " + result);
     display.value = result;
   } catch (error) {
