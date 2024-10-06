@@ -53,3 +53,10 @@ button {
   text-align: center;
   margin-top: 20px;
 }
+
+#img {
+  display: block;
+  border-radius: 50%;
+  border: 10px solid #b22222;
+  margin-bottom: 30px;
+}

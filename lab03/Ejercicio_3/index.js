@@ -19,6 +19,7 @@ function empezarJuego() {
   document.getElementById("Canvas").style.display = "block";
   document.getElementById("letraInput").style.display = "inline-block";
   document.getElementById("btnAdivinar").style.display = "inline-block";
+  document.getElementById("img").style.display = "none";
 
   // Ocultar el botón "Empezar"
   document.getElementById("btnEmpezar").style.display = "none";
@@ -31,6 +32,8 @@ function empezarJuego() {
   letrasAdivinadas = Array(palabraSecreta.length).fill("_");
   document.getElementById("palabraGuiones").innerText =
     letrasAdivinadas.join(" ");
+
+  dibujarEstructura();
 }
 
 function verificarLetra() {
@@ -69,45 +72,55 @@ function verificarLetra() {
   }
 }
 
+function dibujarEstructura() {
+  // Dibujar la base
+  ctx.beginPath();
+  ctx.moveTo(50, 380);
+  ctx.lineTo(250, 380);
+  ctx.stroke();
+
+  // Dibujar el poste
+  ctx.beginPath();
+  ctx.moveTo(100, 380);
+  ctx.lineTo(100, 50);
+  ctx.lineTo(200, 50);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+}
+
 function dibujarAhorcado(paso) {
   switch (paso) {
-    case 1:
-      ctx.beginPath();
-      ctx.moveTo(50, 380);
-      ctx.lineTo(250, 380);
-      ctx.stroke();
-      break;
-    case 2:
-      ctx.beginPath();
-      ctx.moveTo(100, 380);
-      ctx.lineTo(100, 50);
-      ctx.lineTo(200, 50);
-      ctx.lineTo(200, 100);
-      ctx.stroke();
-      break;
-    case 3:
+    case 1: // Cabeza
       ctx.beginPath();
       ctx.arc(200, 130, 30, 0, Math.PI * 2);
       ctx.stroke();
       break;
-    case 4:
+    case 2: // Torso
       ctx.beginPath();
       ctx.moveTo(200, 160);
       ctx.lineTo(200, 250);
       ctx.stroke();
       break;
-    case 5:
+    case 3: // Brazo izquierdo
       ctx.beginPath();
       ctx.moveTo(200, 180);
       ctx.lineTo(170, 220);
+      ctx.stroke();
+      break;
+    case 4: // Brazo derecho
+      ctx.beginPath();
       ctx.moveTo(200, 180);
       ctx.lineTo(230, 220);
       ctx.stroke();
       break;
-    case 6:
+    case 5: // Pierna izquierda
       ctx.beginPath();
       ctx.moveTo(200, 250);
       ctx.lineTo(170, 300);
+      ctx.stroke();
+      break;
+    case 6: // Pierna derecha
+      ctx.beginPath();
       ctx.moveTo(200, 250);
       ctx.lineTo(230, 300);
       ctx.stroke();
@@ -122,6 +135,9 @@ function reiniciarJuego() {
   document.getElementById("btnReiniciar").style.display = "none";
   document.getElementById("letraInput").disabled = false;
   document.getElementById("btnAdivinar").disabled = false;
+
+  // Redibujar la estructura del ahorcado
+  dibujarEstructura();
 
   empezarJuego();
 }
