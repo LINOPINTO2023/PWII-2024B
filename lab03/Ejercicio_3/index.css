@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+canvas {
+  border: 2px solid #333;
+  background-color: #fff;
+}
+
+.game-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+
+#palabraGuiones {
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  margin: 20px 0;
+}
+
+#mensaje {
+  color: red;
+  font-weight: bold;
+}
