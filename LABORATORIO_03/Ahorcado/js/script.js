@@ -17,4 +17,8 @@ function adivinarLetra() {
     if (juegoTerminado) {
         return;
     }
+
+    const inputLetra = document.getElementById('letra');
+    const letra = inputLetra.value.toUpperCase();
+    inputLetra.value = '';
 }
