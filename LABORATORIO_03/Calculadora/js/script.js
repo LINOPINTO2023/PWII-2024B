@@ -10,3 +10,11 @@ function limpiar() {
     operacionActual = '';
     document.calculador.respuesta.value = '';
 }
+
+function resultado() {
+    try {
+        let resultado = eval(operacionActual);
+    } catch (e) {
+        document.calculador.respuesta.value = 'Error';
+    }
+}
