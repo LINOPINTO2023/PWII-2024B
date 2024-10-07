@@ -7,6 +7,11 @@ let juegoTerminado = false;
 
 document.getElementById('palabra').textContent = palabraAdivinada;
 
+function teclaPresionada(evento) {
+    if (evento.key === 'Enter') {
+        adivinarLetra();
+    }
+}
 
 
 
