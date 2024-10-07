@@ -1,0 +1,4 @@
+let operacionActual = '';
+let pila = [];
+
+
