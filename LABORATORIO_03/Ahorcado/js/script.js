@@ -13,5 +13,8 @@ function teclaPresionada(evento) {
     }
 }
 
-
-
+function adivinarLetra() {
+    if (juegoTerminado) {
+        return;
+    }
+}
