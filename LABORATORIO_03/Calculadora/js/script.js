@@ -16,8 +16,19 @@ function resultado() {
         let resultado = eval(operacionActual);
         pila.push(operacionActual + ' = ' + resultado);
         actualizarPila();
-
+        operacionActual = '';
+        document.calculador.respuesta.value = resultado;
     } catch (e) {
         document.calculador.respuesta.value = 'Error';
     }
+}
+
+function actualizarPila() {
+    let listaPila = document.getElementById('lista-pila');
+    listaPila.innerHTML = '';
+    pila.forEach(function (operacion) {
+        let li = document.createElement('li');
+        li.textContent = operacion;
+        listaPila.appendChild(li);
+    });
 }
