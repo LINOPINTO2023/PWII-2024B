@@ -25,4 +25,20 @@ function adivinarLetra() {
         alert("Introduce una letra válida");
         return;
     }
+
+    if (palabra.includes(letra)) {
+        let nuevaPalabraAdivinada = '';
+        for (let i = 0; i < palabra.length; i++) {
+            if (palabra[i] === letra) {
+                nuevaPalabraAdivinada += letra;
+            } else {
+                nuevaPalabraAdivinada += palabraAdivinada[i];
+            }
+        }
+        palabraAdivinada = nuevaPalabraAdivinada;
+        document.getElementById('palabra').textContent = palabraAdivinada;
+    } else {
+        intentos++;
+        dibujarAhorcado(intentos);
+    }
 }
