@@ -98,4 +98,14 @@ function dibujarAhorcado(intentos) {
     }
 }
 
+if (palabraAdivinada === palabra) {
+    document.getElementById('mensaje').textContent = "¡Felicidades! ¡Ganaste!";
+    juegoTerminado = true;
+    document.getElementById('letra').disabled = true;
+} else if (intentos >= maxIntentos) {
+    document.getElementById('mensaje').textContent = `TE AHORCASTE!!!. La palabra era: ${palabra}`;
+    juegoTerminado = true;
+    document.getElementById('letra').disabled = true;
+}
+
 }
