@@ -16,7 +16,8 @@ function resultado() {
         let resultado = eval(operacionActual);
         pila.push(operacionActual + ' = ' + resultado);
         actualizarPila();
-
+        operacionActual = '';
+        document.calculador.respuesta.value = resultado;
     } catch (e) {
         document.calculador.respuesta.value = 'Error';
     }
