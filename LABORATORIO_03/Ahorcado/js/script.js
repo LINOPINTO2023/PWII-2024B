@@ -21,4 +21,8 @@ function adivinarLetra() {
     const inputLetra = document.getElementById('letra');
     const letra = inputLetra.value.toUpperCase();
     inputLetra.value = '';
+    if (!letra || !/^[A-ZÑ]$/.test(letra)) {
+        alert("Introduce una letra válida");
+        return;
+    }
 }
