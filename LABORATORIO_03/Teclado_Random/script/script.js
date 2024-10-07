@@ -12,4 +12,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         return numbers;
     }
+
+    function crearTeclado() {
+        const numeros = generarNumerosRandom();
+        teclado.innerHTML = '';
+
+        numeros.forEach(number => {
+            const button = document.createElement('button');
+            button.type = 'button'; 
+            button.textContent = number;
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                if (clave.value.length < 6) {
+                    clave.value += number;
+                }
+            });
+            teclado.appendChild(button);
+        });
+
+        const clearButton = document.createElement('button');
+        clearButton.type = 'button'; 
+        clearButton.textContent = 'LIMPIAR';
+        clearButton.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            clave.value = '';
+        });
+        teclado.appendChild(clearButton);
+    }
+
+    crearTeclado();
+
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        console.log("Formulario enviado, clave:", clave.value);
+    });
 });
