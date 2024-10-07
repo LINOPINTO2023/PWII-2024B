@@ -14,6 +14,9 @@ function limpiar() {
 function resultado() {
     try {
         let resultado = eval(operacionActual);
+        pila.push(operacionActual + ' = ' + resultado);
+        actualizarPila();
+
     } catch (e) {
         document.calculador.respuesta.value = 'Error';
     }
