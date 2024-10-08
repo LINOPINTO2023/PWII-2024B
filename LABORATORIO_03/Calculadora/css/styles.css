@@ -1,0 +1,97 @@
+#programa {
+    height: 420px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
+
+#programa form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#programa input[type="text"] {
+    height: 60px;
+    width: 100%;
+    cursor: default;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    text-align: right;
+    font-size: 2em;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+#programa input[type=button], #programa input[type=reset] {
+    width: 22%;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    padding: 15px;
+    margin: 3px;
+    border: 0;
+    border-radius: 100%;
+    background-color: rgb(255, 0, 0);
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+#programa .fila .orange {
+    background-color: orange;
+    color: white;
+}
+
+#programa .fila .white {
+    background-color: white;
+    color: black;
+}
+
+#programa input[type=button]:hover, #programa input[type=reset]:hover {
+    background-color: #e85c1b;
+}
+
+.pila {
+    bottom: 10px;
+    text-align: center;
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pila h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#lista-pila {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-pila li {
+    margin-bottom: 5px;
+}
