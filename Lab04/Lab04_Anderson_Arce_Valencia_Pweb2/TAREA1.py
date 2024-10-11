@@ -1,6 +1,12 @@
 contador = 0
 contadorm = 0
 contadorf = 0
+ventas_rango_general = 0
+ventas_rango_femenino = 0
+acumulado_importe_bruto = 0
+acumulado_importe_neto = 0
+acumulado_importe_tipo1 = 0
+contador_tipo1 = 0
 do = True
 while do: 
     print("Empresa de Transporte aéreo")
@@ -33,15 +39,12 @@ while do:
                 else:
                     break
          
-         
-            if list1[0] == 1:
-                contador += cantidadp  
-            else:
-                if list1[2] == "m":
-                    contadorm += cantidadp
-                elif list1[2] == "f":
-                    contadorf += cantidadp
-
+            if list1[2] == "m":
+                contadorm += 1  
+            elif list1[2] == "f":
+                contadorf += 1  
+            
+            contador += cantidadp
     
             if list1[3] == 1:
                 economico = 70
@@ -52,7 +55,8 @@ while do:
             elif list1[3] == 3:
                 primera_Clase = 280
                 importe_Bruto = cantidadp * primera_Clase
-
+            
+            acumulado_importe_bruto += importe_Bruto
          
             if 2 <= list1[1] <= 5:
                 desc = importe_Bruto * 0.05
@@ -64,13 +68,31 @@ while do:
                 desc = 0
 
             importe_neto = importe_Bruto - desc
+            acumulado_importe_neto += importe_neto
+            
+            if 70 <= importe_neto <= 500:
+                ventas_rango_general += 1
+            if list1[2] == "f" and 140 <= importe_neto <= 1000:
+                ventas_rango_femenino += 1
 
-            print(f"El importe bruto es: {importe_Bruto}")
-            print(f"El monto de descuento es: {desc}")
-            print(f"El importe neto es: {importe_neto}")
+            if list1[0] == 1:
+                acumulado_importe_tipo1 += importe_neto
+                contador_tipo1 += 1  
+
+
+            print("El importe bruto es: " + str(importe_Bruto))
+            print("El monto de descuento es: " +  str(desc))
+            print("El importe neto es: " + str(importe_neto))   
 
         case 2:
             # Opción 2
-            print(f"Ventas registradas:\n- Pasajes masculinos: {contadorm}\n- Pasajes femeninos: {contadorf}")
+            print("Ventas registradas:")
+            print("- Cantidad de clientes masculinos: " + str(contadorm))
+            print("- Ventas cuyo Importe Neto sea >=70 y <=500: " + str(ventas_rango_general) )
+            print("- Ventas de clientes femeninos cuyo Importe Neto sea >=140 y <=1000: " + str(ventas_rango_femenino))
+            print("- Acumulado del Importe de Ventas (Bruto): " +  str(acumulado_importe_bruto))
+            print("- Acumulado del Importe Neto de clientes de tipo 1: " + str(acumulado_importe_tipo1) )  
+            promedio_tipo1 = acumulado_importe_tipo1 / contador_tipo1
+            print("- Promedio de Importe Neto de clientes de tipo 1:" + str(promedio_tipo1))
         case 3:
             do = False
