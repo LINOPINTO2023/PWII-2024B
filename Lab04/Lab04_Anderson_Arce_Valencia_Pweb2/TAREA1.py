@@ -1,10 +1,15 @@
+#Contador de la cantidad de pasajes
 contador = 0
+#Contador masculino y femenino
 contadorm = 0
 contadorf = 0
+#Ventas con rango uno general y otro para clientes femeninos
 ventas_rango_general = 0
 ventas_rango_femenino = 0
+#importe bruto e importe neto
 acumulado_importe_bruto = 0
 acumulado_importe_neto = 0
+#tipo1
 acumulado_importe_tipo1 = 0
 contador_tipo1 = 0
 do = True
