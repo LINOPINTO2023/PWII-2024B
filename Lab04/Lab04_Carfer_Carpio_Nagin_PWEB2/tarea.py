@@ -86,6 +86,16 @@ while menu:
       
     elif opcion == "2":
         # Ventas
+        print(f"Cantidad de clientes masculinos: {contadormascul}")
+        print(f"Cantidad de clientes femeninos: {contadorfem}")
+        print(f"Ventas con importe neto entre $70 y $500: {importeneto70500}")
+        print(f"Ventas con importe neto entre $140 y $1000: {importnetofem140}")
+        print(f"Total acumulado del importe de ventas: ${acumulimportventas:.2f}")
+        if importpromtipo1 > 0:
+            promedio_importe_tipo1 = importnetotipo1 / importpromtipo1
+            print(f"Promedio de importe neto de clientes de tipo 1: ${promedio_importe_tipo1:.2f}")
+        else:
+            print("No hay ventas de clientes de tipo 1 para calcular un promedio")
 
     # Opción para salir del programa
     elif opcion == "3":
