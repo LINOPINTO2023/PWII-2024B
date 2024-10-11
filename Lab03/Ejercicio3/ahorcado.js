@@ -49,7 +49,6 @@ function inicializarJuego() {
 
         // Ocultar el botón "Volver a Jugar"
             botonReiniciar.style.display = 'none';
-       
 }
 // Función para dibujar la base y el poste (dibujados al inicio del juego)
     function dibujarBaseYPoste() {
