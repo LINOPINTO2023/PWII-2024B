@@ -1,4 +1,6 @@
 // Obtener referencia al campo de texto donde se muestran las operaciones
+
+//variables
 const elemento = document.querySelector('input[type="text"]');
 let ActualVariable = "";
 // Referencia al historial
