@@ -88,7 +88,20 @@ while verificar_menu:
                 break  # Salir al menú principal
 
     elif opcion == 2:
-        
+        # Mostrar reporte de ventas
+        print("\nReporte de Ventas:")
+        print(f"Cantidad de clientes de género masculino: {genero_m}")
+        print(f"Cantidad de ventas con Importe Neto entre $70 y $500: {ventas_rango}")
+        print(f"Cantidad de ventas de clientes femeninos con Importe Neto entre $140 y $1000: {ventas_femeninas}")
+        print(f"Acumulado total de Importe de Ventas: ${acumulado_importe_ventas:.2f}")
+        print(f"Acumulado de Importe Neto de clientes de tipo 1: ${acumulado_importe_neto_tipo_1:.2f}")
+    
+        # Calcular promedio de Importe Neto de clientes tipo 1
+        if tipo_cliente_1 > 0:
+            promedio_importe_neto_tipo_1 = acumulado_importe_neto_tipo_1 / tipo_cliente_1
+        else:
+            promedio_importe_neto_tipo_1 = 0
+        print(f"Promedio de Importe Neto de clientes de tipo 1: ${promedio_importe_neto_tipo_1:.2f}")
 
     elif opcion == 3:
         verificar_menu = False
