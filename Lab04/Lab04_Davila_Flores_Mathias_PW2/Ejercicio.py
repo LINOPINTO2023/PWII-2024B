@@ -9,6 +9,7 @@ acumulado_importe_ventas = 0  # Total de ventas
 ventas_femeninas = 0  # Ventas de clientes femeninos con importes entre 140 y 1000
 ventas_rango = 0  # Ventas con importes entre 70 y 500
 tipo_cliente = 0
+
 while verificar_menu:
     print("\nMENU DE OPCIONES\n[1] REGISTRAR VENTA DE PASAJE\n[2] REPORTAR VENTAS\n[3] SALIR")
     opcion = int(input("Seleccione una opción: "))
