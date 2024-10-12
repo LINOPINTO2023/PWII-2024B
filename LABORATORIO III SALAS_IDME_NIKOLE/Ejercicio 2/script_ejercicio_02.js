@@ -99,3 +99,7 @@ function deleteLastChar() {
     currentExpression = currentExpression.slice(0, -1);
     displayExpression = displayExpression.slice(0, -1);
 }
+// Manejar porcentaje
+function handlePercent() {
+    appendToExpression('/100');
+}
