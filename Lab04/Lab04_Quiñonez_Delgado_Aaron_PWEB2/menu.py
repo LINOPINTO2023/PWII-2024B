@@ -4,13 +4,14 @@ cantidadMujeres = 0
 #Creamos variable que almacenará los datos de los usuarios
 usuarios = []
 registro = {}
-def agregarUsuario(tipo, pasajes, genero, servicio, impNeto):
+def agregarUsuario(tipo, pasajes, genero, servicio, impNeto, impBruto):
      registro = {
           "tipo" : tipo,
           "pasajes" : pasajes,
           "genero" : genero,
           "servicio" : servicio,
-          "neto" : impNeto
+          "neto" : impNeto,
+          "bruto" : impBruto
      }
      usuarios.append(registro)
 #Utilizamos condiciones para que nos asegure que el numero escrito está en el rango permitido
@@ -81,7 +82,7 @@ while True:
             importeNeto = importeBruto - descuento
             print(f"Importe neto: {importeNeto}")
             #Usamos la función para almacenar los datos de los usuarios
-            agregarUsuario(tipoCliente, cantidadPasajes, generoCliente, tipoServicio, importeNeto)
+            agregarUsuario(tipoCliente, cantidadPasajes, generoCliente, tipoServicio, importeNeto, importeBruto)
         #Reporte de ventas
         elif opcionMenu == 2:
              #Cantidad de hombres
@@ -91,7 +92,9 @@ while True:
              print(f"Cantidad de ventas cuyo importe neto sea entre 70 y 500 {impNetoComparacion}")
              #Clientes de género femenino cuyo importe neto sea >=140 y <=1000
              cantidadMujeresImpNeto = sum(1 for usuario in usuarios if 140 <= usuario["neto"] <= 1000 and (usuario["genero"] == "m" or usuario["genero"] == "M"))
-
+             print(f"Clientes femeninas cuyo importe neto sea entre 140 y 1000: {cantidadMujeresImpNeto}")
+             #Acumulado de importe de ventas
+             totalImpVentas = sum(usuario["bruto"] for usuario in usuarios)
         else:
              break
     else:
