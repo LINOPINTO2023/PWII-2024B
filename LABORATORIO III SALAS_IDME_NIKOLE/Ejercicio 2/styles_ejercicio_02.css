@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.calculator {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.operator {
+    background-color: #17a2b8;
+}
+
+button.operator:hover {
+    background-color: #138496;
+}
+
+button.clear {
+    background-color: #dc3545;
+}
+
+button.clear:hover {
+    background-color: #c82333;
+}
+
+button.equal {
+    background-color: #28a745;
+    grid-column: span 2;
+}
+
+button.equal:hover {
+    background-color: #218838;
+}
+
+.history {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.history h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#historyList {
+    list-style-type: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#historyList li {
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator,
+    .history {
+        max-width: 100%;
+    }
+}
