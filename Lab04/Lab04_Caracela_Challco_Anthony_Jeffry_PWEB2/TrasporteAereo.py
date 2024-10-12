@@ -68,6 +68,7 @@ def ingresar_datos():
 def mostrar_resultados():
     total_ventas = 0
     total_clientes_masculinos = 0
+    total_clientes_femeninos = 0
     ventas_rango_70_500 = 0
     ventas_femeninas_rango_140_1000 = 0
     acumulado_tipo_1 = 0
@@ -81,6 +82,9 @@ def mostrar_resultados():
         if cliente.genero == 'M':
             total_clientes_masculinos += 1
         
+        if cliente.genero == 'F':
+            total_clientes_femeninos += 1
+
         if 70 <= importe_neto <= 500:
             ventas_rango_70_500 += 1
         
@@ -94,6 +98,7 @@ def mostrar_resultados():
 
     print(f"Total de ventas: {total_ventas:.2f}")
     print(f"Cantidad de clientes masculinos: {total_clientes_masculinos}")
+    print(f"Cantidad de clientes masculinos: {total_clientes_femeninos}") 
     print(f"Cantidad de ventas con importe neto entre 70 y 500: {ventas_rango_70_500}")
     print(f"Cantidad de ventas femeninas con importe neto entre 140 y 1000: {ventas_femeninas_rango_140_1000}")
     print(f"Acumulado de importe neto de clientes de tipo 1: {acumulado_tipo_1:.2f}")
@@ -107,9 +112,9 @@ def mostrar_resultados():
 # Menú principal
 print("Bienvenido al registro de Transporte Aéreo\nMENÚ DE OPCIONES")
 while True:
-    print("\n1. Ingresar datos")
-    print("2. Ver resultados de ventas")
-    print("3. Salir")
+    print("\n[1] Ingresar datos")
+    print("[2] Ver resultados de ventas")
+    print("[3] Salir")
     
     opcion = input("Seleccione una opción: ")
     
