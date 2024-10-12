@@ -20,3 +20,9 @@ function iniciarJuego() {
     mensaje.textContent = '';
     btnAdivinar.disabled = false;
   }
+  function actualizarPalabra() {
+    mostrarPalabra.textContent = palabraAdivinada.join(' ');
+  }
+  function limpiarLienzo() {
+    contexto.clearRect(0, 0, lienzo.width, lienzo.height);
+  }
