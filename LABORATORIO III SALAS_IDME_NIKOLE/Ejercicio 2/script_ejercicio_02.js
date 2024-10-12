@@ -2,6 +2,7 @@
 const display = document.getElementById('display');
 const buttons = document.getElementById('buttons');
 const historyList = document.getElementById('historyList');
+
 let currentExpression = '';
 let displayExpression = '';
 const operationStack = [];
@@ -21,6 +22,7 @@ buttons.addEventListener('click', event => {
         updateDisplay();
     }
 });
+
 // Manejar acciones (operadores y funciones especiales)
 function handleAction(action) {
     switch (action) {
@@ -60,11 +62,13 @@ function handleAction(action) {
             break;
     }
 }
+
 // Agregar a la expresión
 function appendToExpression(value) {
     currentExpression += value;
     displayExpression += value;
 }
+
 function calculateResult() {
     if (currentExpression === '') return;
     try {
@@ -76,6 +80,7 @@ function calculateResult() {
             .replace(/mod/g, '%');
 
         const result = eval(expressionToEvaluate);
+
         const roundedResult = Number(result.toFixed(10));
 
         const operation = `${displayExpression} = ${roundedResult}`;
@@ -88,6 +93,7 @@ function calculateResult() {
         displayExpression = 'Error';
     }
 }
+
 // Limpiar calculadora
 function clearCalculator() {
     currentExpression = '';
@@ -99,14 +105,17 @@ function deleteLastChar() {
     currentExpression = currentExpression.slice(0, -1);
     displayExpression = displayExpression.slice(0, -1);
 }
+
 // Manejar porcentaje
 function handlePercent() {
     appendToExpression('/100');
 }
+
 // Actualizar pantalla
 function updateDisplay() {
     display.value = displayExpression || '0';
 }
+
 // Actualizar historial
 function updateHistory() {
     historyList.innerHTML = '';
@@ -116,3 +125,6 @@ function updateHistory() {
         historyList.appendChild(li);
     });
 }
+
+// Inicialización
+updateDisplay();
