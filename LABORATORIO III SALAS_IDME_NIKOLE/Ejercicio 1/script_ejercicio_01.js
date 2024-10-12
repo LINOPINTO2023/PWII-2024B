@@ -29,3 +29,19 @@ refreshCaptchaButton.addEventListener('click', updateCaptcha);
 document.addEventListener('DOMContentLoaded', () => {
     updateCaptcha();
 });
+function validateCaptcha() {
+    const userCaptchaInput = captchaInputElement.value.trim();
+
+    if (userCaptchaInput === currentCaptchaText) {
+        alert('Bienvenido Usuario');
+        location.reload();
+    } else {
+        alert('CAPTCHA incorrecto, por favor intente de nuevo');
+        updateCaptcha();
+    }
+}
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    validateCaptcha();
+});
