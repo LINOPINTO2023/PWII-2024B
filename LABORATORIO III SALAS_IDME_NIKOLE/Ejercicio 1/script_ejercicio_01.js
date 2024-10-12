@@ -63,3 +63,14 @@ function renderKeyboard() {
         keyboard.appendChild(button);
     });
 }
+function handleKeyPress(key) {
+    if (key === 'C') {
+      pinInput.value = '';
+    } else if (key === '⌫') {
+      pinInput.value = pinInput.value.slice(0, -1);
+    } else if (pinInput.value.length < 6) {
+      pinInput.value += key;
+    }
+  }
+  
+  renderKeyboard();
