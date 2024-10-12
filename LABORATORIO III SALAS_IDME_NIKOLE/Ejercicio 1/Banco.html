@@ -31,6 +31,13 @@
         </select>
         <input type="text" id="document" placeholder="Número de documento" maxlength="8">
         <input type="password" id="pinInput" placeholder="Ingrese su clave" readonly>
+        <div class="virtual-keyboard" id="virtualKeyboard"></div>
+        <div class="captcha">
+            <img id="captchaImage" src="" alt="Captcha" style="width:150px; height:50px;">
+            <input type="text" id="captchaInput" placeholder="Ingrese el texto de la imagen">
+            <button id="refreshCaptcha">Cambiar imagen</button>
+        </div>
+        <button class="action-button" id="submitButton">INGRESAR</button>
     </div>
     <script src="script_ejercicio_01.js"></script>
 </body>
