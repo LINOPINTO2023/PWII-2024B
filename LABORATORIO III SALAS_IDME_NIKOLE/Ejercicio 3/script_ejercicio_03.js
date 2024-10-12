@@ -111,3 +111,10 @@ function iniciarJuego() {
     inputLetra.value = '';
     inputLetra.focus();
   }
+  btnReiniciar.addEventListener('click', iniciarJuego);
+btnAdivinar.addEventListener('click', hacerAdivinanza);
+inputLetra.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') hacerAdivinanza();
+});
+
+iniciarJuego();
