@@ -21,3 +21,42 @@ buttons.addEventListener('click', event => {
         updateDisplay();
     }
 });
+// Manejar acciones (operadores y funciones especiales)
+function handleAction(action) {
+    switch (action) {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            appendToExpression(action);
+            break;
+        case 'mod':
+            appendToExpression(' mod ');
+            break;
+        case '=':
+            calculateResult();
+            break;
+        case 'clear':
+            clearCalculator();
+            break;
+        case 'delete':
+            deleteLastChar();
+            break;
+        case 'π':
+            appendToExpression('π');
+            break;
+        case '√':
+            appendToExpression('√(');
+            break;
+        case '^2':
+            appendToExpression('^2');
+            break;
+        case 'porcent':
+            handlePercent();
+            break;
+        case '(':
+        case ')':
+            appendToExpression(action);
+            break;
+    }
+}
