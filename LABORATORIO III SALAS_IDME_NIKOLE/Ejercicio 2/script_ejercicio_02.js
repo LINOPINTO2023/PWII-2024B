@@ -60,3 +60,8 @@ function handleAction(action) {
             break;
     }
 }
+// Agregar a la expresión
+function appendToExpression(value) {
+    currentExpression += value;
+    displayExpression += value;
+}
