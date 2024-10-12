@@ -1,4 +1,3 @@
-opcionMenu = int(input("BIENVENIDO A LA EMPRESA ROYDAN LATAM\nSELECIONE UNA OPCIÓN:\n[1]REGISTAR VENTA DE PASAJE\n[2]REPORTAR VENTAS\n[3]SALIR\n"))
 #Creamos variables que almacenaran datos para el reporte de ventas
 cantidadHombres = 0
 cantidadMujeres = 0
@@ -16,6 +15,7 @@ def agregarUsuario(tipo, pasajes, genero, servicio, impNeto):
      usuarios.append(registro)
 #Utilizamos condiciones para que nos asegure que el numero escrito está en el rango permitido
 while True:
+    opcionMenu = int(input("BIENVENIDO A LA EMPRESA ROYDAN LATAM\nSELECIONE UNA OPCIÓN:\n[1]REGISTAR VENTA DE PASAJE\n[2]REPORTAR VENTAS\n[3]SALIR\n"))
     if 0 < opcionMenu < 4:
         #Registrar venta de pasaje
         if opcionMenu == 1:
@@ -73,10 +73,13 @@ while True:
             elif cantidadPasajes > 10:
                     print(f"Obtiene un 15% de descuento")
                     precioPasajeFinal = (precioPasaje*85)/100
-            #Imprimir información de informe bruto
+            #Imprimir información
             importeBruto = precioPasaje
-            descuento = precioPasajeFinal - precioPasaje
+            print(f"Importe Bruto: {importeBruto}")
+            descuento = precioPasaje - precioPasajeFinal 
+            print(f"Descuento: {descuento:.2f}")
             importeNeto = importeBruto - descuento
+            print(f"Importe neto: {importeNeto}")
             #Usamos la función para almacenar los datos de los usuarios
             agregarUsuario(tipoCliente, cantidadPasajes, generoCliente, tipoServicio, importeNeto)
         #Reporte de ventas
@@ -88,9 +91,8 @@ while True:
              print(f"Cantidad de ventas cuyo importe neto sea entre 70 y 500 {impNetoComparacion}")
              #Clientes de género femenino cuyo importe neto sea >=140 y <=1000
              cantidadMujeresImpNeto = sum(1 for usuario in usuarios if 140 <= usuario["neto"] <= 1000 and (usuario["genero"] == "m" or usuario["genero"] == "M"))
-             
+
         else:
              break
-        break
     else:
         print("Opción no válida, vuelva a ingresar el número")
