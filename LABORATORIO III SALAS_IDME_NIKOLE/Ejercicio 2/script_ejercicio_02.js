@@ -103,3 +103,16 @@ function deleteLastChar() {
 function handlePercent() {
     appendToExpression('/100');
 }
+// Actualizar pantalla
+function updateDisplay() {
+    display.value = displayExpression || '0';
+}
+// Actualizar historial
+function updateHistory() {
+    historyList.innerHTML = '';
+    operationStack.slice().reverse().forEach(operation => {
+        const li = document.createElement('li');
+        li.textContent = operation;
+        historyList.appendChild(li);
+    });
+}
