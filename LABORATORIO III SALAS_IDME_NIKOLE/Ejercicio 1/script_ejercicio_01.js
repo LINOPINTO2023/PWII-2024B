@@ -14,3 +14,9 @@ const captchaImages = [
 ];
 const captchaFolder = 'captcha-images/';
 let currentCaptchaText = '';
+function getRandomCaptcha() {
+    const randomIndex = Math.floor(Math.random() * captchaImages.length);
+    const selectedCaptcha = captchaImages[randomIndex];
+    currentCaptchaText = selectedCaptcha.text;
+    return captchaFolder + selectedCaptcha.src;
+}
