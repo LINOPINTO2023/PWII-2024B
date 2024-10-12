@@ -88,3 +88,14 @@ function calculateResult() {
         displayExpression = 'Error';
     }
 }
+// Limpiar calculadora
+function clearCalculator() {
+    currentExpression = '';
+    displayExpression = '';
+}
+
+// Borrar último carácter
+function deleteLastChar() {
+    currentExpression = currentExpression.slice(0, -1);
+    displayExpression = displayExpression.slice(0, -1);
+}
