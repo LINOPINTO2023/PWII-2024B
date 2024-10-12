@@ -45,3 +45,21 @@ submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     validateCaptcha();
 });
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function renderKeyboard() {
+    keyboard.innerHTML = '';
+    shuffleArray(keys);
+    keys.forEach(key => {
+        const button = document.createElement('button');
+        button.textContent = key;
+        button.className = 'key';
+        button.onclick = () => handleKeyPress(key);
+        keyboard.appendChild(button);
+    });
+}
