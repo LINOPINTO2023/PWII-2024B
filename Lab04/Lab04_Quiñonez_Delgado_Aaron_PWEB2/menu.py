@@ -91,10 +91,18 @@ while True:
              impNetoComparacion = sum(1 for usuario in usuarios if 70 <= usuario["neto"] <= 500)
              print(f"Cantidad de ventas cuyo importe neto sea entre 70 y 500 {impNetoComparacion}")
              #Clientes de género femenino cuyo importe neto sea >=140 y <=1000
-             cantidadMujeresImpNeto = sum(1 for usuario in usuarios if 140 <= usuario["neto"] <= 1000 and (usuario["genero"] == "m" or usuario["genero"] == "M"))
+             cantidadMujeresImpNeto = sum(1 for usuario in usuarios if 140 <= usuario["neto"] <= 1000 and (usuario["genero"] == "f" or usuario["genero"] == "F"))
              print(f"Clientes femeninas cuyo importe neto sea entre 140 y 1000: {cantidadMujeresImpNeto}")
              #Acumulado de importe de ventas
              totalImpVentas = sum(usuario["bruto"] for usuario in usuarios)
+             print(f"Acumulado de importe de ventas: {totalImpVentas}")
+             #Acumulado del Importe Neto de clientes, de tipo 1
+             totalImpNeto = sum(usuario["neto"] for usuario in usuarios if usuario["tipo"] == 1)
+             print(f"Acumulado de importe neto de clientes, de tipo 1: {totalImpNeto}")
+             #Promedio de Importe Neto, de clientes, de tipo 1
+             cantidadTipo1 = sum(1 for usuario in usuarios if usuario["tipo"] == 1)
+             promedio = totalImpNeto/cantidadTipo1 
+             print(f"Promedio de importe neto de clientes, de tipo 1: {promedio}")
         else:
              break
     else:
