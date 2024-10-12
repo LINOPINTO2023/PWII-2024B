@@ -93,6 +93,7 @@ acumulado_importe_neto_tipo_1 = 0
 # Bucle principal
 verificar_menu = True
 while verificar_menu:
+    print("BIENVENIDO A MI PROGRAMA DE EMPRESA DE TRANSPORTES INTERPROVINCIAL\n\n\n")
     print("\nMENU DE OPCIONES\n[1] REGISTRAR VENTA DE PASAJE\n[2] REPORTAR VENTAS\n[3] SALIR")
     
     try:
