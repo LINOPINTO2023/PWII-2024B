@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.contenedor-juego {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#mostrarPalabra {
+    font-size: 1.5em;
+    margin: 20px 0;
+    letter-spacing: 10px;
+}
+
+#lienzoAhorcado {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#inputLetra {
+    font-size: 1.2em;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnAdivinar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#btnAdivinar:hover {
+    background-color: #45a049;
+}
+
+#btnReiniciar {
+    background-color: #f5584d;
+    color: white;
+}
+
+#btnReiniciar:hover {
+    background-color: #f44336;
+}
+
+#mensaje {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
