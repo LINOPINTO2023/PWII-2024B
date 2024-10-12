@@ -26,3 +26,58 @@ function iniciarJuego() {
   function limpiarLienzo() {
     contexto.clearRect(0, 0, lienzo.width, lienzo.height);
   }
+  function dibujarAhorcado() {
+    contexto.strokeStyle = '#333';
+    contexto.lineWidth = 2;
+    switch (intentosIncorrectos) {
+      case 1:
+        // Base
+        contexto.beginPath();
+        contexto.moveTo(20, 230);
+        contexto.lineTo(180, 230);
+        contexto.stroke();
+        break;
+      case 2:
+        // Poste vertical
+        contexto.beginPath();
+        contexto.moveTo(40, 230);
+        contexto.lineTo(40, 20);
+        contexto.stroke();
+        break;
+      case 3:
+        // Poste horizontal
+        contexto.beginPath();
+        contexto.moveTo(40, 20);
+        contexto.lineTo(100, 20);
+        contexto.stroke();
+        break;
+      case 4:
+        // Cuerda
+        contexto.beginPath();
+        contexto.moveTo(100, 20);
+        contexto.lineTo(100, 50);
+        contexto.stroke();
+        break;
+      case 5:
+        // Cabeza
+        contexto.beginPath();
+        contexto.arc(100, 70, 20, 0, Math.PI * 2);
+        contexto.stroke();
+        break;
+      case 6:
+        // Cuerpo, brazos y piernas
+        contexto.beginPath();
+        contexto.moveTo(100, 90);
+        contexto.lineTo(100, 150);
+        contexto.moveTo(100, 110);
+        contexto.lineTo(60, 100); // Brazo izquierdo
+        contexto.moveTo(100, 110);
+        contexto.lineTo(140, 100); // Brazo derecho
+        contexto.moveTo(100, 150);
+        contexto.lineTo(70, 190); // Pierna izquierda
+        contexto.moveTo(100, 150);
+        contexto.lineTo(130, 190); // Pierna derecha
+        contexto.stroke();
+        break;
+    }
+  }
