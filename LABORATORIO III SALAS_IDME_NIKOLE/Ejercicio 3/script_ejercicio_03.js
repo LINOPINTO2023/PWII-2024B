@@ -81,3 +81,33 @@ function iniciarJuego() {
         break;
     }
   }
+  function hacerAdivinanza() {
+    const letra = inputLetra.value.toLowerCase();
+    if (letra.length !== 1 || !/[a-zñ]/.test(letra)) {
+      mensaje.textContent = 'Por favor, ingresa una letra válida.';
+      return;
+    }
+  
+    if (palabraSeleccionada.includes(letra)) {
+      for (let i = 0; i < palabraSeleccionada.length; i++) {
+        if (palabraSeleccionada[i] === letra) {
+          palabraAdivinada[i] = letra;
+        }
+      }
+      actualizarPalabra();
+      if (!palabraAdivinada.includes('_')) {
+        mensaje.textContent = '¡Felicidades! Has ganado.';
+        btnAdivinar.disabled = true;
+      }
+    } else {
+      intentosIncorrectos++;
+      dibujarAhorcado();
+      if (intentosIncorrectos === maxIntentos) {
+        mensaje.textContent = `Juego Terminado. La palabra era: ${palabraSeleccionada}`;
+        btnAdivinar.disabled = true;
+      }
+    }
+  
+    inputLetra.value = '';
+    inputLetra.focus();
+  }
