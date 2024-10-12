@@ -20,3 +20,12 @@ function getRandomCaptcha() {
     currentCaptchaText = selectedCaptcha.text;
     return captchaFolder + selectedCaptcha.src;
 }
+function updateCaptcha() {
+    captchaImageElement.src = getRandomCaptcha();
+}
+
+refreshCaptchaButton.addEventListener('click', updateCaptcha);
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCaptcha();
+});
