@@ -65,3 +65,26 @@ function appendToExpression(value) {
     currentExpression += value;
     displayExpression += value;
 }
+function calculateResult() {
+    if (currentExpression === '') return;
+    try {
+        let expressionToEvaluate = currentExpression
+            .replace(/π/g, 'Math.PI')
+            .replace(/√\(/g, 'Math.sqrt(')
+            .replace(/\^2/g, '**2')
+            .replace(/%/g, '/100')
+            .replace(/mod/g, '%');
+
+        const result = eval(expressionToEvaluate);
+        const roundedResult = Number(result.toFixed(10));
+
+        const operation = `${displayExpression} = ${roundedResult}`;
+        operationStack.push(operation);
+        updateHistory();
+        currentExpression = roundedResult.toString();
+        displayExpression = roundedResult.toString();
+    } catch (error) {
+        currentExpression = 'Error';
+        displayExpression = 'Error';
+    }
+}
