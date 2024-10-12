@@ -3,16 +3,17 @@ opcionMenu = int(input("BIENVENIDO A LA EMPRESA ROYDAN LATAM\nSELECIONE UNA OPCI
 cantidadHombres = 0
 cantidadMujeres = 0
 #Creamos variable que almacenará los datos de los usuarios
-usuarioID = 0
-usuarios = {}
-def agregarUsuario(id, tipo, pasajes, genero, servicio, impNeto):
-     usuarios[id] = {
+usuarios = []
+registro = {}
+def agregarUsuario(tipo, pasajes, genero, servicio, impNeto):
+     registro = {
           "tipo" : tipo,
           "pasajes" : pasajes,
           "genero" : genero,
           "servicio" : servicio,
           "neto" : impNeto
      }
+     usuarios.append(registro)
 #Utilizamos condiciones para que nos asegure que el numero escrito está en el rango permitido
 while True:
     if 0 < opcionMenu < 4:
@@ -37,9 +38,9 @@ while True:
                 generoCliente = input("Ingrese su género (M o F): ")
                 if generoCliente in ["M", "F", "m", "f"]:
                      if generoCliente in ["M", "m"]:
-                          cantidadHombres = cantidadHombres + 1
+                          cantidadHombres += 1
                      else:
-                          cantidadMujeres = cantidadMujeres + 1
+                          cantidadMujeres += 1
                      break
                 else:
                     print("Por favor, ingrese un valor válido (M o F).")
@@ -60,7 +61,6 @@ while True:
                         break
                 else:
                      print("Número incorrecto, escoja de nuevo")
-                
             #Aplicación de descuento
             if cantidadPasajes == 1:
                 print("No aplica descuento")
@@ -78,17 +78,19 @@ while True:
             descuento = precioPasajeFinal - precioPasaje
             importeNeto = importeBruto - descuento
             #Usamos la función para almacenar los datos de los usuarios
-            usuarioID += 1
-            agregarUsuario(usuarioID, tipoCliente, cantidadPasajes, generoCliente, tipoServicio, importeNeto)
-
+            agregarUsuario(tipoCliente, cantidadPasajes, generoCliente, tipoServicio, importeNeto)
+        #Reporte de ventas
         elif opcionMenu == 2:
-             #Reporte de ventas
-             
              #Cantidad de hombres
-
+             print(f"Cantidad de clientes masculinos: {cantidadHombres}")
+             #Cantidad de ventas cuyo importe neto sea >=70 y <=500
+             impNetoComparacion = sum(1 for usuario in usuarios if 70 <= usuario["neto"] <= 500)
+             print(f"Cantidad de ventas cuyo importe neto sea entre 70 y 500 {impNetoComparacion}")
+             #Clientes de género femenino cuyo importe neto sea >=140 y <=1000
+             cantidadMujeresImpNeto = sum(1 for usuario in usuarios if 140 <= usuario["neto"] <= 1000 and (usuario["genero"] == "m" or usuario["genero"] == "M"))
+             
         else:
              break
-
         break
     else:
         print("Opción no válida, vuelva a ingresar el número")
