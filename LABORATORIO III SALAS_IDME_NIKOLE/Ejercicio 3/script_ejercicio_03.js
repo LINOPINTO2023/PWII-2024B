@@ -11,3 +11,12 @@ const inputLetra = document.getElementById('inputLetra');
 const btnAdivinar = document.getElementById('btnAdivinar');
 const btnReiniciar = document.getElementById('btnReiniciar');
 const mensaje = document.getElementById('mensaje');
+function iniciarJuego() {
+    palabraSeleccionada = palabras[Math.floor(Math.random() * palabras.length)];
+    palabraAdivinada = Array(palabraSeleccionada.length).fill('_');
+    intentosIncorrectos = 0;
+    actualizarPalabra();
+    limpiarLienzo();
+    mensaje.textContent = '';
+    btnAdivinar.disabled = false;
+  }
