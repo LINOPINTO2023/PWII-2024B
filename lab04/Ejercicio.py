@@ -90,18 +90,23 @@ acumulado_importe_ventas = 0
 tipo_cliente_1 = 0
 acumulado_importe_neto_tipo_1 = 0
 
+import time
 # Bucle principal
 verificar_menu = True
 while verificar_menu:
-    print("BIENVENIDO A MI PROGRAMA DE EMPRESA DE TRANSPORTES INTERPROVINCIAL\n\n\n")
+    print("BIENVENIDO A MI PROGRAMA DE EMPRESA DE TRANSPORTES INTERPROVINCIAL\n")
     print("\nMENU DE OPCIONES\n[1] REGISTRAR VENTA DE PASAJE\n[2] REPORTAR VENTAS\n[3] SALIR")
     
-    try:
-        opcion = int(input("Seleccione una opción: "))
-    except ValueError:
-        print("Error: Debe ingresar un número entero.")
-        continue
+    opcion = None  # Inicializamos 'opcion' para la validación
 
+    # Bucle para asegurar que se ingresa un número entero válido
+    while opcion is None:
+        try:
+            opcion = int(input("Seleccione una opción: "))
+        except ValueError:
+            print("Error: Debe ingresar un número entero.")
+
+    # Verificamos las opciones una vez que 'opcion' es válida
     if opcion == 1:
         registrar_venta()
         # Opción para seguir registrando ventas o volver al menú principal
@@ -123,3 +128,5 @@ while verificar_menu:
 
     else:
         print("Error: Opción no válida. Intente de nuevo.")
+        time.sleep(3)  # Pausa de 3 segundos antes de reiniciar el bucle
+        
