@@ -1,82 +1,93 @@
 def ingresar_datos():
-    tipoCliente = int(input("Ingrese el tipo de cliente (1 o 2): "))
-    cantPasajes = int(input("Ingrese la cantidad de pasajes: "))
+    tipo_cliente = int(input("Ingrese el tipo de cliente (1 o 2): "))
+    cantidad_pasajes = int(input("Ingrese la cantidad de pasajes: "))
     genero = input("Ingrese el género del cliente (M/F): ").lower()
-    tipoServicio = int(input("Ingrese el tipo de servicio (1-Económica, 2-Ejecutiva, 3-Primera clase): "))
-    return tipoCliente, cantPasajes, genero, tipoServicio
+    tipo_servicio = int(input("Ingrese el tipo de servicio (1-Económica, 2-Ejecutiva, 3-Primera clase): "))
+    return tipo_cliente, cantidad_pasajes, genero, tipo_servicio
 
-def calcular_precio(cantPasajes, tipoServicio):
-    #tipo servicio
-    if tipoServicio == 1:
-        precio = 70
-    elif tipoServicio == 2:
-        precio = 140
-    elif tipoServicio == 3:
-        precio = 280
+def calcular_precio(cantidad_pasajes, tipo_servicio):
+    if tipo_servicio == 1:
+        precio_base = 70
+    elif tipo_servicio == 2:
+        precio_base = 140
+    elif tipo_servicio == 3:
+        precio_base = 280
     else:
         print("Tipo de servicio inválido.")
         return 0, 0, 0
-    #cant pasajes
-    if cantPasajes == 1:
+
+    if cantidad_pasajes == 1:
         descuento = 0
-    elif 2 <= cantPasajes <= 5:
+    elif 2 <= cantidad_pasajes <= 5:
         descuento = 0.05
-    elif 6 <= cantPasajes <= 10:
+    elif 6 <= cantidad_pasajes <= 10:
         descuento = 0.12
     else:
         descuento = 0.15
-    #operaciones
-    importeBruto = cantPasajes * precio
-    montoDescuento = importeBruto * descuento
-    importeNeto = importeBruto - montoDescuento
-    return importeBruto, montoDescuento, importeNeto
+
+    importe_bruto = cantidad_pasajes * precio_base
+    monto_descuento = importe_bruto * descuento
+    importe_neto = importe_bruto - monto_descuento
+
+    return importe_bruto, monto_descuento, importe_neto
 
 def main():
-    totalVentas = 0
-    totalMasculinos = 0
-    rango70_500 = 0
-    femeninas_rango140_1000 = 0
-    acumulado1 = 0
-    cant1 = 0
+    total_ventas = 0
+    total_clientes_masculinos = 0
+    ventas_rango_70_500 = 0
+    ventas_femeninas_rango_140_1000 = 0
+    acumulado_tipo_1 = 0
+    cantidad_tipo_1 = 0
     continuar = True
+
     while continuar:
         opcion = input("1. Ingresar ventas\n2. Ver total de ventas\n3. Salir\nSeleccione una opción: ")
+        
         if opcion == '1':
-            tipoCliente, cantPasajes, genero, tipoServicio = ingresar_datos()
-            importeBruto, montoDescuento, importeNeto = calcular_precio(cantPasajes, tipoServicio)
-            totalVentas += importeNeto
-            #clientes masculinos
+            tipo_cliente, cantidad_pasajes, genero, tipo_servicio = ingresar_datos()
+            importe_bruto, monto_descuento, importe_neto = calcular_precio(cantidad_pasajes, tipo_servicio)
+            total_ventas += importe_neto
+
+            # Contar clientes de género masculino
             if genero == 'm':
-                totalMasculinos += 1
-            #rango 70 a 500
-            if 70 <= importeNeto <= 500:
+                total_clientes_masculinos += 1
+
+            # Contar ventas en el rango 70 <= Importe Neto <= 500
+            if 70 <= importe_neto <= 500:
                 ventas_rango_70_500 += 1
-            #clientes femeninos en rango 140 a 1000
-            if genero == 'f' and 140 <= importeNeto <= 1000:
-                femeninas_rango140_1000 += 1
-            #acumulado cliente tipo1
-            if tipoCliente == 1:
-                acumulado_tipo_1 += importeNeto
+
+            # Contar ventas de clientes femeninos en el rango 140 <= Importe Neto <= 1000
+            if genero == 'f' and 140 <= importe_neto <= 1000:
+                ventas_femeninas_rango_140_1000 += 1
+
+            # Acumular importe neto de clientes de tipo 1
+            if tipo_cliente == 1:
+                acumulado_tipo_1 += importe_neto
                 cantidad_tipo_1 += 1
-            print(f"Importe bruto: ${importeBruto:.2f}")
-            print(f"Monto de descuento: ${montoDescuento:.2f}")
-            print(f"Importe neto: ${importeNeto:.2f}")
+
+            # Mostrar resultados por cliente
+            print(f"Importe bruto: ${importe_bruto:.2f}")
+            print(f"Monto de descuento: ${monto_descuento:.2f}")
+            print(f"Importe neto: ${importe_neto:.2f}")
+        
         elif opcion == '2':
-            if cant1 > 0:
-                promedio1 = acumulado1 / cant1
+            if cantidad_tipo_1 > 0:
+                promedio_tipo_1 = acumulado_tipo_1 / cantidad_tipo_1
             else:
-                promedio1 = 0
+                promedio_tipo_1 = 0
+
             print(f"\n--- Resultados Totales ---")
-            print(f"Cantidad de clientes de género masculino: {totalMasculinos}")
-            print(f"Cantidad de ventas con importe neto entre 70 y 500: {rango70_500}")
-            print(f"Cantidad de ventas de clientes femeninos con importe neto entre 140 y 1000: {femeninas_rango140_1000}")
-            print(f"Acumulado del importe de ventas: ${totalVentas:.2f}")
-            print(f"Acumulado del importe neto de clientes tipo 1: ${acumulado1:.2f}")
-            print(f"Promedio del importe neto de clientes tipo 1: ${promedio1:.2f}")
+            print(f"Cantidad de clientes de género masculino: {total_clientes_masculinos}")
+            print(f"Cantidad de ventas con importe neto entre 70 y 500: {ventas_rango_70_500}")
+            print(f"Cantidad de ventas de clientes femeninos con importe neto entre 140 y 1000: {ventas_femeninas_rango_140_1000}")
+            print(f"Acumulado del importe de ventas: ${total_ventas:.2f}")
+            print(f"Acumulado del importe neto de clientes tipo 1: ${acumulado_tipo_1:.2f}")
+            print(f"Promedio del importe neto de clientes tipo 1: ${promedio_tipo_1:.2f}")
+        
         elif opcion == '3':
             continuar = False
         else:
-            print("Opción inválida, intente de nuevo.")
+            print("Opción no válida, intente de nuevo.")
 
 if __name__ == "__main__":
     main()
