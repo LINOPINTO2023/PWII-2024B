@@ -128,5 +128,4 @@ while verificar_menu:
 
     else:
         print("Error: Opción no válida. Intente de nuevo.")
-        time.sleep(3)  # Pausa de 3 segundos antes de reiniciar el bucle
-        
+        time.sleep(3) # Pausa 3 segundos
