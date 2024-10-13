@@ -67,3 +67,20 @@ def ingresar_datos():
             print(f"Importe bruto: ${importeBruto:.2f}")
             print(f"Monto de descuento: ${montoDescuento:.2f}")
             print(f"Importe neto: ${importeNeto:.2f}")
+            elif opcion == '2':
+            if cant1 > 0:
+                promedio1 = acumulado1 / cant1
+            else:
+                promedio1 = 0
+
+            print(f"\n--- Resultados Totales ---")
+            print(f"Cantidad de clientes de género masculino: {totalMasculinos}")
+            print(f"Cantidad de ventas con importe neto entre 70 y 500: {rango70_500}")
+            print(f"Cantidad de ventas de clientes femeninos con importe neto entre 140 y 1000: {femeninas_rango140_1000}")
+            print(f"Acumulado del importe de ventas: ${totalVentas:.2f}")
+            print(f"Acumulado del importe neto de clientes tipo 1: ${acumulado1:.2f}")
+            print(f"Promedio del importe neto de clientes tipo 1: ${promedio1:.2f}")
+        elif opcion == '3':
+            continuar = False
+        else:
+            print("Opción inválida, intente de nuevo.")
