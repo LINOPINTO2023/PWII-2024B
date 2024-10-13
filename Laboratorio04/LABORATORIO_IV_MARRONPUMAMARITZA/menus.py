@@ -124,9 +124,7 @@ def accion2():
     print(f"Importe total de ventas: S/{acumuladoImporteVentas:.2f}")
     print(f"Importe Neto total de clientes tipo 1: S/{acumuladoImporteNetoTipo1:.2f}")
     print(f"Promedio de Importe Neto de clientes tipo 1: S/{promedioImporteNetoTipo1:.2f}")
-
     
-
 def salir():
     print('Saliendo...')
 
