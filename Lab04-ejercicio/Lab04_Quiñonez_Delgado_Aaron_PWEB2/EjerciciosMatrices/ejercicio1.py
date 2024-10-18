@@ -26,4 +26,7 @@ for i in range(len(array)):
         for cont in array:
             print(cont)
 #Se comprobará si la matriz es escalar
-esEscalar(array)
+if esEscalar(array):
+    print("Su matriz es escalar")
+else:
+    print("La matriz ingresada no es escalar")
