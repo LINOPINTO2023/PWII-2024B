@@ -2,6 +2,9 @@
 venv/
 pyvenv/
 LABORATORIO_05/pyvenv/
+LABORATORIO_05/lib/
+LABORATORIO_05/Scripts/
+LABORATORIO_05/include/
 
 # Ignorar archivos de compilación de Python
 __pycache__/
