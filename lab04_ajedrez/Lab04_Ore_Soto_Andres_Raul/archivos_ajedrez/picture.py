@@ -17,19 +17,18 @@ class Picture:
         vertical = []
         for value in self.img:
             vertical.append(value[::-1])
-        return vertical
+        return Picture(vertical)
 
     def horizontalMirror(self):
         """ Devuelve el espejo horizontal de la imagen """
         horizontal = []
         for numero in range(len(self.img)):
             horizontal.append(self.img[len(self.img) -1 - numero])
-        return horizontal
+        return Picture(horizontal)
 
     def negative(self):
         """ Devuelve un negativo de la imagen """
         vertical = []
-
         for fila in self.img:
             horizontal = []
             for letra in fila:
@@ -38,7 +37,7 @@ class Picture:
                 else:
                     horizontal.append("#")
             vertical.append(horizontal)
-        return vertical
+        return Picture(vertical)
     
     def join(self, p):
         """ Devuelve una nueva figura poniendo la figura del argumento 
@@ -47,8 +46,13 @@ class Picture:
         
         max_rows = max(len(self.img), len(p.img))
         
-        self_img_extended = self.img + [' ' * len(self.img[0])] * (max_rows - len(self.img))
-        p_img_extended = p.img + [' ' * len(p.img[0])] * (max_rows - len(p.img))
+        # Asegúrate de que cada fila es una cadena de caracteres
+        self_img_extended = [row if isinstance(row, str) else ''.join(row) for row in self.img]
+        p_img_extended = [row if isinstance(row, str) else ''.join(row) for row in p.img]
+
+        # Extiende las filas para que ambas imágenes tengan el mismo número de filas
+        self_img_extended += [' ' * len(self_img_extended[0])] * (max_rows - len(self_img_extended))
+        p_img_extended += [' ' * len(p_img_extended[0])] * (max_rows - len(p_img_extended))
 
         for i in range(max_rows):
             row_self = self_img_extended[i]
