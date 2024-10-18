@@ -1,10 +1,8 @@
-# Ignorar el entorno virtual
-venv/
+# Ignorar el entorno virtual completo
 pyvenv/
-LABORATORIO_05/pyvenv/
-LABORATORIO_05/lib/
-LABORATORIO_05/Scripts/
-LABORATORIO_05/include/
+Lib/
+Scripts/
+include/
 
 # Ignorar archivos de compilación de Python
 __pycache__/
@@ -29,17 +27,24 @@ __pycache__/
 *.sublime-workspace
 *.sublime-project
 
-# Ignorar archivos de configuración de Pygame
-*.pygame
-
 # Ignorar otros archivos temporales
 *.tmp
 
 # Ignorar configuraciones específicas de sistema
-.DS_Store  # Para macOS
 Thumbs.db  # Para Windows
 
 # Ignorar archivos de datos generados por pruebas
 test-results/
 *.coverage
+
+# Ignorar archivos binarios o ejecutables
+*.exe
+*.dll
+
+# Si usas Jupyter Notebooks, ignora checkpoints
+.ipynb_checkpoints/
+
+# Ignorar archivos de lock
+Pipfile.lock
+poetry.lock
 
