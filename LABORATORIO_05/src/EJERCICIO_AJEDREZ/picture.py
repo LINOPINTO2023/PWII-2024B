@@ -71,10 +71,20 @@ class Picture:
     return Picture(self.img * n)
   
   def horizontalRepeat(self, n):
-      """ Devuelve una nueva figura repitiendo la figura actual al costado
-          la cantidad de veces que indique el valor de n """
-      nueva_img = []
-      for fila in self.img:
-        nueva_fila = fila * n
-        nueva_img.append(nueva_fila)
-      return Picture(nueva_img)
+    """ Devuelve una nueva figura repitiendo la figura actual al costado
+        la cantidad de veces que indique el valor de n """
+    nueva_img = []
+    for fila in self.img:
+      nueva_fila = fila * n
+      nueva_img.append(nueva_fila)
+    return Picture(nueva_img)
+  
+  def rotate(self):
+    """ Devuelve una figura rotada en 90 grados, puede ser en sentido horario """
+    rotada = []
+    for i in range(len(self.img[0])):
+      nueva_fila = ""
+      for fila in reversed(self.img):
+        nueva_fila += fila[i]
+      rotada.append(nueva_fila)
+    return Picture(rotada)
