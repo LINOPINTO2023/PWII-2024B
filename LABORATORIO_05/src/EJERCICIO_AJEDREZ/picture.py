@@ -43,3 +43,19 @@ class Picture:
     for fila1, fila2 in zip(self.img, p.img):
       nueva_img.append(fila1 + fila2)
     return Picture(nueva_img)
+
+  def up(self, p):
+    """ Devuelve una nueva figura con la pieza del argumento sobre la figura actual """
+    nueva_img = []
+    max_length = max(len(self.img), len(p.img))
+    for i in range(max_length):
+      fila_actual = self.img[i] if i < len(self.img) else ""  
+      fila_nueva = p.img[i] if i < len(p.img) else ""  
+      nueva_fila = ""  
+      for j in range(max(len(fila_actual), len(fila_nueva))):
+        if j < len(fila_nueva) and fila_nueva[j] != " ":
+          nueva_fila += fila_nueva[j]
+        else:
+          nueva_fila += fila_actual[j] if j < len(fila_actual) else " "  
+      nueva_img.append(nueva_fila)
+    return Picture(nueva_img)
