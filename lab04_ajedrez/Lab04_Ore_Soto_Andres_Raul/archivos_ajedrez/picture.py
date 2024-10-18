@@ -1,6 +1,5 @@
 from .colors import *
 
-
 class Picture:
     def __init__(self, img):
         self.img = img
@@ -58,27 +57,27 @@ class Picture:
         
         return Picture(combined)
 
-
-
     def up(self, p):
         """Devuelve una nueva figura poniendo la figura recibida como argumento,
         encima de la figura actual"""
         
         combined = []
-        
         max_rows = len(self.img) + len(p.img)
-        
         combined.extend(p.img) 
         combined.extend(self.img)
-        
         return Picture(combined)
 
-
-
     def under(self, p):
-        """ Devuelve una nueva figura poniendo la figura p sobre la
-            figura actual """
-        return Picture(None)
+        """ Devuelve una nueva figura poniendo la figura p encima de la
+            figura actual, sustituyéndola en su posición. """
+        figures = ["king", "bishop", "knight", "queen", "rock", "pawn", "square"]
+        if p not in figures:
+            print("Ingrese una figura válida")
+            return self
+        new_figure = []
+        
+
+
 
     def horizontalRepeat(self, n):
         """ Devuelve una nueva figura repitiendo la figura actual al costado
