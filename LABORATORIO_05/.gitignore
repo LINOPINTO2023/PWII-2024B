@@ -23,10 +23,11 @@ __pycache__/
 .vscode/
 .idea/
 
-# Ignorar el archivo de configuración de Pygame
-*.pygame
-
 # Ignorar otros archivos temporales
 *.tmp
+
+# Ignorar configuraciones específicas de Pygame
+*.pygame
+
 
 
