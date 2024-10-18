@@ -40,15 +40,40 @@ class Picture:
                     horizontal.append("#")
             vertical.append(horizontal)
         return vertical
-
-
+    
     def join(self, p):
         """ Devuelve una nueva figura poniendo la figura del argumento 
             al lado derecho de la figura actual """
-        return Picture(None)
+        combined = []
+        
+        max_rows = max(len(self.img), len(p.img))
+        
+        self_img_extended = self.img + [' ' * len(self.img[0])] * (max_rows - len(self.img))
+        p_img_extended = p.img + [' ' * len(p.img[0])] * (max_rows - len(p.img))
+
+        for i in range(max_rows):
+            row_self = self_img_extended[i]
+            row_p = p_img_extended[i]
+            combined.append(row_self + row_p)
+        
+        return Picture(combined)
+
+
 
     def up(self, p):
-        return Picture(None)
+        """Devuelve una nueva figura poniendo la figura recibida como argumento,
+        encima de la figura actual"""
+        
+        combined = []
+        
+        max_rows = len(self.img) + len(p.img)
+        
+        combined.extend(p.img) 
+        combined.extend(self.img)
+        
+        return Picture(combined)
+
+
 
     def under(self, p):
         """ Devuelve una nueva figura poniendo la figura p sobre la
