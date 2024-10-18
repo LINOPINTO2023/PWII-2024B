@@ -4,5 +4,5 @@ from chessPictures import *
 #pruebas de picture
 pieza = knight
 pieza2 = queen
-piezaRepeat = Picture.verticalRepeat(pieza, 6)
+piezaRepeat = Picture.horizontalRepeat(pieza, 6)
 draw(piezaRepeat)
