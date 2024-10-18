@@ -34,6 +34,8 @@ class Picture:
             for letra in fila:
                 if letra == "#":
                     horizontal.append(".")
+                elif letra == " ":
+                    horizontal.append(" ")
                 else:
                     horizontal.append("#")
             vertical.append(horizontal)
