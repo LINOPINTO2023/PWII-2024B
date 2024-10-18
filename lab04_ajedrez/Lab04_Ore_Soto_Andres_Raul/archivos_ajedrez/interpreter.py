@@ -2,7 +2,7 @@
 import pygame
 import sys
 from pygame.locals import *
-from colors import *
+from .colors import *
 
 
 def parseLine(DISPLAY, y, s):

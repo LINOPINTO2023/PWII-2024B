@@ -1,5 +1,4 @@
-from archivos_ajedrez.pictures import verticalMirror
-from archivos_ajedrez.pieces import KING
-
-verticalMirror(KING)
-draw(KING)
+from archivos_ajedrez import *
+from archivos_ajedrez.chessPictures import rock
+from archivos_ajedrez.interpreter import draw
+draw(rock)

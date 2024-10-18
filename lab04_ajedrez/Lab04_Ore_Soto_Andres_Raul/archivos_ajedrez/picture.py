@@ -1,4 +1,4 @@
-from colors import *
+from .colors import *
 
 
 class Picture:
