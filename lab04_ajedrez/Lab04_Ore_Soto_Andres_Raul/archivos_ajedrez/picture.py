@@ -29,7 +29,18 @@ class Picture:
 
     def negative(self):
         """ Devuelve un negativo de la imagen """
-        return Picture(None)
+        vertical = []
+
+        for fila in self.img:
+            horizontal = []
+            for letra in fila:
+                if letra == "#":
+                    horizontal.append(".")
+                else:
+                    horizontal.append("#")
+            vertical.append(horizontal)
+        return vertical
+
 
     def join(self, p):
         """ Devuelve una nueva figura poniendo la figura del argumento 
