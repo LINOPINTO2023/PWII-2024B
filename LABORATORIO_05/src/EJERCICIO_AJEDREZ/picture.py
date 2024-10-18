@@ -35,3 +35,11 @@ class Picture:
           nueva_fila += self._invColor(color)
       negativo.append(nueva_fila)
     return Picture(negativo)
+  
+  def join(self, p):
+    """ Devuelve una nueva figura poniendo la figura del argumento 
+        al lado derecho de la figura actual """
+    nueva_img = []
+    for fila1, fila2 in zip(self.img, p.img):
+      nueva_img.append(fila1 + fila2)
+    return Picture(nueva_img)
