@@ -4,7 +4,13 @@ def menu():
     print("VER RESULTADOS DE VENTAS")
     print("SALIR")
 
-#Para controlar la parte del codigo a ejecutar
+def main():
+    print("Ingrese el Tipo de cliente: ")
+    cliente = int(input()) 
+    print("ingrese la cantidad de pasajes: ")
+    pasajes = int(input())
+    print("Ingrese el genero: ")
+    genero = input()
+# Para controlar la parte del código a ejecutar
 if __name__ == "__main__":
-    menu()
-    
+    main()
