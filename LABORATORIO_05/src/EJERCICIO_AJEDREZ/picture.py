@@ -88,3 +88,14 @@ class Picture:
         nueva_fila += fila[i]
       rotada.append(nueva_fila)
     return Picture(rotada)
+  
+  def rotate_Ant(self):
+    """ Devuelve una figura rotada en 90 grados, puede ser en sentido antihorario """
+    img_rotacion = []
+    num_columnas = len(self.img[0])
+    for i in range(num_columnas - 1, -1, -1): #indices en orden inverso
+      nueva_fila = ""
+      for fila in self.img:
+        nueva_fila += fila[i]
+      img_rotacion.append(nueva_fila)
+    return Picture(img_rotacion)
