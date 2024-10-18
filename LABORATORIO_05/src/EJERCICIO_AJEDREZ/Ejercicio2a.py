@@ -3,5 +3,6 @@ from chessPictures import *
 
 #pruebas de picture
 pieza = knight
-piezaNegative = Picture.negative(pieza)
-draw(piezaNegative)
+pieza2 = queen
+piezaJoin = Picture.join(pieza, pieza2)
+draw(piezaJoin)
