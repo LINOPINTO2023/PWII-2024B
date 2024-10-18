@@ -4,5 +4,5 @@ from chessPictures import *
 #pruebas de picture
 pieza = knight
 pieza2 = queen
-piezaRotate = Picture.rotate(pieza)
+piezaRotate = Picture.rotate_Ant(pieza)
 draw(piezaRotate)
