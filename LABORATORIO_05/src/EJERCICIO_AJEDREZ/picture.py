@@ -64,3 +64,8 @@ class Picture:
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
     return Picture(self.img + p.img)
+  
+  def verticalRepeat(self, n):
+    """ Devuelve una nueva figura repitiendo la figura actual hacia abajo
+        la cantidad de veces que indique el valor de n """
+    return Picture(self.img * n)
