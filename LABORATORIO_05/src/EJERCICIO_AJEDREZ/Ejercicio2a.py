@@ -3,5 +3,5 @@ from chessPictures import *
 
 #pruebas de picture
 pieza = knight
-piezaVertical = Picture.verticalMirror(pieza)
-draw(pieza)
+piezaHorizontal = Picture.horizontalMirror(pieza)
+draw(piezaHorizontal)
