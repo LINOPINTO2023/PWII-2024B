@@ -45,12 +45,8 @@ class Picture:
         combined = []
         
         max_rows = max(len(self.img), len(p.img))
-        
-        # Asegúrate de que cada fila es una cadena de caracteres
         self_img_extended = [row if isinstance(row, str) else ''.join(row) for row in self.img]
         p_img_extended = [row if isinstance(row, str) else ''.join(row) for row in p.img]
-
-        # Extiende las filas para que ambas imágenes tengan el mismo número de filas
         self_img_extended += [' ' * len(self_img_extended[0])] * (max_rows - len(self_img_extended))
         p_img_extended += [' ' * len(p_img_extended[0])] * (max_rows - len(p_img_extended))
 
