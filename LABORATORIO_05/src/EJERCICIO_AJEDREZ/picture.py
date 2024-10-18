@@ -59,3 +59,8 @@ class Picture:
           nueva_fila += fila_actual[j] if j < len(fila_actual) else " "  
       nueva_img.append(nueva_fila)
     return Picture(nueva_img)
+  
+  def under(self, p):
+    """ Devuelve una nueva figura poniendo la figura p sobre la
+        figura actual """
+    return Picture(self.img + p.img)
