@@ -34,8 +34,29 @@ class Picture:
 		return Picture(joined_img)
 
 	def up(self, p):
-		return Picture(None)
+		""" Devuelve una nueva figura colocando la figura p encima de la figura actual,
+        reemplazando los caracteres de la figura actual con los de p. """
+		combined_img = []
 
+		for i in range(len(self.img)):
+			# Obtiene la línea de la figura actual y de la figura p
+			line_self = self.img[i]
+			line_piece = p.img[i]
+
+			# Inicializamos una lista vacía para los caracteres de la nueva línea
+			new_line_chars = []
+
+			for piece, self_char in zip(line_piece, line_self):
+				if piece != ' ':
+					new_line_chars.append(piece)
+				else:
+					new_line_chars.append(self_char)
+			new_line = ''.join(new_line_chars)
+
+			combined_img.append(new_line)
+
+		return Picture(combined_img)  # Retornar la nueva figura
+	
 	def under(self, p):
 		""" Devuelve una nueva figura poniendo la figura p sobre la
 		figura actual """
