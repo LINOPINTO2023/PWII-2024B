@@ -72,27 +72,30 @@ class Picture:
         return Picture(combined)
 
     def under(self, p):
-        """ Devuelve una nueva figura poniendo la figura p encima de la
-            figura actual, sustituyéndola en su posición. """
-        figures = ["king", "bishop", "knight", "queen", "rock", "pawn", "square"]
-        if p not in figures:
-            print("Ingrese una figura válida")
-            return self
-        new_figure = []
-        
-
-
-
+        """ Devuelve una nueva figura poniendo la figura p debajo de la
+            figura actual. """
+        combined = []
+        combined.extend(self.img)
+        combined.extend(p.img)
+        return Picture(combined)    
+    
     def horizontalRepeat(self, n):
         """ Devuelve una nueva figura repitiendo la figura actual al costado
             la cantidad de veces que indique el valor de n """
-        return Picture(None)
-
+        repeated = []
+        for row in self.img:
+            repeated.append(row * n)
+        return Picture(repeated)
+    
     def verticalRepeat(self, n):
-        return Picture(None)
+        """ Devuelve una nueva figura repitiendo la figura actual hacia abajo
+            la cantidad de veces que indique el valor de n """
+        repeated = self.img * n
+        return Picture(repeated)
 
     # Extra: Sólo para realmente viciosos
     def rotate(self):
-        """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-        o antihorario"""
-        return Picture(None)
+        """ Devuelve una figura rotada en 90 grados en sentido horario """
+        rotated = list(zip(*self.img[::-1]))
+        rotated = [''.join(row) for row in rotated]
+        return Picture(rotated) 

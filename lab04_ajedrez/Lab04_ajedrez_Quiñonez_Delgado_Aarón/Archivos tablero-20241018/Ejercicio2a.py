@@ -1,3 +1,5 @@
 from interpreter import draw
 from chessPictures import *
-draw(rock)
+from picture import *
+a = rock
+draw(a._invColor)

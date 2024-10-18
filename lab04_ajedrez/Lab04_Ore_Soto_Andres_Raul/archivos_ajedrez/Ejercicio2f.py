@@ -1,2 +1,5 @@
-from interpreter import draw
-from chessPictures import *
+from archivos_ajedrez.chessPictures import *
+from archivos_ajedrez.interpreter import draw
+from archivos_ajedrez.picture import *
+
+draw(((square.negative().join(square).horizontalRepeat(4)).up(square.join(square.negative()).horizontalRepeat(4))).verticalRepeat(2))
