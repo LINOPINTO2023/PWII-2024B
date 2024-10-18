@@ -3,10 +3,11 @@ venv/
 pyvenv/
 LABORATORIO_05/pyvenv/
 
-# Ignorar archivos de configuración de Python
+# Ignorar archivos de compilación de Python
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 
 # Ignorar archivos de paquetes de Python
 *.egg-info/
@@ -22,12 +23,20 @@ __pycache__/
 # Ignorar archivos de configuración de IDE
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar archivos de configuración de Pygame
+*.pygame
 
 # Ignorar otros archivos temporales
 *.tmp
 
-# Ignorar configuraciones específicas de Pygame
-*.pygame
+# Ignorar configuraciones específicas de sistema
+.DS_Store  # Para macOS
+Thumbs.db  # Para Windows
 
-
+# Ignorar archivos de datos generados por pruebas
+test-results/
+*.coverage
 
