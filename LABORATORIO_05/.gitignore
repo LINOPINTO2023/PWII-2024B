@@ -1,0 +1,32 @@
+# Ignorar el entorno virtual
+venv/
+pyvenv/
+LABORATORIO_05/pyvenv/
+
+# Ignorar archivos de configuración de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignorar archivos de paquetes de Python
+*.egg-info/
+*.egg
+
+# Ignorar archivos temporales de edición
+*.swp
+*.swo
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Ignorar el archivo de configuración de Pygame
+*.pygame
+
+# Ignorar otros archivos temporales
+*.tmp
+
+
