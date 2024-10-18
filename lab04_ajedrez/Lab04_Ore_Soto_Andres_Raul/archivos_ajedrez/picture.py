@@ -72,13 +72,20 @@ class Picture:
         return Picture(combined)
 
     def under(self, p):
-        """ Devuelve una nueva figura poniendo la figura p debajo de la
-            figura actual. """
+        """ Devuelve una nueva figura poniendo la figura recibida
+        como argumento, sobre la figura actual"""
+        
         combined = []
-        combined.extend(self.img)
-        combined.extend(p.img)
-        return Picture(combined)    
-    
+        for i in range(len(self.img)):
+            new_row = ""
+            for j in range(len(self.img[i])):
+                if p.img[i][j] == " ":
+                    new_row += self.img[i][j]
+                else:
+                    new_row += p.img[i][j]
+            combined.append(new_row)
+        return Picture(combined)
+
     def horizontalRepeat(self, n):
         """ Devuelve una nueva figura repitiendo la figura actual al costado
             la cantidad de veces que indique el valor de n """
