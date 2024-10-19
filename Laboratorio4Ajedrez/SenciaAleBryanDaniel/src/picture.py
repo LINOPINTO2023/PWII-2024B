@@ -12,7 +12,7 @@ class Picture:
     return inverter[color]
 
   def verticalMirror(self):
-    img = self.img[::-1]
+    img = [self.img[i] for i in range(len(self.img) - 1, -1, -1)]
     return Picture(img)
 
   def horizontalMirror(self):
@@ -20,7 +20,12 @@ class Picture:
     return Picture(img)
 
   def negative(self):
-    img = [(''.join([self._invColor(char) for char in row])) for row in self.img]
+    img = []
+    for row in self.img:
+        new_row = ''
+        for char in row:
+            new_row += self._invColor(char)
+        img.append(new_row)
     return Picture(img)
 
   def join(self, other):
@@ -39,16 +44,9 @@ class Picture:
   
   def under(self, other):
     img = []
-    for i in range(len(self.img)):
-      row = []
-      for j in range(len(self.img[i])):
-        charS = self.img[i][j]
-        charO = other.img[i][j]
-        if(charS == ' '):
-          row.append(charO)
-        else:
-          row.append(charS)
-      img.append(row)
+    for row_self, row_other in zip(self.img, other.img):
+      new_row = ''.join(char_self if char_self != ' ' else char_other for char_self, char_other in zip(row_self, row_other))
+      img.append(new_row)
     return Picture(img)
   
   def horizontalRepeat(self, n):
