@@ -1,4 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 from picture import *
-draw(square.negative())
+
+#Patron de cuadrado blanco y cuadrado gris
+patron = square.join(square.negative())
+draw(patron.horizontalRepeat(4))
