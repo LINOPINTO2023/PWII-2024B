@@ -27,40 +27,63 @@ class Picture:
 
 	def negative(self):
 		"""Devuelve el negativo de la imagen"""
-		nuevaImagen = []
-		for fila in self.img:
-			nuevaFila = []
-		for caracter in fila:
-			nuevoColor = self._invColor(caracter)
-			nuevaFila.append(nuevoColor)
-		nuevaImagen.append(nuevaFila)
-		return Picture(nuevaImagen)
+		negativo = []
+		for i in self.img:
+			filaNegativo = []
+		#Se analizará caracter por caracter y se usará invColor para cambiar los caracteres
+		for j in i:
+			nuevoColor = self._invColor(j)
+			filaNegativo.append(nuevoColor)
+		negativo.append(filaNegativo)
+		return Picture(negativo)
 
 	def join(self, p):
 		""" Devuelve una nueva figura poniendo la figura del argumento 
 		al lado derecho de la figura actual """
-		
-		return Picture(None)
+		imagenesJuntas = []
+		for i, fila in enumerate(self.img):
+			#Juntamos ambas filas de caracteres en uno solo
+			combFilas = list(fila) + list(p.img[i])
+			#Lo almacenamos en nuestra variable
+			imagenesJuntas.append(combFilas)
+		return Picture(imagenesJuntas)
 
 	def up(self, p):
-		return Picture(None)
+		"""Devuelve la figura 'p' encima de la figura actual"""
+		figuraEncima = []
+		#Arriba estará la figura p
+		for i in p.img:
+			figuraEncima.append(i[::1])
+		#Luego se pondrá la otra imagen
+		for i in self.img:
+			figuraEncima.append(i[::1])
+		return Picture(figuraEncima)
 
 	def under(self, p):
 		""" Devuelve una nueva figura poniendo la figura p sobre la
 		figura actual """
-		return Picture(None)
+		#Copiamos todo el contenido en nuestra nueva variable
+		figuraSobrepuesta = [list(self) for fila in self.img]
+		#Vamos analizando cada caracter de cada fila con bucles
+		for i, fil in enumerate(p.img):
+			for j, col in enumerate(fil):
+				#Se sobreescribirá si se presenta espacios/caracteres vacíos
+				if figuraSobrepuesta[i][j] == ' ':
+					figuraSobrepuesta[i][j] = col
+		return Picture(figuraSobrepuesta)
 
 	def horizontalRepeat(self, n):
 		""" Devuelve una nueva figura repitiendo la figura actual al costado
 		la cantidad de veces que indique el valor de n """
-		return Picture(None)
+		figuraHorizontal = []
+		for i in self.img:
+			#Se irá almacenando n filas en una sola hasta terminar el bucle
+			figuraHorizontal.append(i * n)
+		return Picture(figuraHorizontal)
 
 	def verticalRepeat(self, n):
-		return Picture(None)
-
-	#Extra: Sólo para realmente viciosos 
-	def rotate(self):
-		"""Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-		o antihorario"""
-		return Picture(None)
-
+		figuraVertical = []
+		for i in range(n):
+			for j in self.img:
+				figuraVertical.append(j[::1])
+		return Picture(figuraVertical)
