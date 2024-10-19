@@ -8,14 +8,15 @@ def parseLine(DISPLAY, y, s):
     pygame.draw.line(DISPLAY, color[c], (x, y), (x, y))
     x += 1
 
-def draw(picture):
+def draw(picture, valorx, valory):
   try:
     img = picture.img
   except:
     img = picture
   pygame.init()
+  
 
-  DISPLAY=pygame.display.set_mode((640, 480))
+  DISPLAY=pygame.display.set_mode((valorx, valory))
   DISPLAY.fill(BLUE)
 
   n = len(img)
