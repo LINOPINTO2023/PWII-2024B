@@ -30,11 +30,11 @@ class Picture:
 		negativo = []
 		for i in self.img:
 			filaNegativo = []
-		#Se analizará caracter por caracter y se usará invColor para cambiar los caracteres
-		for j in i:
-			nuevoColor = self._invColor(j)
-			filaNegativo.append(nuevoColor)
-		negativo.append(filaNegativo)
+			#Se analizará caracter por caracter y se usará invColor para cambiar los caracteres
+			for j in i:
+				nuevoColor = self._invColor(j)
+				filaNegativo.append(nuevoColor)
+			negativo.append(filaNegativo)
 		return Picture(negativo)
 
 	def join(self, p):
