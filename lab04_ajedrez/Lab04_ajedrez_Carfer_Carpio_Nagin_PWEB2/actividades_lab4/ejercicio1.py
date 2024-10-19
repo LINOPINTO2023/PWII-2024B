@@ -11,7 +11,7 @@ def esEscalar(m):
                 return False
     return True
 #Pedimos un numero para el tamaño de la matriz
-matrizN = int(input("Ingrese el numero N para la matriz de NxN: "))
+matrizN = int(input("Ingrese el tamaño para la matriz NxN: "))
 array = [[0 for fila in range(matrizN)] for columna in range(matrizN)]
 print("Su matriz es")
 for cont in array:
