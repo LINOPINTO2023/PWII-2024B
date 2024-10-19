@@ -22,6 +22,13 @@ class Picture:
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
     return Picture(self.img[::-1])
+  
+  def superponer(self):
+      def reemplazarespacios(figura):
+          return [fila.replace(' ', '_') for fila in figura]
+
+      ali = reemplazarespacios(self.img)
+      return Picture(ali)
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
