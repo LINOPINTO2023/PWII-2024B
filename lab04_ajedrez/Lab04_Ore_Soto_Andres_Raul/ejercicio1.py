@@ -1,3 +1,5 @@
-from archivos_ajedrez import *
-from interpreter import draw
-draw(rock)
+from archivos_ajedrez.chessPictures import *
+from archivos_ajedrez.interpreter import draw
+from archivos_ajedrez.picture import *
+
+draw(knight.join(king).join(queen))
