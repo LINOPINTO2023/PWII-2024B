@@ -11,12 +11,10 @@ class Picture:
     return inverter.get(char, char)
 
   def verticalMirror(self):
-    """ Devuelve el espejo vertical de la imagen """
     img = [row[::-1] for row in self.img]  
     return Picture(img)
 
   def horizontalMirror(self):
-    """ Devuelve el espejo horizontal de la imagen """
     return Picture(self.img[::-1])
 
   def negative(self):
@@ -40,8 +38,7 @@ class Picture:
     return Picture(p.img + self.img)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
+    
     return Picture(self.img + p.img)
   
   def horizontalRepeat(self, n):
