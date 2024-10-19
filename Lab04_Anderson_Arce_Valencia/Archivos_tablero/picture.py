@@ -7,9 +7,8 @@ class Picture:
     return self.img == other.img
 
   def _invColor(self, color):
-    if color not in inverter:
-      return color
-    return inverter[color]
+        inverter = {'_': '=', '=': '_', '.': '@', '@': '.'}
+  return inverter.get(char, char)
 
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
