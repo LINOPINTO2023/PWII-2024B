@@ -75,7 +75,8 @@ class Picture:
         
         filan = ''
         for j in range(len(filas)):
-            if j < len(filap):
+            # Si el carácter de p no es un espacio, lo usamos, de lo contrario, usamos el de self
+            if j < len(filap) and filap[j] != ' ':
                 filan += filap[j]
             else:
                 filan += filas[j]
