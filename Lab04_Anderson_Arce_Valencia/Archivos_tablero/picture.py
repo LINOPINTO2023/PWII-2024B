@@ -62,3 +62,24 @@ class Picture:
     rotated_img = [''.join(row) for row in rotated_img]
     return Picture(rotated_img)
 
+  def superponer(self,p):
+    superponer= []
+    alturaimg = max(len(self.img), len(p.img))
+    for i in range(alturaimg):
+        # Obtener la fila de self
+        if i < len(self.img):
+            filas= self.img[i]
+        # Obtener la fila de p
+        if i < len(p.img):
+            filap = p.img[i]
+        
+        filan = ''
+        for j in range(len(filas)):
+            if j < len(filap):
+                filan += filap[j]
+            else:
+                filan += filas[j]
+        
+        superponer.append(filan)
+    
+    return Picture(superponer)
