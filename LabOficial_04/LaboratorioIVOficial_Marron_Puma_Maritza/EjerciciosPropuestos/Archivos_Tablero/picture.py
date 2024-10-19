@@ -30,13 +30,16 @@ class Picture:
         return Picture(joined_img)
 
     def up(self, p):
-        return Picture(None)
+         return Picture(p.img + self.img)
 
     def under(self, p):
         return Picture(self.img + p.img)
 
     def horizontalRepeat(self, n):
-        return Picture(None)
+            repeated_img = []
+        for row in self.img:
+            repeated_img.append(row * n)
+        return Picture(repeated_img)
 
     def verticalRepeat(self, n):
         repeated_img = [line * n for line in self.img]
