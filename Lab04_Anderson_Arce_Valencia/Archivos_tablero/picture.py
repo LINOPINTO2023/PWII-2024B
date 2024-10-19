@@ -45,8 +45,6 @@ class Picture:
     return Picture(self.img + p.img)
   
   def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
     repeated_img = []
     for row in self.img:
             repeated_img.append(row * n)
