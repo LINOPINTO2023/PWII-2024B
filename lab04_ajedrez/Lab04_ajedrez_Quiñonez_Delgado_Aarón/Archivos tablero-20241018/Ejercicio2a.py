@@ -1,4 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 from picture import *
-draw(king.negative())
+
+#Caballo blanco con caballo negro
+caballos = knight.join(knight.negative())
+draw(caballos.negative().up(caballos))
