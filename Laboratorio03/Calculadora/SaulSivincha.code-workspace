@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../../JS/SaulSivincha"
+		},
+		{
+			"path": "../../../../Bootstrap"
+		},
+		{
+			"path": "../../Laboratorio2/escuela_danza"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Laboratorio4/SaulSivinchaMachaca"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Calculadora"
+	}
+}
