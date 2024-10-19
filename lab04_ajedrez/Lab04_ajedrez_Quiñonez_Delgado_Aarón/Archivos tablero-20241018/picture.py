@@ -63,7 +63,7 @@ class Picture:
 		""" Devuelve una nueva figura poniendo la figura p sobre la
 		figura actual """
 		#Copiamos todo el contenido en nuestra nueva variable
-		figuraSobrepuesta = [list(self) for fila in self.img]
+		figuraSobrepuesta = [list(fil) for fil in self.img]
 		#Vamos analizando cada caracter de cada fila con bucles
 		for i, fil in enumerate(p.img):
 			for j, col in enumerate(fil):
