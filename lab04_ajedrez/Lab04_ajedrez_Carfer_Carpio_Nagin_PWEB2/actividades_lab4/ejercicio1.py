@@ -19,7 +19,7 @@ for cont in array:
 #Pedimos los valores dentro de la matriz
 for i in range(len(array)):
     for j in range(len(array)):
-        pos = int(input(f"\nIngrese valores para {i}x{j}: "))
+        pos = int(input(f"\nIngrese valores para {i}x{j} "))
         array[i][j] = pos
         #Imprimimos la matriz
         print("Su matriz es:")
