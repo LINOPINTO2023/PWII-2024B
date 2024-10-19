@@ -1,9 +1,12 @@
 from interpreter import draw
 from chessPictures import *
 
-filanegro = square.under(square.negative()).join(square.negative().under(square)).horizontalRepeat(4).verticalRepeat(1).superponer(pawn.negative().horizontalRepeat(8).under(rock.join(knight).join(bishop).join(queen).join(king).join(bishop).join(knight).join(rock).negative()))
+Piezas = rock.join(knight).join(bishop).join(queen).join(king).join(bishop).join(knight).join(rock) #Union de fichas torre/caballo/alfil/reina/rey/..
+peones= pawn.horizontalRepeat(8) #Peones
+tablero = square.under(square.negative()).join(square.negative().under(square)).horizontalRepeat(4) #Tablero 8x2
 
-filablanca = square.under(square.negative()).join(square.negative().under(square)).horizontalRepeat(4).verticalRepeat(3).superponer(rock.join(knight).join(bishop).join(queen).join(king).join(bishop).join(knight).join(rock).under(pawn.horizontalRepeat(8)))
-
+filanegro = tablero.verticalRepeat(1).superponer(peones.negative().under(Piezas.negative()))
+filablanca = tablero.verticalRepeat(3).superponer(Piezas.under(peones))
 tablero_de_Ajedrez = filablanca.under(filanegro)
-draw(tablero_de_Ajedrez)
+
+draw(tablero)
