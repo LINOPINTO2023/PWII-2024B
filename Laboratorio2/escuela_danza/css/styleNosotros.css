@@ -1,0 +1,192 @@
+/* Global */
+* {
+    font-family: "Latolight"; /* Fuente principal por defecto */
+}
+
+/* Definición de las fuentes */
+@font-face {
+    font-family: LatoHeavy;
+    src: url(fonts/LatoHeavy.ttf);
+}
+@font-face {
+    font-family: Latolight;
+    src: url(fonts/Latolight.ttf);
+}
+@font-face {
+    font-family: DolceVita;
+    src: url(fonts/DolceVita.ttf);
+}
+@font-face {
+    font-family: Neoteric-Bold;
+    src: url(fonts/Neoteric-Bold.ttf);
+}
+
+/* Shortcuts */
+.pd-0 { padding: 0; }
+.pt-5 { padding-top: 5%; }
+.pb-5 { padding-bottom: 5%; }
+.mg-0 { margin: 0; }
+.mg-10 { margin: 30px; }
+.w-100 { width: 100%; }
+.lh { line-height: 1.5; }
+.lh2 { line-height: 2; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-white { color: white; }
+.text-gray { color: rgb(83, 88, 95); }
+.text-blue { color: #285989; }
+.a-none-decoration { text-decoration: none; }
+.bg-gray { background-color: rgb(244, 244, 244); }
+.bg-dark { background-color: rgb(244, 244, 244); }
+.bg-gray2 { background-color: rgba(0, 0, 0, 0.3); }
+.bg-img-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text-box {
+        background-color: rgba(0, 0, 0, 0.65); /* Fondo semitransparente con tono más oscuro y uniforme */
+        padding: 15px; /* Ajusta el espaciado interno si es necesario */
+        border-radius: 0; /* Bordes rectos, sin redondeo */
+        box-shadow: none; /* Quitar sombra si deseas un estilo más plano */
+        max-width: 600px; /* Ancho máximo para el cuadro */
+        margin: auto; /* Centra el cuadro */
+        color: white; /* Color del texto */
+        font-family: verdana; /* Fuente para el texto */
+}
+
+.title-pilar{
+        color: #838895; /* Color del texto */
+        font-family: sans-serif; /* Fuente para el texto */
+        text-align: center;
+        transform: scaleY(1.1); /* Alargar la altura del texto */
+}
+
+.line-pilar{
+        margin-left: 20px; /* Reduce el margen izquierdo */
+        margin-right: 20px; /* Reduce el margen derecho */
+        border: none; /* Elimina el borde predeterminado */
+        height: 2px; /* Ajusta el grosor de la línea */
+        background-color: #838895; /* Color plomo */
+        text-align: center; /* Centra la línea en el contenedor */
+}
+
+.content-pilar{
+        margin-left: 30px; /* Reduce el margen izquierdo */
+        margin-right: 30px; /* Reduce el margen derecho */
+        color: #838895; /* Color del texto */
+        font-family: verdana; /* Fuente para el texto */
+        text-align: center;
+
+}
+
+.name-Instructors{
+        color: #000000; /* Color del texto */
+        font-family: verdana; /* Fuente para el texto */
+        text-align: start;
+}
+
+.info-Instructors{
+        color: #000000; /* Color del texto */
+        font-family: verdana; /* Fuente para el texto */
+        text-align: start;
+}
+
+.instructores-section img {
+        width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+        height: 250px; /* Altura fija para asegurar consistencia entre todas las imágenes */
+        object-fit: cover; /* Asegura que la imagen llene el contenedor sin distorsión */
+        object-position: top; /* Alínea la imagen desde la parte superior */
+        border-radius: 5px; /* Opcional: para esquinas redondeadas */
+}
+
+.cita-frase{
+        font-family: verdana; /* Puedes cambiar la fuente si es necesario */
+        font-size: 2rem; /* Tamaño de la fuente */
+        font-style: italic; /* Texto en cursiva */
+        text-align: center; /* Centrar el texto horizontalmente */
+        color: #000000; /* Color del texto, ajusta según tu diseño */
+        margin: 60px 0; /* Margen para espaciar la cita del contenido superior e inferior */
+        font-weight: 300; /* Peso de la fuente, ajusta según sea necesario */
+        transform: scaleY(1.4); /* Alargar la altura del texto */
+}
+
+/* Estilos para el Header */
+header {
+    background-color: #f8f9fa; /* Fondo más claro para mayor contraste */
+    padding: 30px 0px 0px; /* Espaciado superior e inferior */
+}
+header h1 {
+    font-family: sans-serif; /* Fuente elegante para el título */
+    font-size: 1.8rem; /* Aumentar tamaño para mayor impacto */
+    padding: 10px 0; /* Espacio arriba y abajo */
+    margin: 0; /* Eliminar margen superior e inferior */
+    text-align: center; /* Centrar el título */
+}
+
+/* Estilo para el menú de navegación */
+header .nav-link {
+    font-family: verdana; /* Fuente clara para el menú */
+    color: #4e5052; /* Color del texto del menú */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente más grande */
+    letter-spacing: 0.1rem; /* Espaciado entre letras */
+    margin: 0 30px; /* Espaciado entre elementos del menú */
+}
+
+
+.input-group .input-group-text {
+    background-color: white;
+    border-color: #cbd1d6;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+}
+
+.input-group .form-control {
+    border-left: 0;
+
+}
+
+footer {
+    background-color: rgb(26, 41, 81);
+    color: rgb(180, 184, 190);
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+.text-footer {
+    padding-left: 15px;
+}
+
+.input-group-prepend {
+    align-items: flex-start;
+}
+
+button.btn-custom {
+    background-color: rgb(26, 41, 81);
+    color: white;
+    border-radius: 5px;
+    border-color: rgb(26, 41, 81);
+    width: 100%;
+    padding: 10px;
+}
+
+.row-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.row-right img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+
+

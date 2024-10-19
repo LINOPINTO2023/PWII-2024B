@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('../fonts/DolceVita.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Neoteric-Bold';
+    src: url('../fonts/Neoteric-Bold.ttf') format('truetype');
+}
+
+/* cuerpo */
+body {
+    font-family: 'Neoteric-Bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* titulo principal */
+.custom-title {
+    font-family: 'Dolce Vita', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* barra de navegacion */
+nav .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 0.5rem 1rem;
+}
+
+/* mouse en los enlaces de navegacion */
+nav .navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* tarjetas de danzas */
+.card {
+    position: relative;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* animacion tarjetas */
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* imagen dentro de la tarjeta */
+.card-img-top {
+    height: 457px; 
+    object-fit: cover;
+}
+
+/* texto y titulo de las tarjetas */
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* mouse sobre la tarjeta mostrar texto*/
+.card:hover .card-body {
+    opacity: 1;
+}
+
+/* Título dentro de la tarjeta (h5) */
+h5.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Texto dentro de la tarjeta */
+p.card-text {
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-group .input-group-text {
+    background-color: white;
+    border-color: #cbd1d6;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+}
+
+.input-group .form-control {
+    border-left: 0;
+
+}
+
+footer {
+    background-color: rgb(26, 41, 81);
+    color: rgb(180, 184, 190);
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+.text-footer {
+    padding-left: 15px;
+}
+
+.input-group-prepend {
+    align-items: flex-start;
+}
+
+button.btn-custom {
+    background-color: rgb(26, 41, 81);
+    color: white;
+    border-radius: 5px;
+    border-color: rgb(26, 41, 81);
+    width: 100%;
+    padding: 10px;
+}
+
+.row-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.row-right img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
