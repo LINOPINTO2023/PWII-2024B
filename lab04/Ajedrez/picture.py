@@ -32,12 +32,12 @@ class Picture:
         return Picture(negative)
 
     def join(self, p):
-      """ Devuelve una nueva figura poniendo la figura del argumento 
+        """ Devuelve una nueva figura poniendo la figura del argumento 
         al lado derecho de la figura actual """
-      joined = []
-      for row1, row2 in zip(self.img, p.img):
-          joined.append("".join(row1) + "".join(row2))  # Convertimos las filas en cadenas antes de concatenarlas
-      return Picture(joined)
+        joined = []
+        for row1, row2 in zip(self.img, p.img):
+            joined.append("".join(row1) + "".join(row2))  # Convertimos las filas en cadenas antes de concatenarlas
+        return Picture(joined)
 
 
     def up(self, p):
@@ -46,7 +46,28 @@ class Picture:
 
     def under(self, p):
         """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
-        return self.up(p)  # Igual a `up`, ya que son conceptos similares pero invertidos
+        combined = []
+        max_rows = max(len(self.img), len(p.img))  # Asegurarnos de recorrer todas las filas
+        for i in range(max_rows):
+            if i < len(self.img):
+                row_self = self.img[i]  # Fila del tablero
+            else:
+                row_self = [" "] * len(self.img[0])  # Si p es más grande, rellenar con espacios
+
+            if i < len(p.img):
+                row_p = p.img[i]  # Fila de las piezas
+            else:
+                row_p = [" "] * len(p.img[0])  # Si self es más grande, rellenar con espacios
+
+            combined_row = []
+            for pixel_self, pixel_p in zip(row_self, row_p):
+                if pixel_p != " ":
+                    combined_row.append(pixel_p)
+                else:
+                    combined_row.append(pixel_self)
+            combined.append("".join(combined_row))
+
+        return Picture(combined)
 
     def horizontalRepeat(self, n):
         """ Devuelve una nueva figura repitiendo la figura actual al costado
