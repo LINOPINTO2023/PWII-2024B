@@ -39,8 +39,8 @@ fila_peones_blancas = peon_blanco.horizontalRepeat(8)
 # Dibujar el tablero completo con todas las piezas
 fila_tablero_negras = fila1.under(fila_negras)
 fila_tablero_peones_negras = fila2.under(fila_peones_negras)
-fila_tablero_blancas = fila1.under(fila_blancas)
-fila_tablero_peones_blancas = fila2.under(fila_peones_blancas)
+fila_tablero_blancas = fila2.under(fila_blancas)
+fila_tablero_peones_blancas = fila1.under(fila_peones_blancas)
 tablero_sin_piezas = fila1.up(fila2).verticalRepeat(2)
 tablero_completo = fila_tablero_negras.up(fila_tablero_peones_negras).up(tablero_sin_piezas).up(fila_tablero_peones_blancas).up(fila_tablero_blancas)
 
