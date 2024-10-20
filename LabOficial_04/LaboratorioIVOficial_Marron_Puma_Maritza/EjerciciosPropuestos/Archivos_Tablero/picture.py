@@ -19,7 +19,8 @@ class Picture:
         return Picture(vertical)
 
     def horizontalMirror(self):
-        return Picture(self.img[::-1])
+            horizontal = [''.join(reversed(line)) for line in self.img]
+            return Picture(horizontal)
 
     def negative(self):
         negated_img = [''.join(map(self._invColor, line)) for line in self.img]
@@ -36,10 +37,7 @@ class Picture:
         return Picture(self.img + p.img)
 
     def horizontalRepeat(self, n):
-            repeated_img = []
-        for row in self.img:
-            repeated_img.append(row * n)
-        return Picture(repeated_img)
+        return Picture([line * n for line in self.img])
 
     def verticalRepeat(self, n):
         repeated_img = [line * n for line in self.img]

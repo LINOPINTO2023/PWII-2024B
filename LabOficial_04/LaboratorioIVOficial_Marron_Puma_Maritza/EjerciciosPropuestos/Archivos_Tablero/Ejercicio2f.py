@@ -1,12 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 
-box_white = square
-box_black = box_white.negative()
-box_wb = box_white.join(box_black)
-box_bw = box_wb.negative()
-row_firstWhite = box_wb.horizontalRepeat(4)
-row_firstBlack = box_bw.horizontalRepeat(4)
-union_of_rows = row_firstWhite.under(row_firstBlack)
-board = union_of_rows.verticalRepeat(2)
-draw(board)
+row_whiteFirst = square.join(square.negative()).horizontalRepeat(4)
+row_blackFirst = square.negative().join(square).horizontalRepeat(4)
+chess_board = row_whiteFirst.under(row_blackFirst).verticalRepeat(2)
+draw(chess_board)
