@@ -1,5 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 from picture import *
-a = rock
-draw(a._invColor)
+
+#Caballo blanco con caballo negro
+caballos = knight.join(knight.negative())
+draw(caballos.negative().up(caballos))

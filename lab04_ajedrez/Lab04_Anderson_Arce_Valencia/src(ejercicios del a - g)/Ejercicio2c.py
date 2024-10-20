@@ -1,4 +1,5 @@
 from interpreter import draw
 from chessPictures import *
 
-draw(queen.horizontalRepeat(4))
+figura3 = queen.horizontalRepeat(4)
+draw(figura3)
