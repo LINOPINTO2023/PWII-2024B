@@ -1,68 +1,95 @@
 import random
-
-palabras = [
-    "elefante",
-    "murcielago",
-    "aeropuerto",
-    "estudiante",
-    "mariposa",
-    "guitarra",
-    "ventilador",
-    "computadora",
-    "jardineria",
-    "caminante",
-    "abrelatas",
-    "biblioteca",
-    "universidad",
-    "constructor",
-    "calendario"
-]
-#Escogemos de manera aleatoria una palabra del array
-numRand = random.randint(0, len(palabras)-1)
-palabraEscogida = palabras[numRand]
-#Hacemos una lista que almacena la palabra escogida
-palabraOculta = list(palabraEscogida)
-#Escogemos de manera aleatorias las letras que ocultaremos
-longMitadPalabra = len(palabraEscogida)//2
-#Hacemos un bucle for que nos almacenará todas las posiciones de letras a ocultar
-posLetras = []
-for i in range(longMitadPalabra):
-    numRand = random.randint(0, len(palabraEscogida) - 1)
-    while True:
-        if numRand not in posLetras:
-            posLetras.append(numRand)
+#Creamos un bucle para que el usuario decida si quiere continuar o no con el juego
+while True:
+    palabras = [
+        "elefante",
+        "murcielago",
+        "aeropuerto",
+        "estudiante",
+        "mariposa",
+        "guitarra",
+        "ventilador",
+        "computadora",
+        "jardineria",
+        "caminante",
+        "abrelatas",
+        "biblioteca",
+        "universidad",
+        "constructor",
+        "calendario"
+    ]
+    #Escogemos de manera aleatoria una palabra del array
+    numRand = random.randint(0, len(palabras)-1)
+    palabraEscogida = palabras[numRand]
+    #Hacemos una lista que almacena la palabra escogida
+    palabraOculta = list(palabraEscogida)
+    #Escogemos de manera aleatorias las letras que ocultaremos
+    longMitadPalabra = len(palabraEscogida)//2
+    #Hacemos un bucle for que nos almacenará todas las posiciones de letras a ocultar
+    posLetras = []
+    for i in range(longMitadPalabra):
+        numRand = random.randint(0, len(palabraEscogida) - 1)
+        while True:
+            if numRand not in posLetras:
+                posLetras.append(numRand)
+                break
+            else:
+                numRand = random.randint(0, len(palabraEscogida) - 1)
+    #Hacemos un bucle for que reemplazará cada caracter por "_"
+    for i in posLetras:
+        palabraOculta[i] = "_"
+    #Usamos join para convertir la lista en string
+    palabraOculta = "".join(palabraOculta)
+    print("La palabra oculta es:", palabraOculta)
+    #Creamos un array que almacernará los caracteres correctos ingresados por el usuario
+    letrasHalladas = []
+    #Creamos un contador de intentos que se mostrará al usuario, tendrá 5 intentos para completar la palabra
+    intentos = 5
+    while intentos != 0:
+        #Pedimos al usuario que ingrese una letra o la palabra completa a adivinar
+        usuarioInput = input("Ingrese la letra o palabra completa: ")
+        #Si introduce la palabra completa
+        if len(usuarioInput) > 1 and usuarioInput == palabraEscogida:
+            print("Palabra correcta, ganaste")
             break
+        #Si solo introduce una letra
+        elif len(usuarioInput) == 1:
+            if usuarioInput in palabraEscogida and usuarioInput not in letrasHalladas:
+                palabraOculta = list(palabraOculta)
+                for i in range(len(palabraEscogida)):
+                    if palabraEscogida[i] == usuarioInput:
+                        #Reemplazamos con el input del usuario
+                        palabraOculta[i] = usuarioInput
+                #Almacenamos la letra escrita en el array
+                letrasHalladas.append(usuarioInput)
+                palabraOculta = "".join(palabraOculta)
+                print(f"Palabra correcta, tiene {intentos} intentos")
+            else:
+                intentos-=1
+                print(f"Letra incorrecta, tiene {intentos} intentos")
+            print(palabraOculta)
         else:
-            numRand = random.randint(0, len(palabraEscogida) - 1)
-#Hacemos un bucle for que reemplazará cada caracter por "_"
-for i in posLetras:
-    palabraOculta[i] = "_"
-#Usamos join para convertir la lista en string
-palabraOculta = "".join(palabraOculta)
-print("La palabra oculta es:", palabraOculta)
-#Creamos un contador de intentos que se mostrará al usuario, tendrá 5 intentos para completar la palabra
-intentos = 5
-while intentos != 0:
-    #Pedimos al usuario que ingrese una letra o la palabra completa a adivinar
-    usuarioInput = input("Ingrese la letra o palabra completa: ")
-    #Si introduce la palabra completa
-    if len(usuarioInput) > 1 and usuarioInput == palabraEscogida:
-        print("Palabra correcta, ganaste")
-    #Si solo introduce una letra
-    elif len(usuarioInput) == 1:
-        if usuarioInput in palabraEscogida:
-            palabraOculta = list(palabraOculta)
-            for i in range(len(palabraEscogida)):
-                if palabraEscogida[i] == usuarioInput:
-                    #Reemplazamos con el input del usuario
-                    palabraOculta[i] = usuarioInput
-            palabraOculta = "".join(palabraOculta)
-            print(f"Palabra correcta, tiene {intentos} intentos")
-        else:
-            intentos-=1
-            print(f"Letra incorrecta, tiene {intentos} intentos")
-        print(palabraOculta)
-    #Comprobación final cuando la palabra esté completada y de un mensaje que ganó
-    if "_" not in palabraOculta:
-        print("Felicidades, ganó el juego")
+            print("Ingrese un valor válido, no tendrá penalización")
+        #Comprobación final cuando la palabra esté completada y de un mensaje que ganó
+        if "_" not in palabraOculta:
+            print("Felicidades, ganó el juego")
+            break
+    if intentos == 0:
+        while True:
+            print("Juego perdido. ¿Quiere volver a jugar?\n[1]Si\n[2]No")
+            intentar = int(input())
+            if intentar == 1 or intentar == 2:
+                break
+            else:
+                print("Ingrese un número válido (1 ó 2)")
+    else:
+        while True:
+            print("¿Quiere volver a jugar?\n[1]Si\n[2]No")
+            intentar = int(input())
+            if intentar == 1 or intentar == 2:
+                break
+            else:
+                print("Ingrese un número válido (1 ó 2)")
+    #Comprobamos que ingresó el usuario para continuar o terminar el juego
+    if intentar == 2:
         break
