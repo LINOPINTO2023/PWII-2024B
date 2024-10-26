@@ -21,3 +21,6 @@ def ocultar_letras(palabra):
 def juego():
     palabra_original = random.choice(palabras)  # Elegir una palabra al azar
     palabra_actual = ocultar_letras(palabra_original)  # Ocultamos letras
+
+    intentos = 5  # Número de intentos
+    print(f"Palabra a adivinar: {palabra_actual}")
