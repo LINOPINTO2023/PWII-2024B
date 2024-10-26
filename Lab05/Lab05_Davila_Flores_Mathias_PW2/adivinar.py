@@ -24,3 +24,8 @@ def juego():
 
     intentos = 5  # Número de intentos
     print(f"Palabra a adivinar: {palabra_actual}")
+
+    while intentos > 0 and "_" in palabra_actual:
+        intento = input(f"Tienes {intentos} intentos. Introduce una letra o la palabra completa: ").lower()
+    else:
+        print(f"Entrada inválida. Debes introducir una letra o una palabra de {len(palabra_original)} letras.")
