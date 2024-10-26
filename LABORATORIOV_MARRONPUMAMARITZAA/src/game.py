@@ -5,12 +5,12 @@ guessed_letters = []
 while True:
     letter = input("Ingrese su letra correspondiente: ")
     guessed_letters.append(letter)
-    hidden_letter=''
+    hidden_letter = ''
     for c in word:
         if c in guessed_letters:
-            hidden_letter+=c
+            hidden_letter += c
         else:
-            hidden_letter+="_"
+            hidden_letter += "_"
     print(hidden_letter)
     if "_" not in hidden_letter:
         print("¡Ganaste el juego!")
