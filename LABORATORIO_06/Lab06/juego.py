@@ -37,17 +37,17 @@ def actualizar(palabra, palabra_mostrada, entrada):
 def realizar_intentos(palabra, palabra_mostrada, intentos, entrada):
     if intento(palabra, entrada):
         palabra_mostrada = actualizar(palabra, palabra_mostrada, entrada)
-        print("¡Correcto!")
+        print("\n¡Correcto!\n")
         print(palabra_mostrada)
     else:
         intentos -= 1
-        print("Intento Incorrecto")
+        print("\nIntento Incorrecto\n")
     return palabra_mostrada, intentos
 
 #mostrar la palabra oculta y el numero de intentos que se tiene
 def mostrar(palabra_mostrada, intentos):
     print(f"PALABRA --> {palabra_mostrada}")
-    print(f"INTENTOS --> {intentos}")
+    print(f"INTENTOS --> {intentos}\n")
 
 
 def jugar():
@@ -55,8 +55,8 @@ def jugar():
     palabra_mostrada = ocultar(palabra)
     intentos = 7
 
-    print("BIENVENIDO JUGARDO")
-    print(f"TIENES {intentos} INTENTOS PARA ADIVINAR LA PALABRA")
+    print("\nBIENVENIDO JUGARDO\n")
+    print(f"TIENES {intentos} INTENTOS PARA ADIVINAR LA PALABRA\n")
     mostrar(palabra_mostrada, intentos)
 
     while intentos > 0:
@@ -65,6 +65,7 @@ def jugar():
 
         if palabra_mostrada == palabra:
             print("FELICIDADES JUGADOR ----- ADIVINASTE LA PALABRA")
+            break
         
         mostrar(palabra_mostrada, intentos)
     
