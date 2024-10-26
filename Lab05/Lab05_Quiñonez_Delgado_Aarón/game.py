@@ -46,8 +46,11 @@ if len(usuarioInput) > 1 and usuarioInput == palabraEscogida:
     print("Palabra correcta, ganaste")
 #Si solo introduce una letra
 elif len(usuarioInput) == 1:
-    for i in palabraEscogida:
-        if i == usuarioInput:
-            #Volvemos la palabra lista y después lo volveremos string
-            
-contador = 0
+    for i in range(len(palabraEscogida)):
+        if palabraEscogida[i] == usuarioInput:
+            #Volvemos la palabra lista, lo reemplazamos por el input del usuario y lo volveremos string de nuevo
+            palabraOculta = list(palabraOculta)
+            palabraOculta[i] = usuarioInput
+            palabraOculta = "".join(palabraOculta)
+            break
+print(palabraOculta)
