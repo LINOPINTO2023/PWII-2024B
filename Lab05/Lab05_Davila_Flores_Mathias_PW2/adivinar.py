@@ -44,5 +44,10 @@ def juego():
                         nueva_palabra += palabra_actual[i]  # Mantener la letra oculta o ya revelada
                 palabra_actual = nueva_palabra  
                 print(f"¡Acertaste! Palabra actual: {palabra_actual}")
+
+            # Si la letra es incorrecta o adivina mal la palabra
+            else:  
+                intentos -= 1
+                print(f"Intento incorrecto. Te quedan {intentos} intentos.")
         else:
             print(f"Entrada inválida. Debes introducir una letra o una palabra de {len(palabra_original)} letras.")
