@@ -7,13 +7,13 @@ PALABRAS = ["europa", "programacion", "arequipa", "ceviche", "computadora", "lat
 def ocultar(palabra):
     ocultas = int(len(palabra) * 0.6)
     indices = random.sample(range(len(palabra)), ocultas)
-    palabra_inicial = list(palabra)
+    palabra_mostrada = list(palabra)
 
     for i in indices:
-        palabra_inicial[i] = "_"
+        palabra_mostrada[i] = "_"
     
     
-    return ''.join(palabra_inicial)
+    return ''.join(palabra_mostrada)
 
 #Verificar si el intento es correcto o incorrecto
 def intento(palabra, entrada):
@@ -22,6 +22,17 @@ def intento(palabra, entrada):
     if(len(entrada) == len(palabra)):
         return entrada == palabra
     return False
+
+#Actualizar la palabra mostrada con la letra ingresada
+def actualizar(palabra, palabra_mostrada, entrada):
+    nueva_palabraM = ''
+    for letra in palabra:
+        if letra == entrada or letra in palabra_mostrada:
+            nueva_palabraM += letra
+        else:
+            nueva_palabraM += '_'
+    return nueva_palabraM
+
 
 #ejemplo
 palabra_seleccionada = random.choice(PALABRAS)
@@ -34,6 +45,8 @@ while True:
     
     if intento(palabra_seleccionada, entrada):
         print("¡Correcto!")
+        palabra_oculta = actualizar(palabra_seleccionada, palabra_oculta, entrada)
+        print(palabra_oculta)
         if entrada == palabra_seleccionada:
             print("¡Has adivinado la palabra! Era:", palabra_seleccionada)
             break
