@@ -17,3 +17,7 @@ def ocultar_letras(palabra):
         else:
             palabra_oculta += letra
     return palabra_oculta
+
+def juego():
+    palabra_original = random.choice(palabras)  # Elegir una palabra al azar
+    palabra_actual = ocultar_letras(palabra_original)  # Ocultamos letras
