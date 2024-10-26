@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import random
 #Las palabras que se adivinaran
 listapalabras = ['elefante', 'lapicero', 'hormiga', 'gallina', 'ave', 'antro', 'azul', 'piña',
@@ -76,7 +75,7 @@ def iniciarJuego():
 
 
 def mostrarIntroduccion():
-    print("----------AHORCADO----------")
+    print("**********AHORCADO**********")
 
 def mostrarFelicitacion(palabra):
     print("*****FELICIDADES*****")
