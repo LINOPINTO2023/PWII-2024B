@@ -33,6 +33,17 @@ def actualizar(palabra, palabra_mostrada, entrada):
             nueva_palabraM += '_'
     return nueva_palabraM
 
+#actulizar al realizar un intento (actulizar el num de intentos o actulizar la palabra oculta)
+def intentos(palabra, palabra_mostrada, intentos, entrada);
+    if intento(palabra, entrada):
+        palabra_mostrada = actualizar(palabra, palabra_mostrada, entrada)
+        print("¡Correcto!")
+        print(palabra_mostrada)
+    else:
+        intentos -= 1
+        print("Intento Incorrecto")
+    return palabra_mostrada, intentos
+
 
 #ejemplo
 palabra_seleccionada = random.choice(PALABRAS)
