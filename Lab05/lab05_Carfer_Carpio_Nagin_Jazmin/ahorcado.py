@@ -26,3 +26,37 @@ def mostrarIntroduccion():
 def mostrarFelicitacion(palabra):
     print("*****FELICIDADES*****")
     print(f"¡Tu palabra es: {palabra}!")
+
+def dibujarMuñeco(posicion):
+    partesCuerpo = [
+        '0',
+        '/', '|', '\\',
+             '|',
+        '/', '\\'
+    ]
+    secciones = [
+        '\n\t+--------+\n\t|\t |\n',
+        '\n=========\n'
+    ]
+    cuerpo = ''
+    for i in range(len(partesCuerpo)):
+        if i <= posicion and posicion >= 0:
+            if i == 0:
+                cuerpo = '\t|\t ' + partesCuerpo[i]
+            elif i > 0 and i < 4:
+                if i == 1:
+                    cuerpo = cuerpo + "\n\t|\t"
+                cuerpo = cuerpo + partesCuerpo[i]
+            elif i == 4:
+                cuerpo = cuerpo + '|\t ' + partesCuerpo[i] + '\n\t|\t'
+            elif i > 4:
+                cuerpo = cuerpo + partesCuerpo[i] + " "
+
+            if i > 2 and i < 4:
+                cuerpo = cuerpo + '\n\t'
+        else:
+            if i > 0:
+                cuerpo += "\n"
+            cuerpo = cuerpo + '\t|\t'
+    cuerpo = secciones[0] + cuerpo + secciones[1]
+    print(cuerpo)
