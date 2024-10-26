@@ -9,7 +9,7 @@ while continuar_jugando:
     word_choose = random.randint(0, len(palabras) - 1)
 
     delete_word = []
-    for letra in range(len(palabras[word_choose]) // 2):
+    for letra in range(len(palabras[word_choose]) // 2 - 1):
         random_number = random.randint(0, len(palabras[word_choose]) - 1)
         if random_number not in delete_word:
             delete_word.append(random_number)
