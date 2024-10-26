@@ -4,9 +4,9 @@ import random
 palabras = ["PYTHON", "UNSA", "SISTEMAS", "CONFIGURACION", "VIERNES", "ADIVINAR"]
 cant_intentos = 5
 
-def ocultar_letras(palabra, porcentaje_oculto=0.6):
-    posiciones_a_ocultar = random.sample(range(len(palabra)), int(len(palabra) * porcentaje_oculto))
-    return "".join("_" if i in posiciones_a_ocultar else letra for i, letra in enumerate(palabra))
+def ocultar_letras(palabra):
+    posiciones_ocultas = random.sample(range(len(palabra)), int(len(palabra) * 0.6))
+    return "".join("_" if i in posiciones_ocultas else letra for i, letra in enumerate(palabra))
 
 #funcion del juego 
 def jugar():
