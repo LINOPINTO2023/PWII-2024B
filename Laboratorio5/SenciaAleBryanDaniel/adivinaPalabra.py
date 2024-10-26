@@ -19,7 +19,7 @@ def jugar():
     print(f"QUE PALABRA ES: {palabra_oculta}")
     
     while intentos_restantes > 0:
-        intento = input("PON UNA LETRA O LA PALABRA COMPLETA: ")
+        intento = input("PON UNA LETRA O LA PALABRA COMPLETA: ").upper()
         #una letra adivinada
         if len(intento) == 1 and intento in palabra:
             palabra_oculta = "".join(intento if palabra[i] == intento else palabra_oculta[i] for i in range(len(palabra)))
