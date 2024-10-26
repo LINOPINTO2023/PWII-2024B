@@ -33,5 +33,16 @@ def juego():
             if intento == palabra_original:  
                 print(f"¡Felicidades! Adivinaste la palabra: {palabra_original}")
                 return
+            
+            # Si introduce una letra correcta
+            elif len(intento) == 1 and intento in palabra_original:  
+                nueva_palabra = ""  
+                for i in range(len(palabra_original)):
+                    if palabra_original[i] == intento:
+                        nueva_palabra += intento  # Agregar la letra correcta
+                    else:
+                        nueva_palabra += palabra_actual[i]  # Mantener la letra oculta o ya revelada
+                palabra_actual = nueva_palabra  
+                print(f"¡Acertaste! Palabra actual: {palabra_actual}")
         else:
             print(f"Entrada inválida. Debes introducir una letra o una palabra de {len(palabra_original)} letras.")
