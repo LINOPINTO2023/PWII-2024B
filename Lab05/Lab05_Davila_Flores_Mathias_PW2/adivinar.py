@@ -28,6 +28,11 @@ def juego():
     while intentos > 0 and "_" in palabra_actual:
         intento = input(f"Tienes {intentos} intentos. Introduce una letra o la palabra completa: ").lower()
 
+        # Verificar si la entrada es alfabética
+        if not intento.isalpha():
+            print("Entrada inválida. Solo se permiten letras.")
+            continue  # Regresar al inicio del bucle sin reducir intentos
+
         # Verificar que la longitud sea válida 
         if len(intento) == 1 or len(intento) == len(palabra_original):
             # Si adivina la palabra completa
