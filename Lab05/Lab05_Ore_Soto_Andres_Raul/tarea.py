@@ -17,4 +17,9 @@ for index in delete_word:
     new_chain[index] = "_"
 
 palabra_final = "".join(new_chain)
+
+# Generar un numero aleatorio de intentos
+intentos = random.randint(2, len(palabra_final) - 1)
+
 print(palabra_final)
+print(f"Tienes {intentos} intentos para adivinar la palabra.")
