@@ -21,20 +21,30 @@ palabra_final = "".join(new_chain)
 # Generar un numero aleatorio de intentos
 intentos = random.randint(2, len(palabra_final) - 1)
 
+
 # entrada para la respuesta
 while True:
+    print(palabra_final)
     answer = input("ingresa la palabra completa: ")
     if len(answer) != len(palabra_final):
         print("Ingresa una palabra con la misma cantidad de letras")
-        continue
     else:
         if answer.lower() == palabras[word_choose].lower():
+            print("-----------------------------------------\n")
             print("Felicidades ganaste!")
-            print(f"La palabra era: {palabras[word_choose]}")
-            break
+            print(f"La palabra era: {palabras[word_choose]}\n")
+            print("================================================")
+            print("Deseas continuar jugando?(s/n)")
+            answer2 = input().lower()
+            if answer2.lower() == "s":
+                continue
+            else:
+                break
+
         else:
             intentos -= 1
-            print("Respuesta incorrecta.")
+            print("Respuesta incorrecta")
+            print(f"Te quedan {intentos} intentos")
             if intentos == 0:
                 print(f"La palabra correcta era: {palabras[word_choose]}")
                 break
