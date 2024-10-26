@@ -54,7 +54,7 @@ while intentos != 0:
             palabraOculta = list(palabraOculta)
             for i in range(len(palabraEscogida)):
                 if palabraEscogida[i] == usuarioInput:
-                    #Volvemos la palabra lista, lo reemplazamos por el input del usuario y lo volveremos string de nuevo
+                    #Reemplazamos con el input del usuario
                     palabraOculta[i] = usuarioInput
             palabraOculta = "".join(palabraOculta)
             print(f"Palabra correcta, tiene {intentos} intentos")
@@ -62,3 +62,7 @@ while intentos != 0:
             intentos-=1
             print(f"Letra incorrecta, tiene {intentos} intentos")
         print(palabraOculta)
+    #Comprobación final cuando la palabra esté completada y de un mensaje que ganó
+    if "_" not in palabraOculta:
+        print("Felicidades, ganó el juego")
+        break
