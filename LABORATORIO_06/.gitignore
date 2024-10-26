@@ -1,0 +1,50 @@
+# Ignorar el entorno virtual completo
+pyvenv/
+Lib/
+Scripts/
+include/
+
+# Ignorar archivos de compilación de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignorar archivos de paquetes de Python
+*.egg-info/
+*.egg
+
+# Ignorar archivos temporales de edición
+*.swp
+*.swo
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos de configuración de IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar otros archivos temporales
+*.tmp
+
+# Ignorar configuraciones específicas de sistema
+Thumbs.db  # Para Windows
+
+# Ignorar archivos de datos generados por pruebas
+test-results/
+*.coverage
+
+# Ignorar archivos binarios o ejecutables
+*.exe
+*.dll
+
+# Si usas Jupyter Notebooks, ignora checkpoints
+.ipynb_checkpoints/
+
+# Ignorar archivos de lock
+Pipfile.lock
+poetry.lock
+
