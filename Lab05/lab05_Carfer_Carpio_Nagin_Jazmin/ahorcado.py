@@ -19,6 +19,61 @@ def generadorLetrasVisibles(palabra):
     
     return ''.join(palabraOculta)
 
+def iniciarJuego():
+    # Se selecciona una palabra aleatoria
+    palabraSeleccionada = listapalabras[random.randint(0, len(listapalabras) - 1)]
+    intentosMaximos = 7
+    intentosRestantes = intentosMaximos
+    
+    # Se genera la palabra parcialmente oculta
+    palabraOculta = generadorLetrasVisibles(palabraSeleccionada)
+    letrasVisibles = list(palabraOculta)
+    
+    mostrarIntroduccion()
+    print(f"\nTe quedan {intentosRestantes} intentos")
+    print(f"Palabra a adivinar: {palabraOculta}")
+    
+    while intentosRestantes > 0:
+        intento = input('Ingresa una letra o intenta adivinar la palabra completa: ').lower()
+        
+        # Aqui verificamos si es una letra única o una palabra completa
+        if len(intento) == 1:  # Es una letra
+            if intento in palabraSeleccionada:
+                # Aqui actualiza todas las ocurrencias de la letra
+                letraAcertada = False
+                for i in range(len(palabraSeleccionada)):
+                    if palabraSeleccionada[i] == intento and letrasVisibles[i] == '_':
+                        letrasVisibles[i] = intento
+                        letraAcertada = True
+                
+                if not letraAcertada:
+                    print("Esa letra ya estaba descubierta!")
+                    intentosRestantes -= 1
+            else:
+                print("Letra incorrecta!")
+                intentosRestantes -= 1
+                
+        else:  #  si es un intento de palabra completa
+            if intento == palabraSeleccionada:
+                mostrarFelicitacion(palabraSeleccionada)
+                return
+            else:
+                print("Palabra incorrecta!")
+                intentosRestantes -= 1
+        
+        # Muestra el estado actual
+        print(f"\nTe quedan {intentosRestantes} intentos")
+        dibujarMuñeco(intentosMaximos - intentosRestantes - 1)
+        print(''.join(letrasVisibles))
+        
+        # Verifica si ganó
+        if '_' not in letrasVisibles:
+            mostrarFelicitacion(palabraSeleccionada)
+            return
+    
+    # Si llega aquí perdió
+    print(f"\n¡Juego Terminado! La palabra era: {palabraSeleccionada}")
+
 
 def mostrarIntroduccion():
     print("----------AHORCADO----------")
@@ -60,3 +115,6 @@ def dibujarMuñeco(posicion):
             cuerpo = cuerpo + '\t|\t'
     cuerpo = secciones[0] + cuerpo + secciones[1]
     print(cuerpo)
+
+if __name__ == "__main__":
+    iniciarJuego()
