@@ -1,14 +1,18 @@
 import random
 
-words = ["Tonto", "Jordan","Desconocido"]
+words = ["Tonto", "Jordan", "Desconocido"]
 n = random.choice(words)
-i = 5
-aciertos = 0
-while i >= 0:
-    for _ in n:
-       poculto= n.replace("-")
-    print("Palabra:"," ".join(n))
-    print("Intentos restantes: ", i,)
-    print("-----------------------------------------")
-    i = i - 1
-    print(n)
+num_letras = len(n)
+max_ocultas = int(num_letras * 0.6)  # Máximo 60% de letras ocultas
+indices_ocultos = random.sample(range(num_letras), max_ocultas)  # Elegimos qué letras ocultar
+
+palabra_oculta = ""
+
+for i, letra in enumerate(n):
+    if i in indices_ocultos:
+        palabra_oculta += "_"
+    else:
+        palabra_oculta += letra
+
+print(palabra_oculta)
+
