@@ -44,22 +44,20 @@ def intentos(palabra, palabra_mostrada, intentos, entrada);
         print("Intento Incorrecto")
     return palabra_mostrada, intentos
 
+#mostrar la palabra oculta y el numero de intentos que se tiene
+def mostrar(palabra_mostrada, intentos):
+    print(f"PALABRA --> {palabra_mostrada}")
+    print(f"INTENTOS --> {intentos}")
 
-#ejemplo
-palabra_seleccionada = random.choice(PALABRAS)
-palabra_oculta = ocultar(palabra_seleccionada)
-    
-print("Palabra oculta:", palabra_oculta)
 
-while True:
-    entrada = input("Adivina una letra o la palabra completa: ")
+def jugar():
+    palabra = random.choice(PALABRAS)
+    palabra_mostrada = ocultar(palabra)
+    intentos = 7
+
+    print("BIENVENIDO JUGARDO")
+    print(f"TIENES {intentos} INTENTOS PARA ADIVINAR LA PALABRA")
+    mostrar(palabra_mostrada, intentos)
+
+
     
-    if intento(palabra_seleccionada, entrada):
-        print("¡Correcto!")
-        palabra_oculta = actualizar(palabra_seleccionada, palabra_oculta, entrada)
-        print(palabra_oculta)
-        if entrada == palabra_seleccionada:
-            print("¡Has adivinado la palabra! Era:", palabra_seleccionada)
-            break
-    else:
-        print("Incorrecto. Intenta de nuevo.")
