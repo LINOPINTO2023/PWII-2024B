@@ -8,3 +8,12 @@ def ocultar_letras(palabra):
     num_letras = len(palabra)
     max_ocultas = int(num_letras * 0.6)  # Máximo 60% de letras ocultas
     indices_ocultos = random.sample(range(num_letras), max_ocultas)  # Elegimos qué letras ocultar
+
+    # Ocultar las letras seleccionadas
+    palabra_oculta = ""
+    for i, letra in enumerate(palabra):
+        if i in indices_ocultos:
+            palabra_oculta += "_"
+        else:
+            palabra_oculta += letra
+    return palabra_oculta
