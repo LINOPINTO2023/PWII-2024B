@@ -11,6 +11,7 @@ def ocultar(palabra):
     for i in indices:
         palabra_inicial[i] = "_"
     
+    
     return ''.join(palabra_inicial)
 
 # Ejemplo de uso
