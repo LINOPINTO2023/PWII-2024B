@@ -44,3 +44,10 @@ while intentos > 0 and "_" in palabra_oculta:
         else:
             intentos -= 1
             print(f"Intento incorrecto. Te quedan {intentos} intentos.")
+    else:
+        print("Entrada invalida, debes introduccir una letra o palabra de " , len(n), "letras")
+
+if '_' not in palabra_oculta:
+    print(f"Ganaste, La palabra era:{n}")
+else:
+    print("Perdiste :p")
