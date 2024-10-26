@@ -32,4 +32,29 @@ while attempts > 0:
         break
 
 if attempts == 0:
-    print("Perdiste. La palabra era:", word)
+    print("La palabra era:", word)
+while attempts > 0:
+    hidden_letter = ''.join([c if c in guessed_letters else '_' for c in word])
+    print("Palabra:", hidden_letter)
+    print("Intentos restantes:", attempts)
+
+    letter = input("Ingrese una letra o la palabra completa: ").lower()
+    
+    if len(letter) == 1:
+        guessed_letters.append(letter)
+        if letter not in word:
+            attempts -= 1
+    elif len(letter) == len(word):
+        if letter == word:
+            print("Adivinaste la palabra:", word)
+            break
+        else:
+            attempts -= 1
+            print("La palabra no es correcta.")
+    
+    if '_' not in hidden_letter:
+        print("Adivinaste la palabra:", word)
+        break
+
+if attempts == 0:
+    print("La palabra era:", word)
