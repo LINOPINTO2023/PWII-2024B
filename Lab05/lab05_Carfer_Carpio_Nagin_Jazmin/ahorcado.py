@@ -18,3 +18,11 @@ def generadorLetrasVisibles(palabra):
         palabraOculta[posicion] = palabra[posicion]
     
     return ''.join(palabraOculta)
+
+
+def mostrarIntroduccion():
+    print("----------AHORCADO----------")
+
+def mostrarFelicitacion(palabra):
+    print("*****FELICIDADES*****")
+    print(f"¡Tu palabra es: {palabra}!")
