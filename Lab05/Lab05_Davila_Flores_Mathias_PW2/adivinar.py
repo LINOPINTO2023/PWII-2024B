@@ -51,3 +51,8 @@ def juego():
                 print(f"Intento incorrecto. Te quedan {intentos} intentos.")
         else:
             print(f"Entrada inválida. Debes introducir una letra o una palabra de {len(palabra_original)} letras.")
+
+    print(f"{'¡Ganaste!' if '_' not in palabra_actual else 'Perdiste.'} La palabra era: {palabra_original}")
+
+# Inicializacion del juego
+juego()
