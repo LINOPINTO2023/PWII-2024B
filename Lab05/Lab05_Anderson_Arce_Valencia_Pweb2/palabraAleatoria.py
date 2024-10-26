@@ -1,5 +1,8 @@
 import random
 
 words = ["Tonto", "Jordan","Desconocido"]
-n = random.randint(0,2)
-print (words[n])
+n = random.choice(words)
+i = 1
+while i < 4:
+    print("Palabra:","".join(n))
+    i= i + 1
