@@ -1,7 +1,7 @@
 import random
 
 #PALABRAS PARA EL JUEGO 
-PALABRAS = {"europa", "programacion", "arequipa", "ceviche", "computadora", "latinoamerica", "pisco"}
+PALABRAS = ["europa", "programacion", "arequipa", "ceviche", "computadora", "latinoamerica", "pisco"]
 
 def ocultar(palabra):
     ocultas = int(len(palabra) * 0.6)
