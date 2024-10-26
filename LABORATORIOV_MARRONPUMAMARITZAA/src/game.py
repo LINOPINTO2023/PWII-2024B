@@ -58,3 +58,13 @@ while attempts > 0:
 
 if attempts == 0:
     print("La palabra era:", word)
+def hide_letters(word):
+    num_letters_to_hide = max(1, int(len(word) * 0.6))
+    hidden_word = list(word)
+    indices_to_hide = random.sample(range(len(word)), num_letters_to_hide)
+    for index in indices_to_hide:
+        hidden_word[index] = '_'
+    return ''.join(hidden_word)
+
+hidden_word_start = hide_letters(word)
+print("Palabra inicial:", hidden_word_start)
