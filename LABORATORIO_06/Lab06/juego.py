@@ -34,7 +34,7 @@ def actualizar(palabra, palabra_mostrada, entrada):
     return nueva_palabraM
 
 #actulizar al realizar un intento (actulizar el num de intentos o actulizar la palabra oculta)
-def intentos(palabra, palabra_mostrada, intentos, entrada);
+def intentos(palabra, palabra_mostrada, intentos, entrada):
     if intento(palabra, entrada):
         palabra_mostrada = actualizar(palabra, palabra_mostrada, entrada)
         print("¡Correcto!")
@@ -59,5 +59,18 @@ def jugar():
     print(f"TIENES {intentos} INTENTOS PARA ADIVINAR LA PALABRA")
     mostrar(palabra_mostrada, intentos)
 
+    while intentos > 0:
+        entrada = input("INGRESE UNA LETRA O PALABRA --> ").strip().lower()
+        palabra_mostrada, intentos = intentos(palabra, palabra_mostrada, intentos, entrada)
 
+        if palabra_mostrada == palabra:
+            print("FELICIDADES JUGADOR ----- ADIVINASTE LA PALABRA")
+        
+        mostrar(palabra_mostrada, intentos)
     
+    if intentos == 0:
+        print("GAME OVER")
+        print(f"LA PALABRA ERA ---> {palabra}")
+
+if __name__ == "__main__":
+    jugar()
