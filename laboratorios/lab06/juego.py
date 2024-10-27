@@ -12,7 +12,7 @@ def ocultar_palabra(palabra):
     return ''.join(palabra_oculta)
 
 def juego_adivina_palabra():
-    palabras = ["murcielago", "maravilloso", "computadora", "television", "escritorio"]
+    palabras = ["papaya", "fresa", "sandia", "durazno", "mandarina","pera"]#podemos cambiar las palabras que deseamos
     palabra = random.choice(palabras)
     palabra_oculta = ocultar_palabra(palabra)
     intentos = 5
