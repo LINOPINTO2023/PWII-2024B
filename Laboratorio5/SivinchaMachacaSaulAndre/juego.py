@@ -27,7 +27,8 @@ def playWordGuessingGame():
     chosenWord = random.choice(wordList)
     hiddenWord, hiddenIndices = hideWord(chosenWord)
     wordInProgress = list(hiddenWord)
-    attempts = 5  
+    attempts = 5
+    score = 0 
 
     print(f"You have {attempts} attempts to guess the word.")
     print("Word:", hiddenWord)
@@ -45,9 +46,11 @@ def playWordGuessingGame():
                 attempts -= 1
                 print("Incorrect letter. Attempts remaining:", attempts)
 
-        elif len(guess) == len(chosenWord):  
+        elif len(guess) == len(chosenWord):
             if guess == chosenWord:
+                score += attempts * 10 
                 print("Congratulations! You've guessed the word:", chosenWord)
+                print("Your score:", score)
                 return
             else:
                 attempts -= 1
@@ -59,9 +62,12 @@ def playWordGuessingGame():
         print("Word:", currentProgress)
 
         if currentProgress == chosenWord:
+            score += attempts * 10  
             print("Congratulations! You've completed the word:", chosenWord)
+            print("Your score:", score)
             return
 
     print("Game over! The word was:", chosenWord)
+    print("Your score:", score)
 
 playWordGuessingGame()
