@@ -9,9 +9,11 @@ def hideWord(word):
     return "".join(hiddenWordList), hiddenIndices
 
 def playWordGuessingGame():
-    print("Welcome to the Word Guessing Game!")
+    print("\n" + "="*30)
+    print("🎉 Welcome to the Word Guessing Game! 🎉")
+    print("="*30)
     
-    addWords = input("Do you want to add new words to the game? (yes/no): ").strip().lower()
+    addWords = input("\nDo you want to add new words to the game? (yes/no): ").strip().lower()
     wordList = defaultWords.copy()
 
     if addWords == "yes":
@@ -22,7 +24,7 @@ def playWordGuessingGame():
             elif newWord.isalpha(): 
                 wordList.append(newWord)
             else:
-                print("Please enter a valid word with only letters.")
+                print("⚠️ Please enter a valid word with only letters.")
 
     chosenWord = random.choice(wordList)
     hiddenWord, hiddenIndices = hideWord(chosenWord)
@@ -30,44 +32,52 @@ def playWordGuessingGame():
     attempts = 5
     score = 0 
 
+    print("\n" + "-"*30)
     print(f"You have {attempts} attempts to guess the word.")
-    print("Word:", hiddenWord)
+    print("Word to guess:", hiddenWord)
+    print("-"*30)
 
     while attempts > 0:
-        guess = input("Enter a single letter or try to solve the entire word: ").strip().lower()
+        guess = input("\nEnter a single letter or try to solve the entire word: ").strip().lower()
 
         if len(guess) == 1: 
             if guess in chosenWord:
                 for index in hiddenIndices:
                     if chosenWord[index] == guess:
                         wordInProgress[index] = guess
-                print("Correct guess!")
+                print("✅ Correct guess!")
             else:
                 attempts -= 1
-                print("Incorrect letter. Attempts remaining:", attempts)
+                print(f"❌ Incorrect letter. Attempts remaining: {attempts}")
 
         elif len(guess) == len(chosenWord):
             if guess == chosenWord:
                 score += attempts * 10 
-                print("Congratulations! You've guessed the word:", chosenWord)
-                print("Your score:", score)
+                print("\n" + "-"*30)
+                print(f"🎉 Congratulations! You've guessed the word: {chosenWord}")
+                print(f"🏆 Your score: {score}")
+                print("-"*30)
                 return
             else:
                 attempts -= 1
-                print("Incorrect word. Attempts remaining:", attempts)
+                print(f"❌ Incorrect word. Attempts remaining: {attempts}")
         else:
-            print("Invalid input. Enter a single letter or a full word of the correct length.")
+            print("⚠️ Invalid input. Enter a single letter or a full word of the correct length.")
 
         currentProgress = "".join(wordInProgress)
-        print("Word:", currentProgress)
+        print("\nCurrent progress:", currentProgress)
 
         if currentProgress == chosenWord:
-            score += attempts * 10  
-            print("Congratulations! You've completed the word:", chosenWord)
-            print("Your score:", score)
+            score += attempts * 10
+            print("\n" + "-"*30)
+            print(f"🎉 Congratulations! You've completed the word: {chosenWord}")
+            print(f"🏆 Your score: {score}")
+            print("-"*30)
             return
 
-    print("Game over! The word was:", chosenWord)
-    print("Your score:", score)
+    print("\n" + "-"*30)
+    print(f"Game over! The word was: {chosenWord}")
+    print(f"Your score: {score}")
+    print("-"*30)
 
 playWordGuessingGame()
