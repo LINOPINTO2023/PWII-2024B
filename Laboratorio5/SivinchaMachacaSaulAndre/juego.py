@@ -11,7 +11,18 @@ def hideWord(word):
 def playWordGuessingGame():
     print("Welcome to the Word Guessing Game!")
     
+    addWords = input("Do you want to add new words to the game? (yes/no): ").strip().lower()
     wordList = defaultWords.copy()
+
+    if addWords == "yes":
+        while True:
+            newWord = input("Enter a new word (or type 'done' to finish): ").strip().lower()
+            if newWord == "done":
+                break
+            elif newWord.isalpha(): 
+                wordList.append(newWord)
+            else:
+                print("Please enter a valid word with only letters.")
 
     chosenWord = random.choice(wordList)
     hiddenWord, hiddenIndices = hideWord(chosenWord)
@@ -24,7 +35,7 @@ def playWordGuessingGame():
     while attempts > 0:
         guess = input("Enter a single letter or try to solve the entire word: ").strip().lower()
 
-        if len(guess) == 1:  
+        if len(guess) == 1: 
             if guess in chosenWord:
                 for index in hiddenIndices:
                     if chosenWord[index] == guess:
