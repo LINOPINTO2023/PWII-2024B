@@ -30,3 +30,27 @@ def jugar_adivinar_palabra():
             else:
                 intentos -= 1
                 print("UPS, no es la palabra. Inténtalo de nuevo.")
+        # Si el jugador introduce una sola letra
+        elif len(intento) == 1:
+            if intento in palabra_original:
+                palabra_actual = ''.join(
+                    intento if palabra_original[i] == intento else palabra_actual[i]
+                    for i in range(len(palabra_original))
+                )
+                print(f"¡BIEN!!! Adivinaste una letra! Palabra: {palabra_actual}")
+                if palabra_actual == palabra_original:
+                    print("¡LO LOGRASTE! Completaste la palabra.")
+                    return
+            else:
+                intentos -= 1
+                print("Letra incorrecta.")
+        else:
+            print("Entrada no válida. Introduce una letra o una palabra completa.")
+
+        print(f"Solo te quedan {intentos} intentos.")
+        print(f"Palabra: {palabra_actual}")
+
+    print(f"Lo siento :( , perdiste. La palabra era: {palabra_original}")
+
+# Iniciar el juego
+jugar_adivinar_palabra()
