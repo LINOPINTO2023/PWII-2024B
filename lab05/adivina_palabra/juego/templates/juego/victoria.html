@@ -1,0 +1,13 @@
+<!-- juego/templates/juego/victoria.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>¡Ganaste!</title>
+  </head>
+  <body>
+    <h1>¡Felicidades, has ganado!</h1>
+    <p>La palabra era: {{ palabra }}</p>
+    <a href="{% url 'juego' %}?reiniciar=true">Jugar de nuevo</a>
+  </body>
+</html>

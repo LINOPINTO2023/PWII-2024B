@@ -1,0 +1,22 @@
+<!-- juego/templates/juego/juego.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Juego de Adivina la Palabra</title>
+  </head>
+  <body>
+    <h1>Adivina la Palabra</h1>
+    <p>Palabra: {{ palabra_oculta }}</p>
+    <p>Intentos restantes: {{ intentos }}</p>
+    {% if error %}
+    <p style="color: red">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      <label for="intento">Introduce una letra o la palabra completa:</label>
+      <input type="text" name="intento" id="intento" required />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
