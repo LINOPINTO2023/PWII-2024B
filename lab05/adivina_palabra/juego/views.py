@@ -1,7 +1,7 @@
 import random
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-PALABRAS = ["javascript", "Django", "PINTO", "Python", "virtualenv", "ahorcamela", "manage"]
+PALABRAS = ["javascript", "django", "pinto", "python", "virtualenv", "ahorcamela", "manage"]
 
 def ocultar_palabra(palabra):
     num_letras_a_ocultar = max(1, int(len(palabra) * 0.6))
@@ -10,9 +10,20 @@ def ocultar_palabra(palabra):
     return palabra_oculta
 
 def juego_view(request):
-    palabra = request.session.get('palabra')
-    palabra_oculta = request.session.get('palabra_oculta')
-    intentos = request.session.get('intentos')
+    if request.GET.get('reiniciar') == 'true':
+        request.session.flush()
+        return redirect('juego')
+
+    if 'palabra' not in request.session:
+        palabra = random.choice(PALABRAS).lower()
+        palabra_oculta = ocultar_palabra(palabra)
+        request.session['palabra'] = palabra
+        request.session['palabra_oculta'] = palabra_oculta
+        request.session['intentos'] = 5
+    else:
+        palabra = request.session['palabra']
+        palabra_oculta = request.session['palabra_oculta']
+        intentos = request.session['intentos']
 
     if request.method == "POST":
         intento_usuario = request.POST.get("intento", "").lower().strip()
@@ -21,41 +32,43 @@ def juego_view(request):
             return render(request, "juego/juego.html", {
                 "error": "Entrada vacía. Intenta con una letra o la palabra completa.",
                 "palabra_oculta": palabra_oculta,
-                "intentos": intentos
+                "intentos": request.session['intentos']
             })
 
         if len(intento_usuario) == len(palabra):
-            # El usuario intenta adivinar la palabra completa
-            if intento_usuario == palabra.lower():
+            if intento_usuario == palabra:
+                request.session.flush()
                 return render(request, "juego/victoria.html", {"palabra": palabra})
             else:
                 request.session['intentos'] -= 1
+
         elif len(intento_usuario) == 1:
-            # El usuario intenta adivinar una letra
-            if intento_usuario in palabra.lower():
+            if intento_usuario in palabra:
                 nueva_oculta = ''.join(
-                    intento_usuario if palabra[i].lower() == intento_usuario else palabra_oculta[i]
+                    intento_usuario if palabra[i] == intento_usuario else palabra_oculta[i]
                     for i in range(len(palabra))
                 )
                 request.session['palabra_oculta'] = nueva_oculta
                 palabra_oculta = nueva_oculta
-                if nueva_oculta.lower() == palabra.lower():
+
+                if nueva_oculta == palabra:
+                    request.session.flush()
                     return render(request, "juego/victoria.html", {"palabra": palabra})
             else:
                 request.session['intentos'] -= 1
+
         else:
             return render(request, "juego/juego.html", {
                 "error": "Entrada inválida. Intenta con una letra o la palabra completa.",
                 "palabra_oculta": palabra_oculta,
-                "intentos": intentos
+                "intentos": request.session['intentos']
             })
 
-        # Verificar si se han agotado los intentos
         if request.session['intentos'] <= 0:
+            request.session.flush()
             return render(request, "juego/derrota.html", {"palabra": palabra})
 
-    # Renderizar la vista del juego
     return render(request, "juego/juego.html", {
         "palabra_oculta": palabra_oculta,
-        "intentos": intentos
+        "intentos": request.session['intentos']
     })

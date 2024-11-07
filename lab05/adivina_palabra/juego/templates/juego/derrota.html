@@ -1,13 +1,11 @@
-<!-- juego/templates/juego/derrota.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Perdiste</title>
+    <title>Derrota</title>
   </head>
   <body>
-    <h1>Lo siento, has perdido</h1>
+    <h1>Lo siento, has perdido.</h1>
     <p>La palabra era: {{ palabra }}</p>
-    <a href="{% url 'juego' %}?reiniciar=true">Jugar de nuevo</a>
+    <a href="{% url 'juego' %}?reiniciar=true">Intentar de nuevo</a>
   </body>
 </html>
