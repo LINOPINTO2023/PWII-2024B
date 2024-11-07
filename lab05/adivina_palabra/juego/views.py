@@ -1,32 +1,22 @@
 import random
 from django.shortcuts import render
 
-# Lista de palabras para el juego
 PALABRAS = ["javascript", "Django", "PINTO", "Python", "virtualenv", "ahorcamela", "manage"]
 
 def ocultar_palabra(palabra):
-    """Oculta hasta el 60% de las letras de la palabra al azar."""
     num_letras_a_ocultar = max(1, int(len(palabra) * 0.6))
     indices_a_ocultar = random.sample(range(len(palabra)), num_letras_a_ocultar)
     palabra_oculta = ''.join('_' if i in indices_a_ocultar else letra for i, letra in enumerate(palabra))
     return palabra_oculta
 
 def juego_view(request):
-    # Obtener variables de sesión con valores predeterminados para evitar errores si no existen
     palabra = request.session.get('palabra')
     palabra_oculta = request.session.get('palabra_oculta')
     intentos = request.session.get('intentos')
 
-    # Si alguna de las variables de sesión no está inicializada, redirigir a una página de error
-    if not palabra or not palabra_oculta or intentos is None:
-        return render(request, "juego/error.html", {
-            "error": "No se ha inicializado el juego correctamente. Reinicia el juego para comenzar."
-        })
-
     if request.method == "POST":
-        intento_usuario = request.POST.get("intento", "").lower().strip()  # Obtener y limpiar el intento
+        intento_usuario = request.POST.get("intento", "").lower().strip()
 
-        # Asegurar que el usuario ingresó algo
         if not intento_usuario:
             return render(request, "juego/juego.html", {
                 "error": "Entrada vacía. Intenta con una letra o la palabra completa.",
