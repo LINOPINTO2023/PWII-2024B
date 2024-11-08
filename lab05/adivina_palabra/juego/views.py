@@ -32,7 +32,7 @@ def juego_view(request):
             return render(request, "juego/juego.html", {
                 "error": "Entrada vacía. Intenta con una letra o la palabra completa.",
                 "palabra_oculta": palabra_oculta,
-                "intentos": request.session['intentos']
+                "intentos": intentos
             })
 
         if len(intento_usuario) == len(palabra):
@@ -40,7 +40,7 @@ def juego_view(request):
                 request.session.flush()
                 return render(request, "juego/victoria.html", {"palabra": palabra})
             else:
-                request.session['intentos'] -= 1
+                intentos -= 1
 
         elif len(intento_usuario) == 1:
             if intento_usuario in palabra:
@@ -55,20 +55,22 @@ def juego_view(request):
                     request.session.flush()
                     return render(request, "juego/victoria.html", {"palabra": palabra})
             else:
-                request.session['intentos'] -= 1
+                intentos -= 1
 
         else:
             return render(request, "juego/juego.html", {
                 "error": "Entrada inválida. Intenta con una letra o la palabra completa.",
                 "palabra_oculta": palabra_oculta,
-                "intentos": request.session['intentos']
+                "intentos": intentos
             })
 
-        if request.session['intentos'] <= 0:
+        request.session['intentos'] = intentos
+
+        if intentos <= 0:
             request.session.flush()
             return render(request, "juego/derrota.html", {"palabra": palabra})
 
     return render(request, "juego/juego.html", {
         "palabra_oculta": palabra_oculta,
-        "intentos": request.session['intentos']
+        "intentos": intentos
     })
