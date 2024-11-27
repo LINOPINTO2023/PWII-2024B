@@ -9,4 +9,4 @@ filanegro = tablero.verticalRepeat(1).superponer(peones.negative().under(Piezas.
 filablanca = tablero.verticalRepeat(3).superponer(Piezas.under(peones))
 tablero_de_Ajedrez = filablanca.under(filanegro)
 
-draw(tablero)
+draw(tablero_de_Ajedrez)
