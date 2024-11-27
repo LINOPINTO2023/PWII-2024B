@@ -1,0 +1,10 @@
+------------------------------
+GRUPO DE FRONTEND:
+ANTHONY
+NAGIN
+ANDRES
+-------------------------------
+GRUPO DE BACKEND
+ANDERSON
+MATHIAS
+AARON
